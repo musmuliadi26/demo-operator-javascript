@@ -1,0 +1,9 @@
+section{
+	padding-top: 6rem;
+}
+#penugasan, #logika, #ternary{
+	background-color: #f2f2f2;
+}
+#ternary{
+	padding-bottom: 10rem;
+}
