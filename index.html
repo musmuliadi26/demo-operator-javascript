@@ -78,21 +78,25 @@
                 </tr>
                 <tr>
                   <td>Modulus/Sisa Bagi</td>
-                  <td>%</td>
+                 <td>%</td>
                 </tr>
               </tbody>
             </table>
           </div>
           <div class="col-md-6">
             <h3>Demo :</h3>
-            <form>
+            <form id="formAritmatika" name="formAritmatika" onsubmit="return false" class="mb-3">
               <div class="mb-3">
-                <label for="ArimatikaVarA" class="form-label">Variabel A :</label>
-                <input type="number" class="form-control" id="ArimatikaVarA">
+                <label for="AritmatikaVarA" class="form-label">Variabel A :</label>
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="CheckboxVarA">
+                  <label class="form-check-label" for="CheckboxVarA">String</label>
+                </div>
+                <input type="text" class="form-control" id="AritmatikaVarA">
               </div>
               <div class="mb-3">
-                <label for="OpArimatika" class="form-label">Jenis Operator :</label>
-                <select id="OpArimatika" class="form-select">
+                <label for="SelOpAritmatika" class="form-label">Jenis Operator :</label>
+                <select id="SelOpAritmatika" class="form-select">
                   <option selected>Pilih jenis operator</option>
                   <option value="+">Penjumlahan(+)</option>
                   <option value="-">Pengurangan(-)</option>
@@ -103,11 +107,17 @@
                 </select>
               </div>
               <div class="mb-3">
-                <label for="ArimatikaVarB" class="form-label">Variabel B :</label>
-                <input type="number" class="form-control" id="ArimatikaVarB">
+                <label for="AritmatikaVarB" class="form-label">Variabel B :</label>
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="CheckboxVarB">
+                  <label class="form-check-label" for="CheckboxVarB">String</label>
+                </div>
+                <input type="text" class="form-control" id="AritmatikaVarB">
               </div>
-              <button type="submit" class="btn btn-secondary">Submit</button>
+              <input type="submit" value="Jalankan" name="" class="btn btn-secondary" onclick="OpAritmatika();">
             </form>
+            <h3>Hasil :</h3>
+            <h4 id="AritmatikaValue"> </h4>
           </div>
         </div>
       </div>
