@@ -40,7 +40,7 @@
       <div class="container">
         <div class="row text-center mb-4">
           <div class="col">
-            <h2>Operator Arimatika</h2>
+            <h2>Operator Aritmatika</h2>
           </div>
         </div>
         <div class="row">
@@ -89,8 +89,8 @@
               <div class="mb-3">
                 <label for="AritmatikaVarA" class="form-label">Variabel A :</label>
                 <div class="form-check">
-                  <input type="checkbox" class="form-check-input" id="CheckboxVarA">
-                  <label class="form-check-label" for="CheckboxVarA">String</label>
+                  <input type="checkbox" class="form-check-input" id="CBAritmatikaVarA">
+                  <label class="form-check-label" for="CBAritmatikaVarA">String</label>
                 </div>
                 <input type="text" class="form-control" id="AritmatikaVarA">
               </div>
@@ -109,15 +109,15 @@
               <div class="mb-3">
                 <label for="AritmatikaVarB" class="form-label">Variabel B :</label>
                 <div class="form-check">
-                  <input type="checkbox" class="form-check-input" id="CheckboxVarB">
-                  <label class="form-check-label" for="CheckboxVarB">String</label>
+                  <input type="checkbox" class="form-check-input" id="CBAritmatikaVarB">
+                  <label class="form-check-label" for="CBAritmatikaVarB">String</label>
                 </div>
                 <input type="text" class="form-control" id="AritmatikaVarB">
               </div>
               <input type="submit" value="Jalankan" name="" class="btn btn-secondary" onclick="OpAritmatika();">
             </form>
             <h3>Hasil :</h3>
-            <h4 id="AritmatikaValue"> </h4>
+            <h5 id="AritmatikaValue"> </h5>
           </div>
         </div>
       </div>
@@ -179,14 +179,18 @@
           </div>
           <div class="col-md-6">
             <h3>Demo :</h3>
-            <form>
+            <form id="formPenugasan" name="formPenugasan" onsubmit="return false" class="mb-3">
               <div class="mb-3">
                 <label for="PenugasanVarA" class="form-label">Variabel A :</label>
-                <input type="number" class="form-control" id="PenugasanVarA">
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="CBPenugasanVarA">
+                  <label class="form-check-label" for="CBPenugasanVarA">String</label>
+                </div>
+                <input type="text" class="form-control" id="PenugasanVarA">
               </div>
               <div class="mb-3">
-                <label for="OpPenugasan" class="form-label">Jenis Operator :</label>
-                <select id="OpPenugasan" class="form-select">
+                <label for="SelOpPenugasan" class="form-label">Jenis Operator :</label>
+                <select id="SelOpPenugasan" class="form-select">
                   <option selected>Pilih jenis operator</option>
                   <option value="+=">Pengisian dan Penambahan(+=)</option>
                   <option value="-=">pengisian dan Pengurangan(-=)</option>
@@ -198,10 +202,16 @@
               </div>
               <div class="mb-3">
                 <label for="PenugasanVarB" class="form-label">Variabel B :</label>
-                <input type="number" class="form-control" id="PenugasanVarB">
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="CBPenugasanVarB">
+                  <label class="form-check-label" for="CBPenugasanVarB">String</label>
+                </div>
+                <input type="text" class="form-control" id="PenugasanVarB">
               </div>
-              <button type="submit" class="btn btn-secondary">Submit</button>
+              <input type="submit" value="Jalankan" name="" class="btn btn-secondary" onclick="OpPenugasan();">
             </form>
+            <h3>Hasil :</h3>
+            <h5 id="PenugasanValue"> </h5>
           </div>
         </div>
       </div>
