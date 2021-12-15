@@ -17,7 +17,7 @@
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="#">Operator Javascript</a>
+        <a class="navbar-brand fs-6" href="#">Demo Operator Javascript</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -43,8 +43,8 @@
             <h2>Operator Aritmatika</h2>
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-6">
+        <div class="row justify-content-center mb-4">
+          <div class="col-md-8">
             <h3>Penjelasan :</h3>
             <p>Operator aritmatika merupakan operator untuk melakukan operasi aritmatika seperti penjumlahan, pengurangan, pembagian, perkalian, dsb.</p>
             <p>Operator aritmatika terdiri dari:</p>
@@ -82,8 +82,10 @@
                 </tr>
               </tbody>
             </table>
-          </div>
-          <div class="col-md-6">
+          </div> 
+        </div>
+        <div class="row justify-content-around">
+          <div class="col-md-5">
             <h3>Demo :</h3>
             <form id="formAritmatika" name="formAritmatika" onsubmit="return false" class="mb-3">
               <div class="mb-3">
@@ -116,8 +118,11 @@
               </div>
               <input type="submit" value="Jalankan" name="" class="btn btn-secondary" onclick="OpAritmatika();">
             </form>
+          </div>
+          <div class="col-md-5">
             <h3>Hasil :</h3>
-            <h5 id="AritmatikaValue"> </h5>
+            <span id="CodingAritmatika" class="hasil fs-5"> </span>
+            <span id="AritmatikaValue"> </span>
           </div>
         </div>
       </div>
@@ -133,8 +138,8 @@
             <h2>Operator Penugasan</h2>
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-6">
+        <div class="row justify-content-center mb-4">
+          <div class="col-md-8">
             <h3>Penjelasan :</h3>
             <p>Operator penugasan adalah operator yang digunakan untuk memberikan tugas kepada variabel. Biasanya digunakan untuk mengisi variabel.</p>
             <p>Operator penugasan terdiri dari :</p>
@@ -176,8 +181,10 @@
                 </tr>
               </tbody>
             </table>
-          </div>
-          <div class="col-md-6">
+          </div> 
+        </div>
+        <div class="row justify-content-around">
+          <div class="col-md-5">
             <h3>Demo :</h3>
             <form id="formPenugasan" name="formPenugasan" onsubmit="return false" class="mb-3">
               <div class="mb-3">
@@ -210,8 +217,11 @@
               </div>
               <input type="submit" value="Jalankan" name="" class="btn btn-secondary" onclick="OpPenugasan();">
             </form>
+          </div>
+          <div class="col-md-5">
             <h3>Hasil :</h3>
-            <h5 id="PenugasanValue"> </h5>
+            <span id="CodingPenugasan" class="hasil fs-5"> </span>
+            <span id="PenugasanValue"> </span>
           </div>
         </div>
       </div>
@@ -270,14 +280,18 @@
           </div>
           <div class="col-md-6">
             <h3>Demo :</h3>
-            <form>
+            <form id="formPerbandingan" name="formPerbandingan" onsubmit="return false" class="mb-3">
               <div class="mb-3">
-                <label for="PerbadinganVarA" class="form-label">Variabel A :</label>
-                <input type="number" class="form-control" id="PerbadinganVarA">
+                <label for="PerbandinganVarA" class="form-label">Variabel A :</label>
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="CBPerbandinganVarA">
+                  <label class="form-check-label" for="CBPerbandinganVarA">String</label>
+                </div>
+                <input type="text" class="form-control" id="PerbandinganVarA">
               </div>
               <div class="mb-3">
-                <label for="OpPerbandingan" class="form-label">Jenis Operator :</label>
-                <select id="OpPerbandingan" class="form-select">
+                <label for="SelOpPerbandingan" class="form-label">Jenis Operator :</label>
+                <select id="SelOpPerbandingan" class="form-select">
                   <option selected>Pilih jenis operator</option>
                   <option value=">">Lebih Besar(>)</option>
                   <option value="<">Lebih Kecil(<)</option>
@@ -290,11 +304,17 @@
                 </select>
               </div>
               <div class="mb-3">
-                <label for="PerbadinganVarB" class="form-label">Variabel B :</label>
-                <input type="number" class="form-control" id="PerbadinganVarB">
+                <label for="PerbandinganVarB" class="form-label">Variabel B :</label>
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="CBPerbandinganVarB">
+                  <label class="form-check-label" for="CBPerbandinganVarB">String</label>
+                </div>
+                <input type="text" class="form-control" id="PerbandinganVarB">
               </div>
-              <button type="submit" class="btn btn-secondary">Submit</button>
+              <input type="submit" value="Jalankan" name="" class="btn btn-secondary" onclick="OpPerbandingan();">
             </form>
+            <h3>Hasil :</h3>
+            <h5 id="PerbandinganValue"> </h5>
           </div>
         </div>
       </div>

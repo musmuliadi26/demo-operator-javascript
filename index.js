@@ -12,110 +12,134 @@ function OpAritmatika(){
 
 	if(JOperator == "+"){
 		if(document.getElementById('formAritmatika').CBAritmatikaVarA.checked && document.getElementById('formAritmatika').CBAritmatikaVarB.checked){
+			document.getElementById('CodingAritmatika').innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> var Hasil = A + B; <br><i>console</i>.log(Hasil);';
 			hasil = VarA + VarB;
-			document.getElementById('AritmatikaValue').innerHTML = 'Hasil Penjumlahan dari "'+ VarA +'" + "'+ VarB +'" adalah = "'+ hasil +'"';
+			document.getElementById('AritmatikaValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">"'+ hasil +'"</h4>';
 			form.reset();
 		}else if(document.getElementById('formAritmatika').CBAritmatikaVarB.checked){
+			document.getElementById('CodingAritmatika').innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> var Hasil = A + B; <br><i>console</i>.log(Hasil);';
 			hasil = c + VarB;
-			document.getElementById('AritmatikaValue').innerHTML = 'Hasil Penjumlahan dari '+ c +' + "'+ VarB +'" adalah = "'+ hasil +'"';
+			document.getElementById('AritmatikaValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">"'+ hasil +'"</h4>';
 			form.reset();
 		}else if(document.getElementById('formAritmatika').CBAritmatikaVarA.checked){
+			document.getElementById('CodingAritmatika').innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> var Hasil = A + B; <br><i>console</i>.log(Hasil);';
 			hasil = VarA + d;
-			document.getElementById('AritmatikaValue').innerHTML = 'Hasil Penjumlahan dari "'+ VarA +'" + '+ d +' adalah = "'+ hasil + '"';
+			document.getElementById('AritmatikaValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">"'+ hasil +'"</h4>';
 			form.reset();
 		}else{
+			document.getElementById('CodingAritmatika').innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var Hasil = A + B; <br><i>console</i>.log(Hasil);';
 			hasil = c + d;
-			document.getElementById('AritmatikaValue').innerHTML = "Hasil Penjumlahan dari "+ c +" + "+ d +" adalah = "+ hasil;
+			document.getElementById('AritmatikaValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
 			form.reset();
 		}
 	}else if(JOperator == "-"){
 		if(document.getElementById('formAritmatika').CBAritmatikaVarA.checked && document.getElementById('formAritmatika').CBAritmatikaVarB.checked){
+			document.getElementById('CodingAritmatika').innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> var Hasil = A - B; <br><i>console</i>.log(Hasil);';
 			hasil = VarA - VarB;
-			document.getElementById('AritmatikaValue').innerHTML = 'Hasil Pengurangan dari "'+ VarA +'" - "'+ VarB +'" adalah = '+ hasil;
+			document.getElementById('AritmatikaValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
 			form.reset();
 		}else if(document.getElementById('formAritmatika').CBAritmatikaVarB.checked){
+			document.getElementById('CodingAritmatika').innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> var Hasil = A - B; <br><i>console</i>.log(Hasil);';
 			hasil = c - VarB;
-			document.getElementById('AritmatikaValue').innerHTML = 'Hasil Pengurangan dari '+ c +' - "'+ VarB +'" adalah = '+ hasil;
+			document.getElementById('AritmatikaValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
 			form.reset();
 		}else if(document.getElementById('formAritmatika').CBAritmatikaVarA.checked){
+			document.getElementById('CodingAritmatika').innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> var Hasil = A - B; <br><i>console</i>.log(Hasil);';
 			hasil = VarA - d;
-			document.getElementById('AritmatikaValue').innerHTML = 'Hasil Pengurangan dari "'+ VarA +'" - '+ d +' adalah = '+ hasil;
+			document.getElementById('AritmatikaValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
 			form.reset();
 		}else{
+			document.getElementById('CodingAritmatika').innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var Hasil = A - B; <br><i>console</i>.log(Hasil);';
 			hasil = c - d;
-			document.getElementById('AritmatikaValue').innerHTML = "Hasil Pengurangan dari "+ c +" - "+ d +" adalah = "+ hasil;
+			document.getElementById('AritmatikaValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
 			form.reset();
 		}
 	}else if(JOperator == "*"){
 		if(document.getElementById('formAritmatika').CBAritmatikaVarA.checked && document.getElementById('formAritmatika').CBAritmatikaVarB.checked){
+			document.getElementById('CodingAritmatika').innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> var Hasil = A * B; <br><i>console</i>.log(Hasil);';
 			hasil = VarA * VarB;
-			document.getElementById('AritmatikaValue').innerHTML = 'Hasil Perkalian dari "'+ VarA +'" * "'+ VarB +'" adalah = '+ hasil;
+			document.getElementById('AritmatikaValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
 			form.reset();
 		}else if(document.getElementById('formAritmatika').CBAritmatikaVarB.checked){
+			document.getElementById('CodingAritmatika').innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> var Hasil = A * B; <br><i>console</i>.log(Hasil);';
 			hasil = c * VarB;
-			document.getElementById('AritmatikaValue').innerHTML = 'Hasil Perkalian dari '+ c +' * "'+ VarB +'" adalah = '+ hasil;
+			document.getElementById('AritmatikaValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
 			form.reset();
 		}else if(document.getElementById('formAritmatika').CBAritmatikaVarA.checked){
+			document.getElementById('CodingAritmatika').innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> var Hasil = A * B; <br><i>console</i>.log(Hasil);';
 			hasil = VarA * d;
-			document.getElementById('AritmatikaValue').innerHTML = 'Hasil Perkalian dari "'+ VarA +'" * '+ d +' adalah = '+ hasil;
+			document.getElementById('AritmatikaValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
 			form.reset();
 		}else{
+			document.getElementById('CodingAritmatika').innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var Hasil = A * B; <br><i>console</i>.log(Hasil);';
 			hasil = c * d;
-			document.getElementById('AritmatikaValue').innerHTML = "Hasil Perkalian dari "+ c +" * "+ d +" adalah = "+ hasil;
+			document.getElementById('AritmatikaValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
 			form.reset();
 		}
 	}else if(JOperator == "**"){
 		if(document.getElementById('formAritmatika').CBAritmatikaVarA.checked && document.getElementById('formAritmatika').CBAritmatikaVarB.checked){
+			document.getElementById('CodingAritmatika').innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> var Hasil = A ** B; <br><i>console</i>.log(Hasil);';
 			hasil = VarA ** VarB;
-			document.getElementById('AritmatikaValue').innerHTML = 'Hasil Pemangkatan dari "'+ VarA +'" ** "'+ VarB +'" adalah = '+ hasil;
+			document.getElementById('AritmatikaValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
 			form.reset();
 		}else if(document.getElementById('formAritmatika').CBAritmatikaVarB.checked){
+			document.getElementById('CodingAritmatika').innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> var Hasil = A ** B; <br><i>console</i>.log(Hasil);';
 			hasil = c ** VarB;
-			document.getElementById('AritmatikaValue').innerHTML = 'Hasil Pemangkatan dari '+ c +' ** "'+ VarB +'" adalah = '+ hasil;
+			document.getElementById('AritmatikaValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
 			form.reset();
 		}else if(document.getElementById('formAritmatika').CBAritmatikaVarA.checked){
+			document.getElementById('CodingAritmatika').innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> var Hasil = A ** B; <br><i>console</i>.log(Hasil);';
 			hasil = VarA ** d;
-			document.getElementById('AritmatikaValue').innerHTML = 'Hasil Pemangkatan dari "'+ VarA +'" ** '+ d +' adalah = '+ hasil;
+			document.getElementById('AritmatikaValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
 			form.reset();
 		}else{
+			document.getElementById('CodingAritmatika').innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var Hasil = A ** B; <br><i>console</i>.log(Hasil);';
 			hasil = c ** d;
-			document.getElementById('AritmatikaValue').innerHTML = "Hasil Pemangkatan dari "+ c +" ** "+ d +" adalah = "+ hasil;
+			document.getElementById('AritmatikaValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
 			form.reset();
 		}
 	}else if(JOperator == "/"){
 		if(document.getElementById('formAritmatika').CBAritmatikaVarA.checked && document.getElementById('formAritmatika').CBAritmatikaVarB.checked){
+			document.getElementById('CodingAritmatika').innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> var Hasil = A / B; <br><i>console</i>.log(Hasil);';
 			hasil = VarA / VarB;
-			document.getElementById('AritmatikaValue').innerHTML = 'Hasil Pembagian dari "'+ VarA +'" / "'+ VarB +'" adalah = '+ hasil;
+			document.getElementById('AritmatikaValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
 			form.reset();
 		}else if(document.getElementById('formAritmatika').CBAritmatikaVarB.checked){
+			document.getElementById('CodingAritmatika').innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> var Hasil = A / B; <br><i>console</i>.log(Hasil);';
 			hasil = c / VarB;
-			document.getElementById('AritmatikaValue').innerHTML = 'Hasil Pembagian dari '+ c +' / "'+ VarB +'" adalah = '+ hasil;
+			document.getElementById('AritmatikaValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
 			form.reset();
 		}else if(document.getElementById('formAritmatika').CBAritmatikaVarA.checked){
+			document.getElementById('CodingAritmatika').innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> var Hasil = A / B; <br><i>console</i>.log(Hasil);';
 			hasil = VarA / d;
-			document.getElementById('AritmatikaValue').innerHTML = 'Hasil Pembagian dari "'+ VarA +'" / '+ d +' adalah = '+ hasil;
+			document.getElementById('AritmatikaValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
 			form.reset();
 		}else{
+			document.getElementById('CodingAritmatika').innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var Hasil = A / B; <br><i>console</i>.log(Hasil);';
 			hasil = c / d;
-			document.getElementById('AritmatikaValue').innerHTML = "Hasil Pembagian dari "+ c +" / "+ d +" adalah = "+ hasil;
+			document.getElementById('AritmatikaValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
 			form.reset();
 		}
 	}else if(JOperator == "%"){
 		if(document.getElementById('formAritmatika').CBAritmatikaVarA.checked && document.getElementById('formAritmatika').CBAritmatikaVarB.checked){
+			document.getElementById('CodingAritmatika').innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> var Hasil = A % B; <br><i>console</i>.log(Hasil);';
 			hasil = VarA % VarB;
-			document.getElementById('AritmatikaValue').innerHTML = 'Hasil Modulus/Sisa bagi dari "'+ VarA +'" % "'+ VarB +'" adalah = '+ hasil;
+			document.getElementById('AritmatikaValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
 			form.reset();
 		}else if(document.getElementById('formAritmatika').CBAritmatikaVarB.checked){
+			document.getElementById('CodingAritmatika').innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> var Hasil = A % B; <br><i>console</i>.log(Hasil);';
 			hasil = c % VarB;
-			document.getElementById('AritmatikaValue').innerHTML = 'Hasil Modulus/Sisa bagi dari '+ c +' % "'+ VarB +'" adalah = '+ hasil;
+			document.getElementById('AritmatikaValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
 			form.reset();
 		}else if(document.getElementById('formAritmatika').CBAritmatikaVarA.checked){
+			document.getElementById('CodingAritmatika').innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> var Hasil = A % B; <br><i>console</i>.log(Hasil);';
 			hasil = VarA % d;
-			document.getElementById('AritmatikaValue').innerHTML = 'Hasil Modulus/Sisa bagi dari "'+ VarA +'" % '+ d +' adalah = '+ hasil;
+			document.getElementById('AritmatikaValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
 			form.reset();
 		}else{
+			document.getElementById('CodingAritmatika').innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var Hasil = A % B; <br><i>console</i>.log(Hasil);';
 			hasil = c % d;
-			document.getElementById('AritmatikaValue').innerHTML = "Hasil Modulus/Sisa bagi dari "+ c +" % "+ d +" adalah = "+ hasil;
+			document.getElementById('AritmatikaValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
 			form.reset();
 		}
 	}	
@@ -134,113 +158,140 @@ function OpPenugasan(){
 
 	if(JOperator == "+="){
 		if(document.getElementById('formPenugasan').CBPenugasanVarA.checked && document.getElementById('formPenugasan').CBPenugasanVarB.checked){
+			document.getElementById('CodingPenugasan').innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> A += B; <br><i>console</i>.log(A);';
 			VarA += VarB;
-			document.getElementById('PenugasanValue').innerHTML = 'Hasil Variabel A setelah Diisi dan Ditambah dengan "'+ VarB +'" adalah = "'+ VarA +'"';
+			document.getElementById('PenugasanValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> "'+ VarA +'" </h4>';
 			form.reset();
 		}else if(document.getElementById('formPenugasan').CBPenugasanVarB.checked){
+			document.getElementById('CodingPenugasan').innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> A += B; <br><i>console</i>.log(A);';
 			c += VarB;
-			document.getElementById('PenugasanValue').innerHTML = 'Hasil Variabel A setelah Diisi dan Ditambah dengan "'+ VarB +'" adalah = "'+ c +'"';
+			document.getElementById('PenugasanValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> "'+ c +'" </h4>';
 			form.reset();
 		}else if(document.getElementById('formPenugasan').CBPenugasanVarA.checked){
+			document.getElementById('CodingPenugasan').innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> A += B; <br><i>console</i>.log(A);';
 			VarA += d;
-			document.getElementById('PenugasanValue').innerHTML = 'Hasil Variabel A setelah Diisi dan Ditambah dengan '+ d +' adalah = "'+ VarA +'"';
+			document.getElementById('PenugasanValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> "'+ VarA +'" </h4>';
 			form.reset();
 		}else{
+			document.getElementById('CodingPenugasan').innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> A += B; <br><i>console</i>.log(A);';
 			c += d;
-			document.getElementById('PenugasanValue').innerHTML = 'Hasil Variabel A setelah Diisi dan Ditambah dengan '+ d +' adalah = '+ c;
+			document.getElementById('PenugasanValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ c +' </h4>';
 			form.reset();
 		}
 	}else if(JOperator == "-="){
 		if(document.getElementById('formPenugasan').CBPenugasanVarA.checked && document.getElementById('formPenugasan').CBPenugasanVarB.checked){
+			document.getElementById('CodingPenugasan').innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> A -= B; <br><i>console</i>.log(A);';
 			VarA -= VarB;
-			document.getElementById('PenugasanValue').innerHTML = 'Hasil Variabel A setelah Diisi dan Dikurang dengan "'+ VarB +'" adalah = '+ VarA;
+			document.getElementById('PenugasanValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ VarA +' </h4>';
 			form.reset();
 		}else if(document.getElementById('formPenugasan').CBPenugasanVarB.checked){
+			document.getElementById('CodingPenugasan').innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> A -= B; <br><i>console</i>.log(A);';
 			c -= VarB;
-			document.getElementById('PenugasanValue').innerHTML = 'Hasil Variabel A setelah Diisi dan Dikurang dengan "'+ VarB +'" adalah = '+ c;
+			document.getElementById('PenugasanValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ c +' </h4>';
 			form.reset();
 		}else if(document.getElementById('formPenugasan').CBPenugasanVarA.checked){
+			document.getElementById('CodingPenugasan').innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> A -= B; <br><i>console</i>.log(A);';
 			VarA -= d;
-			document.getElementById('PenugasanValue').innerHTML = 'Hasil Variabel A setelah Diisi dan Dikurang dengan '+ d +' adalah = '+ VarA;
+			document.getElementById('PenugasanValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ VarA +' </h4>';
 			form.reset();
 		}else{
+			document.getElementById('CodingPenugasan').innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> A -= B; <br><i>console</i>.log(A);';
 			c -= d;
-			document.getElementById('PenugasanValue').innerHTML = 'Hasil Variabel A setelah Diisi dan Dikurang dengan '+ d +' adalah = '+ c;
+			document.getElementById('PenugasanValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ c +' </h4>';
 			form.reset();
 		}
 	}else if(JOperator == "*="){
 		if(document.getElementById('formPenugasan').CBPenugasanVarA.checked && document.getElementById('formPenugasan').CBPenugasanVarB.checked){
+			document.getElementById('CodingPenugasan').innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> A *= B; <br><i>console</i>.log(A);';
 			VarA *= VarB;
-			document.getElementById('PenugasanValue').innerHTML = 'Hasil Variabel A setelah Diisi dan Dikali dengan "'+ VarB +'" adalah = '+ VarA;
+			document.getElementById('PenugasanValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ VarA +' </h4>';
 			form.reset();
 		}else if(document.getElementById('formPenugasan').CBPenugasanVarB.checked){
+			document.getElementById('CodingPenugasan').innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> A *= B; <br><i>console</i>.log(A);';
 			c *= VarB;
-			document.getElementById('PenugasanValue').innerHTML = 'Hasil Variabel A setelah Diisi dan Dikali dengan "'+ VarB +'" adalah = '+ c;
+			document.getElementById('PenugasanValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ c +' </h4>';
 			form.reset();
 		}else if(document.getElementById('formPenugasan').CBPenugasanVarA.checked){
+			document.getElementById('CodingPenugasan').innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> A *= B; <br><i>console</i>.log(A);';
 			VarA *= d;
-			document.getElementById('PenugasanValue').innerHTML = 'Hasil Variabel A setelah Diisi dan Dikali dengan '+ d +' adalah = '+ VarA;
+			document.getElementById('PenugasanValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ VarA +' </h4>';
 			form.reset();
 		}else{
+			document.getElementById('CodingPenugasan').innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> A *= B; <br><i>console</i>.log(A);';
 			c *= d;
-			document.getElementById('PenugasanValue').innerHTML = 'Hasil Variabel A setelah Diisi dan Dikali dengan '+ d +' adalah = '+ c;
+			document.getElementById('PenugasanValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ c +' </h4>';
 			form.reset();
 		}
 	}else if(JOperator == "**="){
 		if(document.getElementById('formPenugasan').CBPenugasanVarA.checked && document.getElementById('formPenugasan').CBPenugasanVarB.checked){
+			document.getElementById('CodingPenugasan').innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> A **= B; <br><i>console</i>.log(A);';
 			VarA **= VarB;
-			document.getElementById('PenugasanValue').innerHTML = 'Hasil Variabel A setelah Diisi dan Dipangkatkan dengan "'+ VarB +'" adalah = '+ VarA;
+			document.getElementById('PenugasanValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ VarA +' </h4>';
 			form.reset();
 		}else if(document.getElementById('formPenugasan').CBPenugasanVarB.checked){
+			document.getElementById('CodingPenugasan').innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> A **= B; <br><i>console</i>.log(A);';
 			c **= VarB;
-			document.getElementById('PenugasanValue').innerHTML = 'Hasil Variabel A setelah Diisi dan Dipangkatkan dengan "'+ VarB +'" adalah = '+ c;
+			document.getElementById('PenugasanValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ c +' </h4>';
 			form.reset();
 		}else if(document.getElementById('formPenugasan').CBPenugasanVarA.checked){
+			document.getElementById('CodingPenugasan').innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> A **= B; <br><i>console</i>.log(A);';
 			VarA **= d;
-			document.getElementById('PenugasanValue').innerHTML = 'Hasil Variabel A setelah Diisi dan Dipangkatkan dengan '+ d +' adalah = '+ VarA;
+			document.getElementById('PenugasanValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ VarA +' </h4>';
 			form.reset();
 		}else{
+			document.getElementById('CodingPenugasan').innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> A **= B; <br><i>console</i>.log(A);';
 			c **= d;
-			document.getElementById('PenugasanValue').innerHTML = 'Hasil Variabel A setelah Diisi dan Dipangkatkan dengan '+ d +' adalah = '+ c;
+			document.getElementById('PenugasanValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ c +' </h4>';
 			form.reset();
 		}
 	}else if(JOperator == "/="){
 		if(document.getElementById('formPenugasan').CBPenugasanVarA.checked && document.getElementById('formPenugasan').CBPenugasanVarB.checked){
+			document.getElementById('CodingPenugasan').innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> A /= B; <br><i>console</i>.log(A);';
 			VarA /= VarB;
-			document.getElementById('PenugasanValue').innerHTML = 'Hasil Variabel A setelah Diisi dan Dibagi dengan "'+ VarB +'" adalah = '+ VarA;
+			document.getElementById('PenugasanValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ VarA +' </h4>';
 			form.reset();
 		}else if(document.getElementById('formPenugasan').CBPenugasanVarB.checked){
+			document.getElementById('CodingPenugasan').innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> A /= B; <br><i>console</i>.log(A);';
 			c /= VarB;
-			document.getElementById('PenugasanValue').innerHTML = 'Hasil Variabel A setelah Diisi dan Dibagi dengan "'+ VarB +'" adalah = '+ c;
+			document.getElementById('PenugasanValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ c +' </h4>';
 			form.reset();
 		}else if(document.getElementById('formPenugasan').CBPenugasanVarA.checked){
+			document.getElementById('CodingPenugasan').innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> A /= B; <br><i>console</i>.log(A);';
 			VarA /= d;
-			document.getElementById('PenugasanValue').innerHTML = 'Hasil Variabel A setelah Diisi dan Dibagi dengan '+ d +' adalah = '+ VarA;
+			document.getElementById('PenugasanValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ VarA +' </h4>';
 			form.reset();
 		}else{
+			document.getElementById('CodingPenugasan').innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> A /= B; <br><i>console</i>.log(A);';
 			c /= d;
-			document.getElementById('PenugasanValue').innerHTML = 'Hasil Variabel A setelah Diisi dan Dibagi dengan '+ d +' adalah = '+ c;
+			document.getElementById('PenugasanValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ c +' </h4>';
 			form.reset();
 		}
 	}else if(JOperator == "%="){
 		if(document.getElementById('formPenugasan').CBPenugasanVarA.checked && document.getElementById('formPenugasan').CBPenugasanVarB.checked){
+			document.getElementById('CodingPenugasan').innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> A %= B; <br><i>console</i>.log(A);';
 			VarA %= VarB;
-			document.getElementById('PenugasanValue').innerHTML = 'Hasil Variabel A setelah Diisi dan Dimodulus dengan "'+ VarB +'" adalah = '+ VarA;
+			document.getElementById('PenugasanValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ VarA +' </h4>';
 			form.reset();
 		}else if(document.getElementById('formPenugasan').CBPenugasanVarB.checked){
+			document.getElementById('CodingPenugasan').innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> A %= B; <br><i>console</i>.log(A);';
 			c %= VarB;
-			document.getElementById('PenugasanValue').innerHTML = 'Hasil Variabel A setelah Diisi dan Dimodulus dengan "'+ VarB +'" adalah = '+ c;
+			document.getElementById('PenugasanValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ c +' </h4>';
 			form.reset();
 		}else if(document.getElementById('formPenugasan').CBPenugasanVarA.checked){
+			document.getElementById('CodingPenugasan').innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> A %= B; <br><i>console</i>.log(A);';
 			VarA %= d;
-			document.getElementById('PenugasanValue').innerHTML = 'Hasil Variabel A setelah Diisi dan Dimodulus dengan '+ d +' adalah = '+ VarA;
+			document.getElementById('PenugasanValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ VarA +' </h4>';
 			form.reset();
 		}else{
+			document.getElementById('CodingPenugasan').innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> A %= B; <br><i>console</i>.log(A);';
 			c %= d;
-			document.getElementById('PenugasanValue').innerHTML = 'Hasil Variabel A setelah Diisi dan Dimodulus dengan '+ d +' adalah = '+ c;
+			document.getElementById('PenugasanValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ c +' </h4>';
 			form.reset();
 		}
 	}	
 }
 // end Operator Penugasan
 
+// operator Perbandingan
+
+// end Operator Perbandingan

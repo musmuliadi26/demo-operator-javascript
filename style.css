@@ -1,3 +1,6 @@
+/*google font*/
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+
 #aritmatika{
 	padding-top: 6rem;
 }
@@ -6,4 +9,7 @@
 }
 #ternary{
 	padding-bottom: 10rem;
+}
+.hasil{
+	font-family: 'Space Mono', monospace;
 }
