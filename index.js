@@ -1,145 +1,148 @@
 // Operator Aritmatika
 function OpAritmatika(){
 	var hasil;
-
 	var form = document.getElementById('formAritmatika');
 	var VarA = document.getElementById('formAritmatika').AritmatikaVarA.value;
 	var VarB = document.getElementById('formAritmatika').AritmatikaVarB.value;
 	var JOperator = document.getElementById('formAritmatika').SelOpAritmatika.value;
+	var CBVarA = document.getElementById('formAritmatika').CBAritmatikaVarA.checked;
+	var CBVarB = document.getElementById('formAritmatika').CBAritmatikaVarB.checked;
+	var Coding = document.getElementById('CodingAritmatika');
+	var Value = document.getElementById('AritmatikaValue');
 
 	var c = Number(VarA);
 	var d = Number(VarB);
 
 	if(JOperator == "+"){
-		if(document.getElementById('formAritmatika').CBAritmatikaVarA.checked && document.getElementById('formAritmatika').CBAritmatikaVarB.checked){
-			document.getElementById('CodingAritmatika').innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> var Hasil = A + B; <br><i>console</i>.log(Hasil);';
+		if(CBVarA && CBVarB){
+			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> var Hasil = A + B; <br><i>console</i>.log(Hasil);';
 			hasil = VarA + VarB;
-			document.getElementById('AritmatikaValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">"'+ hasil +'"</h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">"'+ hasil +'"</h4>';
 			form.reset();
-		}else if(document.getElementById('formAritmatika').CBAritmatikaVarB.checked){
-			document.getElementById('CodingAritmatika').innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> var Hasil = A + B; <br><i>console</i>.log(Hasil);';
+		}else if(CBVarB){
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> var Hasil = A + B; <br><i>console</i>.log(Hasil);';
 			hasil = c + VarB;
-			document.getElementById('AritmatikaValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">"'+ hasil +'"</h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">"'+ hasil +'"</h4>';
 			form.reset();
-		}else if(document.getElementById('formAritmatika').CBAritmatikaVarA.checked){
-			document.getElementById('CodingAritmatika').innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> var Hasil = A + B; <br><i>console</i>.log(Hasil);';
+		}else if(CBVarA){
+			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> var Hasil = A + B; <br><i>console</i>.log(Hasil);';
 			hasil = VarA + d;
-			document.getElementById('AritmatikaValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">"'+ hasil +'"</h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">"'+ hasil +'"</h4>';
 			form.reset();
 		}else{
-			document.getElementById('CodingAritmatika').innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var Hasil = A + B; <br><i>console</i>.log(Hasil);';
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var Hasil = A + B; <br><i>console</i>.log(Hasil);';
 			hasil = c + d;
-			document.getElementById('AritmatikaValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
 			form.reset();
 		}
 	}else if(JOperator == "-"){
-		if(document.getElementById('formAritmatika').CBAritmatikaVarA.checked && document.getElementById('formAritmatika').CBAritmatikaVarB.checked){
-			document.getElementById('CodingAritmatika').innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> var Hasil = A - B; <br><i>console</i>.log(Hasil);';
+		if(CBVarA && CBVarB){
+			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> var Hasil = A - B; <br><i>console</i>.log(Hasil);';
 			hasil = VarA - VarB;
-			document.getElementById('AritmatikaValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
 			form.reset();
-		}else if(document.getElementById('formAritmatika').CBAritmatikaVarB.checked){
-			document.getElementById('CodingAritmatika').innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> var Hasil = A - B; <br><i>console</i>.log(Hasil);';
+		}else if(CBVarB){
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> var Hasil = A - B; <br><i>console</i>.log(Hasil);';
 			hasil = c - VarB;
-			document.getElementById('AritmatikaValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
 			form.reset();
-		}else if(document.getElementById('formAritmatika').CBAritmatikaVarA.checked){
-			document.getElementById('CodingAritmatika').innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> var Hasil = A - B; <br><i>console</i>.log(Hasil);';
+		}else if(CBVarA){
+			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> var Hasil = A - B; <br><i>console</i>.log(Hasil);';
 			hasil = VarA - d;
-			document.getElementById('AritmatikaValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
 			form.reset();
 		}else{
-			document.getElementById('CodingAritmatika').innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var Hasil = A - B; <br><i>console</i>.log(Hasil);';
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var Hasil = A - B; <br><i>console</i>.log(Hasil);';
 			hasil = c - d;
-			document.getElementById('AritmatikaValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
 			form.reset();
 		}
 	}else if(JOperator == "*"){
-		if(document.getElementById('formAritmatika').CBAritmatikaVarA.checked && document.getElementById('formAritmatika').CBAritmatikaVarB.checked){
-			document.getElementById('CodingAritmatika').innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> var Hasil = A * B; <br><i>console</i>.log(Hasil);';
+		if(CBVarA && CBVarB){
+			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> var Hasil = A * B; <br><i>console</i>.log(Hasil);';
 			hasil = VarA * VarB;
-			document.getElementById('AritmatikaValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
 			form.reset();
-		}else if(document.getElementById('formAritmatika').CBAritmatikaVarB.checked){
-			document.getElementById('CodingAritmatika').innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> var Hasil = A * B; <br><i>console</i>.log(Hasil);';
+		}else if(CBVarB){
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> var Hasil = A * B; <br><i>console</i>.log(Hasil);';
 			hasil = c * VarB;
-			document.getElementById('AritmatikaValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
 			form.reset();
-		}else if(document.getElementById('formAritmatika').CBAritmatikaVarA.checked){
-			document.getElementById('CodingAritmatika').innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> var Hasil = A * B; <br><i>console</i>.log(Hasil);';
+		}else if(CBVarA){
+			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> var Hasil = A * B; <br><i>console</i>.log(Hasil);';
 			hasil = VarA * d;
-			document.getElementById('AritmatikaValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
 			form.reset();
 		}else{
-			document.getElementById('CodingAritmatika').innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var Hasil = A * B; <br><i>console</i>.log(Hasil);';
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var Hasil = A * B; <br><i>console</i>.log(Hasil);';
 			hasil = c * d;
-			document.getElementById('AritmatikaValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
 			form.reset();
 		}
 	}else if(JOperator == "**"){
-		if(document.getElementById('formAritmatika').CBAritmatikaVarA.checked && document.getElementById('formAritmatika').CBAritmatikaVarB.checked){
-			document.getElementById('CodingAritmatika').innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> var Hasil = A ** B; <br><i>console</i>.log(Hasil);';
+		if(CBVarA && CBVarB){
+			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> var Hasil = A ** B; <br><i>console</i>.log(Hasil);';
 			hasil = VarA ** VarB;
-			document.getElementById('AritmatikaValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
 			form.reset();
-		}else if(document.getElementById('formAritmatika').CBAritmatikaVarB.checked){
-			document.getElementById('CodingAritmatika').innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> var Hasil = A ** B; <br><i>console</i>.log(Hasil);';
+		}else if(CBVarB){
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> var Hasil = A ** B; <br><i>console</i>.log(Hasil);';
 			hasil = c ** VarB;
-			document.getElementById('AritmatikaValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
 			form.reset();
-		}else if(document.getElementById('formAritmatika').CBAritmatikaVarA.checked){
-			document.getElementById('CodingAritmatika').innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> var Hasil = A ** B; <br><i>console</i>.log(Hasil);';
+		}else if(CBVarA){
+			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> var Hasil = A ** B; <br><i>console</i>.log(Hasil);';
 			hasil = VarA ** d;
-			document.getElementById('AritmatikaValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
 			form.reset();
 		}else{
-			document.getElementById('CodingAritmatika').innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var Hasil = A ** B; <br><i>console</i>.log(Hasil);';
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var Hasil = A ** B; <br><i>console</i>.log(Hasil);';
 			hasil = c ** d;
-			document.getElementById('AritmatikaValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
 			form.reset();
 		}
 	}else if(JOperator == "/"){
-		if(document.getElementById('formAritmatika').CBAritmatikaVarA.checked && document.getElementById('formAritmatika').CBAritmatikaVarB.checked){
-			document.getElementById('CodingAritmatika').innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> var Hasil = A / B; <br><i>console</i>.log(Hasil);';
+		if(CBVarA && CBVarB){
+			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> var Hasil = A / B; <br><i>console</i>.log(Hasil);';
 			hasil = VarA / VarB;
-			document.getElementById('AritmatikaValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
 			form.reset();
-		}else if(document.getElementById('formAritmatika').CBAritmatikaVarB.checked){
-			document.getElementById('CodingAritmatika').innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> var Hasil = A / B; <br><i>console</i>.log(Hasil);';
+		}else if(CBVarB){
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> var Hasil = A / B; <br><i>console</i>.log(Hasil);';
 			hasil = c / VarB;
-			document.getElementById('AritmatikaValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
 			form.reset();
-		}else if(document.getElementById('formAritmatika').CBAritmatikaVarA.checked){
-			document.getElementById('CodingAritmatika').innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> var Hasil = A / B; <br><i>console</i>.log(Hasil);';
+		}else if(CBVarA){
+			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> var Hasil = A / B; <br><i>console</i>.log(Hasil);';
 			hasil = VarA / d;
-			document.getElementById('AritmatikaValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
 			form.reset();
 		}else{
-			document.getElementById('CodingAritmatika').innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var Hasil = A / B; <br><i>console</i>.log(Hasil);';
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var Hasil = A / B; <br><i>console</i>.log(Hasil);';
 			hasil = c / d;
-			document.getElementById('AritmatikaValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
 			form.reset();
 		}
 	}else if(JOperator == "%"){
-		if(document.getElementById('formAritmatika').CBAritmatikaVarA.checked && document.getElementById('formAritmatika').CBAritmatikaVarB.checked){
-			document.getElementById('CodingAritmatika').innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> var Hasil = A % B; <br><i>console</i>.log(Hasil);';
+		if(CBVarA && CBVarB){
+			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> var Hasil = A % B; <br><i>console</i>.log(Hasil);';
 			hasil = VarA % VarB;
-			document.getElementById('AritmatikaValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
 			form.reset();
-		}else if(document.getElementById('formAritmatika').CBAritmatikaVarB.checked){
-			document.getElementById('CodingAritmatika').innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> var Hasil = A % B; <br><i>console</i>.log(Hasil);';
+		}else if(CBVarB){
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> var Hasil = A % B; <br><i>console</i>.log(Hasil);';
 			hasil = c % VarB;
-			document.getElementById('AritmatikaValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
 			form.reset();
-		}else if(document.getElementById('formAritmatika').CBAritmatikaVarA.checked){
-			document.getElementById('CodingAritmatika').innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> var Hasil = A % B; <br><i>console</i>.log(Hasil);';
+		}else if(CBVarA){
+			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> var Hasil = A % B; <br><i>console</i>.log(Hasil);';
 			hasil = VarA % d;
-			document.getElementById('AritmatikaValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
 			form.reset();
 		}else{
-			document.getElementById('CodingAritmatika').innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var Hasil = A % B; <br><i>console</i>.log(Hasil);';
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var Hasil = A % B; <br><i>console</i>.log(Hasil);';
 			hasil = c % d;
-			document.getElementById('AritmatikaValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil">'+ hasil +'</h4>';
 			form.reset();
 		}
 	}	
@@ -152,140 +155,144 @@ function OpPenugasan(){
 	var VarA = document.getElementById('formPenugasan').PenugasanVarA.value;
 	var VarB = document.getElementById('formPenugasan').PenugasanVarB.value;
 	var JOperator = document.getElementById('formPenugasan').SelOpPenugasan.value;
+	var CBVarA = document.getElementById('formPenugasan').CBPenugasanVarA.checked;
+	var CBVarB = document.getElementById('formPenugasan').CBPenugasanVarB.checked;
+	var Coding = document.getElementById('CodingPenugasan');
+	var Value = document.getElementById('PenugasanValue');
 
 	var c = Number(VarA);
 	var d = Number(VarB);
 
 	if(JOperator == "+="){
-		if(document.getElementById('formPenugasan').CBPenugasanVarA.checked && document.getElementById('formPenugasan').CBPenugasanVarB.checked){
-			document.getElementById('CodingPenugasan').innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> A += B; <br><i>console</i>.log(A);';
+		if(CBVarA && CBVarB){
+			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> A += B; <br><i>console</i>.log(A);';
 			VarA += VarB;
-			document.getElementById('PenugasanValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> "'+ VarA +'" </h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> "'+ VarA +'" </h4>';
 			form.reset();
-		}else if(document.getElementById('formPenugasan').CBPenugasanVarB.checked){
-			document.getElementById('CodingPenugasan').innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> A += B; <br><i>console</i>.log(A);';
+		}else if(CBVarB){
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> A += B; <br><i>console</i>.log(A);';
 			c += VarB;
-			document.getElementById('PenugasanValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> "'+ c +'" </h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> "'+ c +'" </h4>';
 			form.reset();
-		}else if(document.getElementById('formPenugasan').CBPenugasanVarA.checked){
-			document.getElementById('CodingPenugasan').innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> A += B; <br><i>console</i>.log(A);';
+		}else if(CBVarA){
+			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> A += B; <br><i>console</i>.log(A);';
 			VarA += d;
-			document.getElementById('PenugasanValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> "'+ VarA +'" </h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> "'+ VarA +'" </h4>';
 			form.reset();
 		}else{
-			document.getElementById('CodingPenugasan').innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> A += B; <br><i>console</i>.log(A);';
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> A += B; <br><i>console</i>.log(A);';
 			c += d;
-			document.getElementById('PenugasanValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ c +' </h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ c +' </h4>';
 			form.reset();
 		}
 	}else if(JOperator == "-="){
-		if(document.getElementById('formPenugasan').CBPenugasanVarA.checked && document.getElementById('formPenugasan').CBPenugasanVarB.checked){
-			document.getElementById('CodingPenugasan').innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> A -= B; <br><i>console</i>.log(A);';
+		if(CBVarA && CBVarB){
+			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> A -= B; <br><i>console</i>.log(A);';
 			VarA -= VarB;
-			document.getElementById('PenugasanValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ VarA +' </h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ VarA +' </h4>';
 			form.reset();
-		}else if(document.getElementById('formPenugasan').CBPenugasanVarB.checked){
-			document.getElementById('CodingPenugasan').innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> A -= B; <br><i>console</i>.log(A);';
+		}else if(CBVarB){
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> A -= B; <br><i>console</i>.log(A);';
 			c -= VarB;
-			document.getElementById('PenugasanValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ c +' </h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ c +' </h4>';
 			form.reset();
-		}else if(document.getElementById('formPenugasan').CBPenugasanVarA.checked){
-			document.getElementById('CodingPenugasan').innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> A -= B; <br><i>console</i>.log(A);';
+		}else if(CBVarA){
+			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> A -= B; <br><i>console</i>.log(A);';
 			VarA -= d;
-			document.getElementById('PenugasanValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ VarA +' </h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ VarA +' </h4>';
 			form.reset();
 		}else{
-			document.getElementById('CodingPenugasan').innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> A -= B; <br><i>console</i>.log(A);';
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> A -= B; <br><i>console</i>.log(A);';
 			c -= d;
-			document.getElementById('PenugasanValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ c +' </h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ c +' </h4>';
 			form.reset();
 		}
 	}else if(JOperator == "*="){
-		if(document.getElementById('formPenugasan').CBPenugasanVarA.checked && document.getElementById('formPenugasan').CBPenugasanVarB.checked){
-			document.getElementById('CodingPenugasan').innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> A *= B; <br><i>console</i>.log(A);';
+		if(CBVarA && CBVarB){
+			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> A *= B; <br><i>console</i>.log(A);';
 			VarA *= VarB;
-			document.getElementById('PenugasanValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ VarA +' </h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ VarA +' </h4>';
 			form.reset();
-		}else if(document.getElementById('formPenugasan').CBPenugasanVarB.checked){
-			document.getElementById('CodingPenugasan').innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> A *= B; <br><i>console</i>.log(A);';
+		}else if(CBVarB){
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> A *= B; <br><i>console</i>.log(A);';
 			c *= VarB;
-			document.getElementById('PenugasanValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ c +' </h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ c +' </h4>';
 			form.reset();
-		}else if(document.getElementById('formPenugasan').CBPenugasanVarA.checked){
-			document.getElementById('CodingPenugasan').innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> A *= B; <br><i>console</i>.log(A);';
+		}else if(CBVarA){
+			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> A *= B; <br><i>console</i>.log(A);';
 			VarA *= d;
-			document.getElementById('PenugasanValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ VarA +' </h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ VarA +' </h4>';
 			form.reset();
 		}else{
-			document.getElementById('CodingPenugasan').innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> A *= B; <br><i>console</i>.log(A);';
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> A *= B; <br><i>console</i>.log(A);';
 			c *= d;
-			document.getElementById('PenugasanValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ c +' </h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ c +' </h4>';
 			form.reset();
 		}
 	}else if(JOperator == "**="){
-		if(document.getElementById('formPenugasan').CBPenugasanVarA.checked && document.getElementById('formPenugasan').CBPenugasanVarB.checked){
-			document.getElementById('CodingPenugasan').innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> A **= B; <br><i>console</i>.log(A);';
+		if(CBVarA && CBVarB){
+			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> A **= B; <br><i>console</i>.log(A);';
 			VarA **= VarB;
-			document.getElementById('PenugasanValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ VarA +' </h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ VarA +' </h4>';
 			form.reset();
-		}else if(document.getElementById('formPenugasan').CBPenugasanVarB.checked){
-			document.getElementById('CodingPenugasan').innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> A **= B; <br><i>console</i>.log(A);';
+		}else if(CBVarB){
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> A **= B; <br><i>console</i>.log(A);';
 			c **= VarB;
-			document.getElementById('PenugasanValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ c +' </h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ c +' </h4>';
 			form.reset();
-		}else if(document.getElementById('formPenugasan').CBPenugasanVarA.checked){
-			document.getElementById('CodingPenugasan').innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> A **= B; <br><i>console</i>.log(A);';
+		}else if(CBVarA){
+			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> A **= B; <br><i>console</i>.log(A);';
 			VarA **= d;
-			document.getElementById('PenugasanValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ VarA +' </h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ VarA +' </h4>';
 			form.reset();
 		}else{
-			document.getElementById('CodingPenugasan').innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> A **= B; <br><i>console</i>.log(A);';
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> A **= B; <br><i>console</i>.log(A);';
 			c **= d;
-			document.getElementById('PenugasanValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ c +' </h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ c +' </h4>';
 			form.reset();
 		}
 	}else if(JOperator == "/="){
-		if(document.getElementById('formPenugasan').CBPenugasanVarA.checked && document.getElementById('formPenugasan').CBPenugasanVarB.checked){
-			document.getElementById('CodingPenugasan').innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> A /= B; <br><i>console</i>.log(A);';
+		if(CBVarA && CBVarB){
+			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> A /= B; <br><i>console</i>.log(A);';
 			VarA /= VarB;
-			document.getElementById('PenugasanValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ VarA +' </h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ VarA +' </h4>';
 			form.reset();
-		}else if(document.getElementById('formPenugasan').CBPenugasanVarB.checked){
-			document.getElementById('CodingPenugasan').innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> A /= B; <br><i>console</i>.log(A);';
+		}else if(CBVarB){
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> A /= B; <br><i>console</i>.log(A);';
 			c /= VarB;
-			document.getElementById('PenugasanValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ c +' </h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ c +' </h4>';
 			form.reset();
-		}else if(document.getElementById('formPenugasan').CBPenugasanVarA.checked){
-			document.getElementById('CodingPenugasan').innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> A /= B; <br><i>console</i>.log(A);';
+		}else if(CBVarA){
+			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> A /= B; <br><i>console</i>.log(A);';
 			VarA /= d;
-			document.getElementById('PenugasanValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ VarA +' </h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ VarA +' </h4>';
 			form.reset();
 		}else{
-			document.getElementById('CodingPenugasan').innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> A /= B; <br><i>console</i>.log(A);';
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> A /= B; <br><i>console</i>.log(A);';
 			c /= d;
-			document.getElementById('PenugasanValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ c +' </h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ c +' </h4>';
 			form.reset();
 		}
 	}else if(JOperator == "%="){
-		if(document.getElementById('formPenugasan').CBPenugasanVarA.checked && document.getElementById('formPenugasan').CBPenugasanVarB.checked){
-			document.getElementById('CodingPenugasan').innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> A %= B; <br><i>console</i>.log(A);';
+		if(CBVarA && CBVarB){
+			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> A %= B; <br><i>console</i>.log(A);';
 			VarA %= VarB;
-			document.getElementById('PenugasanValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ VarA +' </h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ VarA +' </h4>';
 			form.reset();
-		}else if(document.getElementById('formPenugasan').CBPenugasanVarB.checked){
-			document.getElementById('CodingPenugasan').innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> A %= B; <br><i>console</i>.log(A);';
+		}else if(CBVarB){
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> A %= B; <br><i>console</i>.log(A);';
 			c %= VarB;
-			document.getElementById('PenugasanValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ c +' </h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ c +' </h4>';
 			form.reset();
-		}else if(document.getElementById('formPenugasan').CBPenugasanVarA.checked){
-			document.getElementById('CodingPenugasan').innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> A %= B; <br><i>console</i>.log(A);';
+		}else if(CBVarA){
+			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> A %= B; <br><i>console</i>.log(A);';
 			VarA %= d;
-			document.getElementById('PenugasanValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ VarA +' </h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ VarA +' </h4>';
 			form.reset();
 		}else{
-			document.getElementById('CodingPenugasan').innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> A %= B; <br><i>console</i>.log(A);';
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> A %= B; <br><i>console</i>.log(A);';
 			c %= d;
-			document.getElementById('PenugasanValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ c +' </h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ c +' </h4>';
 			form.reset();
 		}
 	}	
@@ -300,186 +307,387 @@ function OpPerbandingan(){
 	var VarA = document.getElementById('formPerbandingan').PerbandinganVarA.value;
 	var VarB = document.getElementById('formPerbandingan').PerbandinganVarB.value;
 	var JOperator = document.getElementById('formPerbandingan').SelOpPerbandingan.value;
+	var CBVarA = document.getElementById('formPerbandingan').CBPerbandinganVarA.checked;
+	var CBVarB = document.getElementById('formPerbandingan').CBPerbandinganVarB.checked;
+	var Coding = document.getElementById('CodingPerbandingan');
+	var Value = document.getElementById('PerbandinganValue');
 
 	var c = Number(VarA);
 	var d = Number(VarB);
 
 	if(JOperator == ">"){
-		if(document.getElementById('formPerbandingan').CBPerbandinganVarA.checked && document.getElementById('formPerbandingan').CBPerbandinganVarB.checked){
-			document.getElementById('CodingPerbandingan').innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> var hasil = A > B; <br><i>console</i>.log(hasil);';
+		if(CBVarA && CBVarB){
+			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> var hasil = A > B; <br><i>console</i>.log(hasil);';
 			hasil = VarA > VarB;
-			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
 			form.reset();
-		}else if(document.getElementById('formPerbandingan').CBPerbandinganVarB.checked){
-			document.getElementById('CodingPerbandingan').innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> var hasil = A > B; <br><i>console</i>.log(hasil);';
+		}else if(CBVarB){
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> var hasil = A > B; <br><i>console</i>.log(hasil);';
 			hasil = c > VarB;
-			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
 			form.reset();
-		}else if(document.getElementById('formPerbandingan').CBPerbandinganVarA.checked){
-			document.getElementById('CodingPerbandingan').innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> var hasil = A > B; <br><i>console</i>.log(hasil);';
+		}else if(CBVarA){
+			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> var hasil = A > B; <br><i>console</i>.log(hasil);';
 			hasil = VarA > d;
-			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
 			form.reset();
 		}else{
-			document.getElementById('CodingPerbandingan').innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A > B; <br><i>console</i>.log(hasil);';
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A > B; <br><i>console</i>.log(hasil);';
 			hasil = c > d;
-			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
 			form.reset();
 		}
 	}else if(JOperator == "<"){
-		if(document.getElementById('formPerbandingan').CBPerbandinganVarA.checked && document.getElementById('formPerbandingan').CBPerbandinganVarB.checked){
-			document.getElementById('CodingPerbandingan').innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> var hasil = A < B; <br><i>console</i>.log(hasil);';
+		if(CBVarA && CBVarB){
+			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> var hasil = A < B; <br><i>console</i>.log(hasil);';
 			hasil = VarA < VarB;
-			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
 			form.reset();
-		}else if(document.getElementById('formPerbandingan').CBPerbandinganVarB.checked){
-			document.getElementById('CodingPerbandingan').innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> var hasil = A < B; <br><i>console</i>.log(hasil);';
+		}else if(CBVarB){
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> var hasil = A < B; <br><i>console</i>.log(hasil);';
 			hasil = c < VarB;
-			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
 			form.reset();
-		}else if(document.getElementById('formPerbandingan').CBPerbandinganVarA.checked){
-			document.getElementById('CodingPerbandingan').innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> var hasil = A < B; <br><i>console</i>.log(hasil);';
+		}else if(CBVarA){
+			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> var hasil = A < B; <br><i>console</i>.log(hasil);';
 			hasil = VarA < d;
-			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
 			form.reset();
 		}else{
-			document.getElementById('CodingPerbandingan').innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A < B; <br><i>console</i>.log(hasil);';
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A < B; <br><i>console</i>.log(hasil);';
 			hasil = c < d;
-			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
 			form.reset();
 		}
 	}else if(JOperator == ">="){
-		if(document.getElementById('formPerbandingan').CBPerbandinganVarA.checked && document.getElementById('formPerbandingan').CBPerbandinganVarB.checked){
-			document.getElementById('CodingPerbandingan').innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> var hasil = A >= B; <br><i>console</i>.log(hasil);';
+		if(CBVarA && CBVarB){
+			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> var hasil = A >= B; <br><i>console</i>.log(hasil);';
 			hasil = VarA >= VarB;
-			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
 			form.reset();
-		}else if(document.getElementById('formPerbandingan').CBPerbandinganVarB.checked){
-			document.getElementById('CodingPerbandingan').innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> var hasil = A >= B; <br><i>console</i>.log(hasil);';
+		}else if(CBVarB){
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> var hasil = A >= B; <br><i>console</i>.log(hasil);';
 			hasil = c >= VarB;
-			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
 			form.reset();
-		}else if(document.getElementById('formPerbandingan').CBPerbandinganVarA.checked){
-			document.getElementById('CodingPerbandingan').innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> var hasil = A >= B; <br><i>console</i>.log(hasil);';
+		}else if(CBVarA){
+			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> var hasil = A >= B; <br><i>console</i>.log(hasil);';
 			hasil = VarA >= d;
-			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
 			form.reset();
 		}else{
-			document.getElementById('CodingPerbandingan').innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A >= B; <br><i>console</i>.log(hasil);';
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A >= B; <br><i>console</i>.log(hasil);';
 			hasil = c >= d;
-			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
 			form.reset();
 		}
 	}else if(JOperator == "<="){
-		if(document.getElementById('formPerbandingan').CBPerbandinganVarA.checked && document.getElementById('formPerbandingan').CBPerbandinganVarB.checked){
-			document.getElementById('CodingPerbandingan').innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> var hasil = A <= B; <br><i>console</i>.log(hasil);';
+		if(CBVarA && CBVarB){
+			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> var hasil = A <= B; <br><i>console</i>.log(hasil);';
 			hasil = VarA <= VarB;
-			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
 			form.reset();
-		}else if(document.getElementById('formPerbandingan').CBPerbandinganVarB.checked){
-			document.getElementById('CodingPerbandingan').innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> var hasil = A <= B; <br><i>console</i>.log(hasil);';
+		}else if(CBVarB){
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> var hasil = A <= B; <br><i>console</i>.log(hasil);';
 			hasil = c <= VarB;
-			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
 			form.reset();
-		}else if(document.getElementById('formPerbandingan').CBPerbandinganVarA.checked){
-			document.getElementById('CodingPerbandingan').innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> var hasil = A <= B; <br><i>console</i>.log(hasil);';
+		}else if(CBVarA){
+			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> var hasil = A <= B; <br><i>console</i>.log(hasil);';
 			hasil = VarA <= d;
-			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
 			form.reset();
 		}else{
-			document.getElementById('CodingPerbandingan').innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A <= B; <br><i>console</i>.log(hasil);';
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A <= B; <br><i>console</i>.log(hasil);';
 			hasil = c <= d;
-			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
 			form.reset();
 		}
 	}else if(JOperator == "=="){
-		if(document.getElementById('formPerbandingan').CBPerbandinganVarA.checked && document.getElementById('formPerbandingan').CBPerbandinganVarB.checked){
-			document.getElementById('CodingPerbandingan').innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> var hasil = A == B; <br><i>console</i>.log(hasil);';
+		if(CBVarA && CBVarB){
+			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> var hasil = A == B; <br><i>console</i>.log(hasil);';
 			hasil = VarA == VarB;
-			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
 			form.reset();
-		}else if(document.getElementById('formPerbandingan').CBPerbandinganVarB.checked){
-			document.getElementById('CodingPerbandingan').innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> var hasil = A == B; <br><i>console</i>.log(hasil);';
+		}else if(CBVarB){
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> var hasil = A == B; <br><i>console</i>.log(hasil);';
 			hasil = c == VarB;
-			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
 			form.reset();
-		}else if(document.getElementById('formPerbandingan').CBPerbandinganVarA.checked){
-			document.getElementById('CodingPerbandingan').innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> var hasil = A == B; <br><i>console</i>.log(hasil);';
+		}else if(CBVarA){
+			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> var hasil = A == B; <br><i>console</i>.log(hasil);';
 			hasil = VarA == d;
-			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
 			form.reset();
 		}else{
-			document.getElementById('CodingPerbandingan').innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A == B; <br><i>console</i>.log(hasil);';
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A == B; <br><i>console</i>.log(hasil);';
 			hasil = c == d;
-			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
 			form.reset();
 		}
 	}else if(JOperator == "==="){
-		if(document.getElementById('formPerbandingan').CBPerbandinganVarA.checked && document.getElementById('formPerbandingan').CBPerbandinganVarB.checked){
-			document.getElementById('CodingPerbandingan').innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> var hasil = A === B; <br><i>console</i>.log(hasil);';
+		if(CBVarA && CBVarB){
+			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> var hasil = A === B; <br><i>console</i>.log(hasil);';
 			hasil = VarA === VarB;
-			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
 			form.reset();
-		}else if(document.getElementById('formPerbandingan').CBPerbandinganVarB.checked){
-			document.getElementById('CodingPerbandingan').innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> var hasil = A === B; <br><i>console</i>.log(hasil);';
+		}else if(CBVarB){
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> var hasil = A === B; <br><i>console</i>.log(hasil);';
 			hasil = c === VarB;
-			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
 			form.reset();
-		}else if(document.getElementById('formPerbandingan').CBPerbandinganVarA.checked){
-			document.getElementById('CodingPerbandingan').innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> var hasil = A === B; <br><i>console</i>.log(hasil);';
+		}else if(CBVarA){
+			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> var hasil = A === B; <br><i>console</i>.log(hasil);';
 			hasil = VarA === d;
-			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
 			form.reset();
 		}else{
-			document.getElementById('CodingPerbandingan').innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A === B; <br><i>console</i>.log(hasil);';
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A === B; <br><i>console</i>.log(hasil);';
 			hasil = c === d;
-			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
 			form.reset();
 		}
 	}else if(JOperator == "!="){
-		if(document.getElementById('formPerbandingan').CBPerbandinganVarA.checked && document.getElementById('formPerbandingan').CBPerbandinganVarB.checked){
-			document.getElementById('CodingPerbandingan').innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> var hasil = A != B; <br><i>console</i>.log(hasil);';
+		if(CBVarA && CBVarB){
+			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> var hasil = A != B; <br><i>console</i>.log(hasil);';
 			hasil = VarA != VarB;
-			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
 			form.reset();
-		}else if(document.getElementById('formPerbandingan').CBPerbandinganVarB.checked){
-			document.getElementById('CodingPerbandingan').innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> var hasil = A != B; <br><i>console</i>.log(hasil);';
+		}else if(CBVarB){
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> var hasil = A != B; <br><i>console</i>.log(hasil);';
 			hasil = c != VarB;
-			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
 			form.reset();
-		}else if(document.getElementById('formPerbandingan').CBPerbandinganVarA.checked){
-			document.getElementById('CodingPerbandingan').innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> var hasil = A != B; <br><i>console</i>.log(hasil);';
+		}else if(CBVarA){
+			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> var hasil = A != B; <br><i>console</i>.log(hasil);';
 			hasil = VarA != d;
-			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
 			form.reset();
 		}else{
-			document.getElementById('CodingPerbandingan').innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A != B; <br><i>console</i>.log(hasil);';
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A != B; <br><i>console</i>.log(hasil);';
 			hasil = c != d;
-			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
 			form.reset();
 		}
 	}else if(JOperator == "!=="){
-		if(document.getElementById('formPerbandingan').CBPerbandinganVarA.checked && document.getElementById('formPerbandingan').CBPerbandinganVarB.checked){
-			document.getElementById('CodingPerbandingan').innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> var hasil = A !== B; <br><i>console</i>.log(hasil);';
+		if(CBVarA && CBVarB){
+			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> var hasil = A !== B; <br><i>console</i>.log(hasil);';
 			hasil = VarA !== VarB;
-			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
 			form.reset();
-		}else if(document.getElementById('formPerbandingan').CBPerbandinganVarB.checked){
-			document.getElementById('CodingPerbandingan').innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> var hasil = A !== B; <br><i>console</i>.log(hasil);';
+		}else if(CBVarB){
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> var hasil = A !== B; <br><i>console</i>.log(hasil);';
 			hasil = c !== VarB;
-			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
 			form.reset();
-		}else if(document.getElementById('formPerbandingan').CBPerbandinganVarA.checked){
-			document.getElementById('CodingPerbandingan').innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> var hasil = A !== B; <br><i>console</i>.log(hasil);';
+		}else if(CBVarA){
+			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> var hasil = A !== B; <br><i>console</i>.log(hasil);';
 			hasil = VarA !== d;
-			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
 			form.reset();
 		}else{
-			document.getElementById('CodingPerbandingan').innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A !== B; <br><i>console</i>.log(hasil);';
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A !== B; <br><i>console</i>.log(hasil);';
 			hasil = c !== d;
-			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
 			form.reset();
 		}
 	}	
 }
 // end Operator Perbandingan
+
+// Operator Logika
+function OpLogika(){
+	var hasil;
+
+	var form = document.getElementById('formLogika');
+	var VarA = document.getElementById('formLogika').LogikaVarA.value;
+	var VarB = document.getElementById('formLogika').LogikaVarB.value;
+	var JOperator = document.getElementById('formLogika').SelOpLogika.value;
+	var CBVarA = document.getElementById('formLogika').CBLogikaVarA.checked;
+	var CBVarB = document.getElementById('formLogika').CBLogikaVarB.checked;
+	var Coding = document.getElementById('CodingLogika');
+	var Value = document.getElementById('LogikaValue');
+
+	if (JOperator == "&&") {
+		if (CBVarA && CBVarB) {
+			if(VarA == "true" && VarB == "true"){
+				Coding.innerHTML ='var A = !'+ VarA +';<br> var B = !'+ VarB +'; <br><br> var hasil = A && B; <br><i>console</i>.log(hasil);';
+				var a = false; var b = false; hasil = a && b;
+				Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+				form.reset();
+			}else if(VarA == "true" && VarB == "false"){
+				Coding.innerHTML ='var A = !'+ VarA +';<br> var B = !'+ VarB +'; <br><br> var hasil = A && B; <br><i>console</i>.log(hasil);';
+				var a = false; var b = true; hasil = a && b;
+				Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+				form.reset();
+			}else if(VarA == "false" && VarB == "true"){
+				Coding.innerHTML ='var A = !'+ VarA +';<br> var B = !'+ VarB +'; <br><br> var hasil = A && B; <br><i>console</i>.log(hasil);';
+				var a = true; var b = false; hasil = a && b;
+				Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+				form.reset();
+			}else if(VarA == "false" && VarB == "false"){
+				Coding.innerHTML ='var A = !'+ VarA +';<br> var B = !'+ VarB +'; <br><br> var hasil = A && B; <br><i>console</i>.log(hasil);';
+				var a = true; var b = true; hasil = a && b;
+				Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+				form.reset();
+			}
+		}else if(CBVarA){
+			if(VarA == "true" && VarB == "true"){
+				Coding.innerHTML ='var A = !'+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A && B; <br><i>console</i>.log(hasil);';
+				var a = false; var b = true; hasil = a && b;
+				Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+				form.reset();
+			}else if(VarA == "true" && VarB == "false"){
+				Coding.innerHTML ='var A = !'+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A && B; <br><i>console</i>.log(hasil);';
+				var a = false; var b = false; hasil = a && b;
+				Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+				form.reset();
+			}else if(VarA == "false" && VarB == "true"){
+				Coding.innerHTML ='var A = !'+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A && B; <br><i>console</i>.log(hasil);';
+				var a = true; var b = true; hasil = a && b;
+				Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+				form.reset();
+			}else if(VarA == "false" && VarB == "false"){
+				Coding.innerHTML ='var A = !'+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A && B; <br><i>console</i>.log(hasil);';
+				var a = true; var b = false; hasil = a && b;
+				Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+				form.reset();
+			}
+		}else if(CBVarB){
+			if(VarA == "true" && VarB == "true"){
+				Coding.innerHTML ='var A = '+ VarA +';<br> var B = !'+ VarB +'; <br><br> var hasil = A && B; <br><i>console</i>.log(hasil);';
+				var a = true; var b = false; hasil = a && b;
+				Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+				form.reset();
+			}else if(VarA == "true" && VarB == "false"){
+				Coding.innerHTML ='var A = '+ VarA +';<br> var B = !'+ VarB +'; <br><br> var hasil = A && B; <br><i>console</i>.log(hasil);';
+				var a = true; var b = true; hasil = a && b;
+				Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+				form.reset();
+			}else if(VarA == "false" && VarB == "true"){
+				Coding.innerHTML ='var A = '+ VarA +';<br> var B = !'+ VarB +'; <br><br> var hasil = A && B; <br><i>console</i>.log(hasil);';
+				var a = false; var b = false; hasil = a && b;
+				Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+				form.reset();
+			}else if(VarA == "false" && VarB == "false"){
+				Coding.innerHTML ='var A = '+ VarA +';<br> var B = !'+ VarB +'; <br><br> var hasil = A && B; <br><i>console</i>.log(hasil);';
+				var a = false; var b = true; hasil = a && b;
+				Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+				form.reset();
+			}
+		}else{
+			if(VarA == "true" && VarB == "true"){
+				Coding.innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A && B; <br><i>console</i>.log(hasil);';
+				var a = true; var b = true; hasil = a && b;
+				Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+				form.reset();
+			}else if(VarA == "true" && VarB == "false"){
+				Coding.innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A && B; <br><i>console</i>.log(hasil);';
+				var a = true; var b = false; hasil = a && b;
+				Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+				form.reset();
+			}else if(VarA == "false" && VarB == "true"){
+				Coding.innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A && B; <br><i>console</i>.log(hasil);';
+				var a = false; var b = true; hasil = a && b;
+				Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+				form.reset();
+			}else if(VarA == "false" && VarB == "false"){
+				Coding.innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A && B; <br><i>console</i>.log(hasil);';
+				var a = false; var b = false; hasil = a && b;
+				Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+				form.reset();
+			}
+		}
+	}else if(JOperator == "||"){
+		if (CBVarA && CBVarB) {
+			if(VarA == "true" && VarB == "true"){
+				Coding.innerHTML ='var A = !'+ VarA +';<br> var B = !'+ VarB +'; <br><br> var hasil = A || B; <br><i>console</i>.log(hasil);';
+				var a = false; var b = false; hasil = a || b;
+				Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+				form.reset();
+			}else if(VarA == "true" && VarB == "false"){
+				Coding.innerHTML ='var A = !'+ VarA +';<br> var B = !'+ VarB +'; <br><br> var hasil = A || B; <br><i>console</i>.log(hasil);';
+				var a = false; var b = true; hasil = a || b;
+				Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+				form.reset();
+			}else if(VarA == "false" && VarB == "true"){
+				Coding.innerHTML ='var A = !'+ VarA +';<br> var B = !'+ VarB +'; <br><br> var hasil = A || B; <br><i>console</i>.log(hasil);';
+				var a = true; var b = false; hasil = a || b;
+				Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+				form.reset();
+			}else if(VarA == "false" && VarB == "false"){
+				Coding.innerHTML ='var A = !'+ VarA +';<br> var B = !'+ VarB +'; <br><br> var hasil = A || B; <br><i>console</i>.log(hasil);';
+				var a = true; var b = true; hasil = a || b;
+				Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+				form.reset();
+			}
+		}else if(CBVarA){
+			if(VarA == "true" && VarB == "true"){
+				Coding.innerHTML ='var A = !'+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A || B; <br><i>console</i>.log(hasil);';
+				var a = false; var b = true; hasil = a || b;
+				Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+				form.reset();
+			}else if(VarA == "true" && VarB == "false"){
+				Coding.innerHTML ='var A = !'+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A || B; <br><i>console</i>.log(hasil);';
+				var a = false; var b = false; hasil = a || b;
+				Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+				form.reset();
+			}else if(VarA == "false" && VarB == "true"){
+				Coding.innerHTML ='var A = !'+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A || B; <br><i>console</i>.log(hasil);';
+				var a = true; var b = true; hasil = a || b;
+				Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+				form.reset();
+			}else if(VarA == "false" && VarB == "false"){
+				Coding.innerHTML ='var A = !'+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A || B; <br><i>console</i>.log(hasil);';
+				var a = true; var b = false; hasil = a || b;
+				Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+				form.reset();
+			}
+		}else if(CBVarB){
+			if(VarA == "true" && VarB == "true"){
+				Coding.innerHTML ='var A = '+ VarA +';<br> var B = !'+ VarB +'; <br><br> var hasil = A || B; <br><i>console</i>.log(hasil);';
+				var a = true; var b = false; hasil = a || b;
+				Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+				form.reset();
+			}else if(VarA == "true" && VarB == "false"){
+				Coding.innerHTML ='var A = '+ VarA +';<br> var B = !'+ VarB +'; <br><br> var hasil = A || B; <br><i>console</i>.log(hasil);';
+				var a = true; var b = true; hasil = a || b;
+				Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+				form.reset();
+			}else if(VarA == "false" && VarB == "true"){
+				Coding.innerHTML ='var A = '+ VarA +';<br> var B = !'+ VarB +'; <br><br> var hasil = A || B; <br><i>console</i>.log(hasil);';
+				var a = false; var b = false; hasil = a || b;
+				Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+				form.reset();
+			}else if(VarA == "false" && VarB == "false"){
+				Coding.innerHTML ='var A = '+ VarA +';<br> var B = !'+ VarB +'; <br><br> var hasil = A || B; <br><i>console</i>.log(hasil);';
+				var a = false; var b = true; hasil = a || b;
+				Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+				form.reset();
+			}
+		}else{
+			if(VarA == "true" && VarB == "true"){
+				Coding.innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A || B; <br><i>console</i>.log(hasil);';
+				var a = true; var b = true; hasil = a || b;
+				Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+				form.reset();
+			}else if(VarA == "true" && VarB == "false"){
+				Coding.innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A || B; <br><i>console</i>.log(hasil);';
+				var a = true; var b = false; hasil = a || b;
+				Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+				form.reset();
+			}else if(VarA == "false" && VarB == "true"){
+				Coding.innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A || B; <br><i>console</i>.log(hasil);';
+				var a = false; var b = true; hasil = a || b;
+				Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+				form.reset();
+			}else if(VarA == "false" && VarB == "false"){
+				Coding.innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A || B; <br><i>console</i>.log(hasil);';
+				var a = false; var b = false; hasil = a || b;
+				Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+				form.reset();
+			}
+		}
+	}
+}
+// end Operator Logika

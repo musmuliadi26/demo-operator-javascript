@@ -1,5 +1,5 @@
 /*google font*/
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Trispace:wght@300&display=swap');
 
 #aritmatika{
 	padding-top: 6rem;
@@ -11,5 +11,5 @@
 	padding-bottom: 10rem;
 }
 .hasil{
-	font-family: 'Space Mono', monospace;
+	font-family: 'Trispace', sans-serif;
 }

@@ -335,8 +335,8 @@
             <h2>Operator Logika</h2>
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-6">
+        <div class="row justify-content-center mb-4">
+          <div class="col-md-8">
             <h3>Penjelasan :</h3>
             <p>Operator logika digunakan untuk melakukan operasi terhadap dua nilai boolean.</p>
             <p>Operator logika terdiri dari :</p>
@@ -362,29 +362,51 @@
                 </tr>
               </tbody>
             </table>
-          </div>
-          <div class="col-md-6">
+          </div> 
+        </div>
+        <div class="row justify-content-around">
+          <div class="col-md-5">
             <h3>Demo :</h3>
-            <form>
+            <form id="formLogika" name="formLogika" onsubmit="return false" class="mb-3">
               <div class="mb-3">
                 <label for="LogikaVarA" class="form-label">Variabel A :</label>
-                <input type="number" class="form-control" id="LogikaVarA">
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="CBLogikaVarA">
+                  <label class="form-check-label" for="CBLogikaVarA">Negasi/Kebalikan</label>
+                </div>
+                <select id="LogikaVarA" class="form-select">
+                  <option selected>Pilih boolean variabel A</option>
+                  <option value="true">true</option>
+                  <option value="false">false</option>
+                </select>
               </div>
               <div class="mb-3">
-                <label for="OpLogika" class="form-label">Jenis Operator :</label>
-                <select id="OpLogika" class="form-select">
+                <label for="SelOpLogika" class="form-label">Jenis Operator :</label>
+                <select id="SelOpLogika" class="form-select">
                   <option selected>Pilih jenis operator</option>
                   <option value="&&">Logika AND(&&)</option>
                   <option value="||">Logika OR(||)</option>
-                  <option value="!">Negasi/kebalikan(!)</option>
                 </select>
               </div>
               <div class="mb-3">
                 <label for="LogikaVarB" class="form-label">Variabel B :</label>
-                <input type="number" class="form-control" id="LogikaVarB">
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="CBLogikaVarB">
+                  <label class="form-check-label" for="CBLogikaVarB">Negasi/Kebalikan</label>
+                </div>
+                <select id="LogikaVarB" class="form-select">
+                  <option selected>Pilih boolean variabel B</option>
+                  <option value="true">true</option>
+                  <option value="false">false</option>
+                </select>
               </div>
-              <button type="submit" class="btn btn-secondary">Submit</button>
+              <input type="submit" value="Jalankan" name="" class="btn btn-secondary" onclick="OpLogika();">
             </form>
+          </div>
+          <div class="col-md-5">
+            <h3>Hasil :</h3>
+            <span id="CodingLogika" class="hasil fs-5"> </span>
+            <span id="LogikaValue"> </span>
           </div>
         </div>
       </div>
