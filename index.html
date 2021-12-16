@@ -237,8 +237,8 @@
             <h2>Operator Perbandingan</h2>
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-6">
+        <div class="row justify-content-center mb-4">
+          <div class="col-md-8">
             <h3>Penjelasan :</h3>
             <p>Operator relasi atau perbandingan adalah operator yang digunakan untuk membandingkan dua nilai.</p>
             <p>Operator perbandingan akan menghasilkan sebuah nilai boolean true dan false.</p>
@@ -260,14 +260,6 @@
                   <td> < </td>
                 </tr>
                 <tr>
-                  <td>Sama Dengan</td>
-                  <td>== atau ====</td>
-                </tr>
-                <tr>
-                  <td>Tidak Sama dengan</td>
-                  <td>!== atau !===</td>
-                </tr>
-                <tr>
                   <td>Lebih Besar Sama dengan</td>
                   <td>>=</td>
                 </tr>
@@ -275,10 +267,20 @@
                   <td>Lebih Kecil Sama dengan</td>
                   <td><=</td>
                 </tr>
+                <tr>
+                  <td>Sama Dengan</td>
+                  <td> == atau === </td>
+                </tr>
+                <tr>
+                  <td>Tidak Sama dengan</td>
+                  <td> != atau !== </td>
+                </tr>
               </tbody>
             </table>
           </div>
-          <div class="col-md-6">
+        </div>
+        <div class="row justify-content-around">
+          <div class="col-md-5">
             <h3>Demo :</h3>
             <form id="formPerbandingan" name="formPerbandingan" onsubmit="return false" class="mb-3">
               <div class="mb-3">
@@ -295,12 +297,12 @@
                   <option selected>Pilih jenis operator</option>
                   <option value=">">Lebih Besar(>)</option>
                   <option value="<">Lebih Kecil(<)</option>
-                  <option value="==">Sama Dengan(==)</option>
-                  <option value="===">Sama Dengan(===)</option>
-                  <option value="!==">Tidak Sama dengan(!==)</option>
-                  <option value="!===">Tidak Sama dengan(!===)</option>
                   <option value=">=">Lebih Besar Sama dengan(>=)</option>
                   <option value="<=">Lebih Kecil Sama dengan(<=)</option>
+                  <option value="==">Sama Dengan(==)</option>
+                  <option value="===">Sama Dengan(===)</option>
+                  <option value="!=">Tidak Sama dengan(!=)</option>
+                  <option value="!==">Tidak Sama dengan(!==)</option>
                 </select>
               </div>
               <div class="mb-3">
@@ -313,8 +315,11 @@
               </div>
               <input type="submit" value="Jalankan" name="" class="btn btn-secondary" onclick="OpPerbandingan();">
             </form>
+          </div>
+          <div class="col-md-5">
             <h3>Hasil :</h3>
-            <h5 id="PerbandinganValue"> </h5>
+            <span id="CodingPerbandingan" class="hasil fs-5"> </span>
+            <span id="PerbandinganValue"> </span>
           </div>
         </div>
       </div>

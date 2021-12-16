@@ -293,5 +293,193 @@ function OpPenugasan(){
 // end Operator Penugasan
 
 // operator Perbandingan
+function OpPerbandingan(){
+	var hasil;
 
+	var form = document.getElementById('formPerbandingan');
+	var VarA = document.getElementById('formPerbandingan').PerbandinganVarA.value;
+	var VarB = document.getElementById('formPerbandingan').PerbandinganVarB.value;
+	var JOperator = document.getElementById('formPerbandingan').SelOpPerbandingan.value;
+
+	var c = Number(VarA);
+	var d = Number(VarB);
+
+	if(JOperator == ">"){
+		if(document.getElementById('formPerbandingan').CBPerbandinganVarA.checked && document.getElementById('formPerbandingan').CBPerbandinganVarB.checked){
+			document.getElementById('CodingPerbandingan').innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> var hasil = A > B; <br><i>console</i>.log(hasil);';
+			hasil = VarA > VarB;
+			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else if(document.getElementById('formPerbandingan').CBPerbandinganVarB.checked){
+			document.getElementById('CodingPerbandingan').innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> var hasil = A > B; <br><i>console</i>.log(hasil);';
+			hasil = c > VarB;
+			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else if(document.getElementById('formPerbandingan').CBPerbandinganVarA.checked){
+			document.getElementById('CodingPerbandingan').innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> var hasil = A > B; <br><i>console</i>.log(hasil);';
+			hasil = VarA > d;
+			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else{
+			document.getElementById('CodingPerbandingan').innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A > B; <br><i>console</i>.log(hasil);';
+			hasil = c > d;
+			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}
+	}else if(JOperator == "<"){
+		if(document.getElementById('formPerbandingan').CBPerbandinganVarA.checked && document.getElementById('formPerbandingan').CBPerbandinganVarB.checked){
+			document.getElementById('CodingPerbandingan').innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> var hasil = A < B; <br><i>console</i>.log(hasil);';
+			hasil = VarA < VarB;
+			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else if(document.getElementById('formPerbandingan').CBPerbandinganVarB.checked){
+			document.getElementById('CodingPerbandingan').innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> var hasil = A < B; <br><i>console</i>.log(hasil);';
+			hasil = c < VarB;
+			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else if(document.getElementById('formPerbandingan').CBPerbandinganVarA.checked){
+			document.getElementById('CodingPerbandingan').innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> var hasil = A < B; <br><i>console</i>.log(hasil);';
+			hasil = VarA < d;
+			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else{
+			document.getElementById('CodingPerbandingan').innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A < B; <br><i>console</i>.log(hasil);';
+			hasil = c < d;
+			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}
+	}else if(JOperator == ">="){
+		if(document.getElementById('formPerbandingan').CBPerbandinganVarA.checked && document.getElementById('formPerbandingan').CBPerbandinganVarB.checked){
+			document.getElementById('CodingPerbandingan').innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> var hasil = A >= B; <br><i>console</i>.log(hasil);';
+			hasil = VarA >= VarB;
+			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else if(document.getElementById('formPerbandingan').CBPerbandinganVarB.checked){
+			document.getElementById('CodingPerbandingan').innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> var hasil = A >= B; <br><i>console</i>.log(hasil);';
+			hasil = c >= VarB;
+			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else if(document.getElementById('formPerbandingan').CBPerbandinganVarA.checked){
+			document.getElementById('CodingPerbandingan').innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> var hasil = A >= B; <br><i>console</i>.log(hasil);';
+			hasil = VarA >= d;
+			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else{
+			document.getElementById('CodingPerbandingan').innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A >= B; <br><i>console</i>.log(hasil);';
+			hasil = c >= d;
+			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}
+	}else if(JOperator == "<="){
+		if(document.getElementById('formPerbandingan').CBPerbandinganVarA.checked && document.getElementById('formPerbandingan').CBPerbandinganVarB.checked){
+			document.getElementById('CodingPerbandingan').innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> var hasil = A <= B; <br><i>console</i>.log(hasil);';
+			hasil = VarA <= VarB;
+			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else if(document.getElementById('formPerbandingan').CBPerbandinganVarB.checked){
+			document.getElementById('CodingPerbandingan').innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> var hasil = A <= B; <br><i>console</i>.log(hasil);';
+			hasil = c <= VarB;
+			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else if(document.getElementById('formPerbandingan').CBPerbandinganVarA.checked){
+			document.getElementById('CodingPerbandingan').innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> var hasil = A <= B; <br><i>console</i>.log(hasil);';
+			hasil = VarA <= d;
+			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else{
+			document.getElementById('CodingPerbandingan').innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A <= B; <br><i>console</i>.log(hasil);';
+			hasil = c <= d;
+			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}
+	}else if(JOperator == "=="){
+		if(document.getElementById('formPerbandingan').CBPerbandinganVarA.checked && document.getElementById('formPerbandingan').CBPerbandinganVarB.checked){
+			document.getElementById('CodingPerbandingan').innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> var hasil = A == B; <br><i>console</i>.log(hasil);';
+			hasil = VarA == VarB;
+			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else if(document.getElementById('formPerbandingan').CBPerbandinganVarB.checked){
+			document.getElementById('CodingPerbandingan').innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> var hasil = A == B; <br><i>console</i>.log(hasil);';
+			hasil = c == VarB;
+			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else if(document.getElementById('formPerbandingan').CBPerbandinganVarA.checked){
+			document.getElementById('CodingPerbandingan').innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> var hasil = A == B; <br><i>console</i>.log(hasil);';
+			hasil = VarA == d;
+			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else{
+			document.getElementById('CodingPerbandingan').innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A == B; <br><i>console</i>.log(hasil);';
+			hasil = c == d;
+			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}
+	}else if(JOperator == "==="){
+		if(document.getElementById('formPerbandingan').CBPerbandinganVarA.checked && document.getElementById('formPerbandingan').CBPerbandinganVarB.checked){
+			document.getElementById('CodingPerbandingan').innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> var hasil = A === B; <br><i>console</i>.log(hasil);';
+			hasil = VarA === VarB;
+			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else if(document.getElementById('formPerbandingan').CBPerbandinganVarB.checked){
+			document.getElementById('CodingPerbandingan').innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> var hasil = A === B; <br><i>console</i>.log(hasil);';
+			hasil = c === VarB;
+			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else if(document.getElementById('formPerbandingan').CBPerbandinganVarA.checked){
+			document.getElementById('CodingPerbandingan').innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> var hasil = A === B; <br><i>console</i>.log(hasil);';
+			hasil = VarA === d;
+			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else{
+			document.getElementById('CodingPerbandingan').innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A === B; <br><i>console</i>.log(hasil);';
+			hasil = c === d;
+			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}
+	}else if(JOperator == "!="){
+		if(document.getElementById('formPerbandingan').CBPerbandinganVarA.checked && document.getElementById('formPerbandingan').CBPerbandinganVarB.checked){
+			document.getElementById('CodingPerbandingan').innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> var hasil = A != B; <br><i>console</i>.log(hasil);';
+			hasil = VarA != VarB;
+			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else if(document.getElementById('formPerbandingan').CBPerbandinganVarB.checked){
+			document.getElementById('CodingPerbandingan').innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> var hasil = A != B; <br><i>console</i>.log(hasil);';
+			hasil = c != VarB;
+			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else if(document.getElementById('formPerbandingan').CBPerbandinganVarA.checked){
+			document.getElementById('CodingPerbandingan').innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> var hasil = A != B; <br><i>console</i>.log(hasil);';
+			hasil = VarA != d;
+			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else{
+			document.getElementById('CodingPerbandingan').innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A != B; <br><i>console</i>.log(hasil);';
+			hasil = c != d;
+			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}
+	}else if(JOperator == "!=="){
+		if(document.getElementById('formPerbandingan').CBPerbandinganVarA.checked && document.getElementById('formPerbandingan').CBPerbandinganVarB.checked){
+			document.getElementById('CodingPerbandingan').innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> var hasil = A !== B; <br><i>console</i>.log(hasil);';
+			hasil = VarA !== VarB;
+			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else if(document.getElementById('formPerbandingan').CBPerbandinganVarB.checked){
+			document.getElementById('CodingPerbandingan').innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> var hasil = A !== B; <br><i>console</i>.log(hasil);';
+			hasil = c !== VarB;
+			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else if(document.getElementById('formPerbandingan').CBPerbandinganVarA.checked){
+			document.getElementById('CodingPerbandingan').innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> var hasil = A !== B; <br><i>console</i>.log(hasil);';
+			hasil = VarA !== d;
+			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else{
+			document.getElementById('CodingPerbandingan').innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A !== B; <br><i>console</i>.log(hasil);';
+			hasil = c !== d;
+			document.getElementById('PerbandinganValue').innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}
+	}	
+}
 // end Operator Perbandingan
