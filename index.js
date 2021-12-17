@@ -691,3 +691,348 @@ function OpLogika(){
 	}
 }
 // end Operator Logika
+
+// Operator Bitwise
+function OpBitwise(){
+	var hasil;
+
+	var form = document.getElementById('formBitwise');
+	var VarA = document.getElementById('formBitwise').BitwiseVarA.value;
+	var VarB = document.getElementById('formBitwise').BitwiseVarB.value;
+	var JOperator = document.getElementById('formBitwise').SelOpBitwise.value;
+	var CBVarA = document.getElementById('formBitwise').CBBitwiseVarA.checked;
+	var CBVarB = document.getElementById('formBitwise').CBBitwiseVarB.checked;
+	var Coding = document.getElementById('CodingBitwise');
+	var Value = document.getElementById('BitwiseValue');
+
+	if(JOperator == "&"){
+		if(CBVarA && CBVarB){
+			Coding.innerHTML ='var A = ~'+ VarA +';<br> var B = ~'+ VarB +'; <br><br> var hasil = A & B; <br><i>console</i>.log(hasil);';
+			hasil = ~VarA & ~VarB;
+			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else if(CBVarA){
+			Coding.innerHTML ='var A = ~'+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A & B; <br><i>console</i>.log(hasil);';
+			hasil = ~VarA & VarB;
+			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else if(CBVarB){
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = ~'+ VarB +'; <br><br> var hasil = A & B; <br><i>console</i>.log(hasil);';
+			hasil = VarA & ~VarB;
+			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else{
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A & B; <br><i>console</i>.log(hasil);';
+			hasil = VarA & VarB;
+			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}
+	}else if(JOperator == "|"){
+		if(CBVarA && CBVarB){
+			Coding.innerHTML ='var A = ~'+ VarA +';<br> var B = ~'+ VarB +'; <br><br> var hasil = A | B; <br><i>console</i>.log(hasil);';
+			hasil = ~VarA | ~VarB;
+			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else if(CBVarA){
+			Coding.innerHTML ='var A = ~'+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A | B; <br><i>console</i>.log(hasil);';
+			hasil = ~VarA | VarB;
+			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else if(CBVarB){
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = ~'+ VarB +'; <br><br> var hasil = A | B; <br><i>console</i>.log(hasil);';
+			hasil = VarA | ~VarB;
+			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else{
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A | B; <br><i>console</i>.log(hasil);';
+			hasil = VarA | VarB;
+			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}
+	}else if(JOperator == "^"){
+		if(CBVarA && CBVarB){
+			Coding.innerHTML ='var A = ~'+ VarA +';<br> var B = ~'+ VarB +'; <br><br> var hasil = A ^ B; <br><i>console</i>.log(hasil);';
+			hasil = ~VarA ^ ~VarB;
+			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else if(CBVarA){
+			Coding.innerHTML ='var A = ~'+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A ^ B; <br><i>console</i>.log(hasil);';
+			hasil = ~VarA ^ VarB;
+			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else if(CBVarB){
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = ~'+ VarB +'; <br><br> var hasil = A ^ B; <br><i>console</i>.log(hasil);';
+			hasil = VarA ^ ~VarB;
+			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else{
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A ^ B; <br><i>console</i>.log(hasil);';
+			hasil = VarA ^ VarB;
+			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}
+	}else if(JOperator == "<<"){
+		if(CBVarA && CBVarB){
+			Coding.innerHTML ='var A = ~'+ VarA +';<br> var B = ~'+ VarB +'; <br><br> var hasil = A << B; <br><i>console</i>.log(hasil);';
+			hasil = ~VarA << ~VarB;
+			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else if(CBVarA){
+			Coding.innerHTML ='var A = ~'+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A << B; <br><i>console</i>.log(hasil);';
+			hasil = ~VarA << VarB;
+			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else if(CBVarB){
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = ~'+ VarB +'; <br><br> var hasil = A << B; <br><i>console</i>.log(hasil);';
+			hasil = VarA << ~VarB;
+			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else{
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A << B; <br><i>console</i>.log(hasil);';
+			hasil = VarA << VarB;
+			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}
+	}else if(JOperator == ">>"){
+		if(CBVarA && CBVarB){
+			Coding.innerHTML ='var A = ~'+ VarA +';<br> var B = ~'+ VarB +'; <br><br> var hasil = A >> B; <br><i>console</i>.log(hasil);';
+			hasil = ~VarA >> ~VarB;
+			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else if(CBVarA){
+			Coding.innerHTML ='var A = ~'+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A >> B; <br><i>console</i>.log(hasil);';
+			hasil = ~VarA >> VarB;
+			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else if(CBVarB){
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = ~'+ VarB +'; <br><br> var hasil = A >> B; <br><i>console</i>.log(hasil);';
+			hasil = VarA >> ~VarB;
+			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else{
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A >> B; <br><i>console</i>.log(hasil);';
+			hasil = VarA >> VarB;
+			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}
+	}else if(JOperator == ">>>"){
+		if(CBVarA && CBVarB){
+			Coding.innerHTML ='var A = ~'+ VarA +';<br> var B = ~'+ VarB +'; <br><br> var hasil = A >>> B; <br><i>console</i>.log(hasil);';
+			hasil = ~VarA >>> ~VarB;
+			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else if(CBVarA){
+			Coding.innerHTML ='var A = ~'+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A >>> B; <br><i>console</i>.log(hasil);';
+			hasil = ~VarA >>> VarB;
+			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else if(CBVarB){
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = ~'+ VarB +'; <br><br> var hasil = A >>> B; <br><i>console</i>.log(hasil);';
+			hasil = VarA >>> ~VarB;
+			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else{
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A >>> B; <br><i>console</i>.log(hasil);';
+			hasil = VarA >>> VarB;
+			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}
+	}
+}
+// end Operator Bitwise
+
+// Operator Ternary
+function OpTernary(){
+	var hasil;
+
+	var form = document.getElementById('formTernary');
+	var VarA = document.getElementById('formTernary').TernaryVarA.value;
+	var VarB = document.getElementById('formTernary').TernaryVarB.value;
+	var JOperator = document.getElementById('formTernary').SelOpTernary.value;
+	var CBVarA = document.getElementById('formTernary').CBTernaryVarA.checked;
+	var CBVarB = document.getElementById('formTernary').CBTernaryVarB.checked;
+	var Coding = document.getElementById('CodingTernary');
+	var Value = document.getElementById('TernaryValue');
+
+	var c = Number(VarA);
+	var d = Number(VarB);
+
+	if(JOperator == ">"){
+		if(CBVarA && CBVarB){
+			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> var hasil = (a > b) ? true : false; <br><i>console</i>.log(hasil);';
+			hasil = (VarA > VarB) ? true : false;
+			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else if(CBVarB){
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> var hasil = (a > b) ? true : false; <br><i>console</i>.log(hasil);';
+			hasil = (c > VarB) ? true : false;
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else if(CBVarA){
+			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> var hasil = (a > b) ? true : false; <br><i>console</i>.log(hasil);';
+			hasil = (VarA > d) ? true : false;
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else{
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = (a > b) ? true : false; <br><i>console</i>.log(hasil);';
+			hasil = (c > d) ? true : false;
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}
+	}else if(JOperator == "<"){
+		if(CBVarA && CBVarB){
+			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> var hasil = (a < b) ? true : false; <br><i>console</i>.log(hasil);';
+			hasil = (VarA < VarB) ? true : false;
+			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else if(CBVarB){
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> var hasil = (a < b) ? true : false; <br><i>console</i>.log(hasil);';
+			hasil = (c < VarB) ? true : false;
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else if(CBVarA){
+			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> var hasil = (a < b) ? true : false; <br><i>console</i>.log(hasil);';
+			hasil = (VarA < d) ? true : false;
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else{
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = (a < b) ? true : false; <br><i>console</i>.log(hasil);';
+			hasil = (c < d) ? true : false;
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}
+	}else if(JOperator == ">="){
+		if(CBVarA && CBVarB){
+			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> var hasil = (a >= b) ? true : false; <br><i>console</i>.log(hasil);';
+			hasil = (VarA >= VarB) ? true : false;
+			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else if(CBVarB){
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> var hasil = (a >= b) ? true : false; <br><i>console</i>.log(hasil);';
+			hasil = (c >= VarB) ? true : false;
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else if(CBVarA){
+			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> var hasil = (a >= b) ? true : false; <br><i>console</i>.log(hasil);';
+			hasil = (VarA >= d) ? true : false;
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else{
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = (a >= b) ? true : false; <br><i>console</i>.log(hasil);';
+			hasil = (c >= d) ? true : false;
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}
+	}else if(JOperator == "<="){
+		if(CBVarA && CBVarB){
+			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> var hasil = (a <= b) ? true : false; <br><i>console</i>.log(hasil);';
+			hasil = (VarA <= VarB) ? true : false;
+			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else if(CBVarB){
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> var hasil = (a <= b) ? true : false; <br><i>console</i>.log(hasil);';
+			hasil = (c <= VarB) ? true : false;
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else if(CBVarA){
+			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> var hasil = (a <= b) ? true : false; <br><i>console</i>.log(hasil);';
+			hasil = (VarA <= d) ? true : false;
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else{
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = (a <= b) ? true : false; <br><i>console</i>.log(hasil);';
+			hasil = (c <= d) ? true : false;
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}
+	}else if(JOperator == "=="){
+		if(CBVarA && CBVarB){
+			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> var hasil = (a == b) ? true : false; <br><i>console</i>.log(hasil);';
+			hasil = (VarA == VarB) ? true : false;
+			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else if(CBVarB){
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> var hasil = (a == b) ? true : false; <br><i>console</i>.log(hasil);';
+			hasil = (c == VarB) ? true : false;
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else if(CBVarA){
+			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> var hasil = (a == b) ? true : false; <br><i>console</i>.log(hasil);';
+			hasil = (VarA == d) ? true : false;
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else{
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = (a == b) ? true : false; <br><i>console</i>.log(hasil);';
+			hasil = (c == d) ? true : false;
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}
+	}else if(JOperator == "==="){
+		if(CBVarA && CBVarB){
+			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> var hasil = (a === b) ? true : false; <br><i>console</i>.log(hasil);';
+			hasil = (VarA === VarB) ? true : false;
+			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else if(CBVarB){
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> var hasil = (a === b) ? true : false; <br><i>console</i>.log(hasil);';
+			hasil = (c === VarB) ? true : false;
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else if(CBVarA){
+			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> var hasil = (a === b) ? true : false; <br><i>console</i>.log(hasil);';
+			hasil = (VarA === d) ? true : false;
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else{
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = (a === b) ? true : false; <br><i>console</i>.log(hasil);';
+			hasil = (c === d) ? true : false;
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}
+	}else if(JOperator == "!="){
+		if(CBVarA && CBVarB){
+			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> var hasil = (a != b) ? true : false; <br><i>console</i>.log(hasil);';
+			hasil = (VarA != VarB) ? true : false;
+			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else if(CBVarB){
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> var hasil = (a != b) ? true : false; <br><i>console</i>.log(hasil);';
+			hasil = (c != VarB) ? true : false;
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else if(CBVarA){
+			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> var hasil = (a != b) ? true : false; <br><i>console</i>.log(hasil);';
+			hasil = (VarA != d) ? true : false;
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else{
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = (a != b) ? true : false; <br><i>console</i>.log(hasil);';
+			hasil = (c != d) ? true : false;
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}
+	}else if(JOperator == "!=="){
+		if(CBVarA && CBVarB){
+			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> var hasil = (a !== b) ? true : false; <br><i>console</i>.log(hasil);';
+			hasil = (VarA !== VarB) ? true : false;
+			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else if(CBVarB){
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> var hasil = (a !== b) ? true : false; <br><i>console</i>.log(hasil);';
+			hasil = (c !== VarB) ? true : false;
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else if(CBVarA){
+			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> var hasil = (a !== b) ? true : false; <br><i>console</i>.log(hasil);';
+			hasil = (VarA !== d) ? true : false;
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}else{
+			Coding.innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = (a !== b) ? true : false; <br><i>console</i>.log(hasil);';
+			hasil = (c !== d) ? true : false;
+			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			form.reset();
+		}
+	}	
+}
+// end Operator Ternary

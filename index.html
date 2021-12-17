@@ -8,6 +8,9 @@
     <!-- My CSS -->
     <link rel="stylesheet" type="text/css" href="style.css">
 
+    <!-- Bootstrap icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
@@ -43,11 +46,16 @@
             <h2>Operator Aritmatika</h2>
           </div>
         </div>
-        <div class="row justify-content-center mb-4">
-          <div class="col-md-8">
+        <div class="row justify-content-center mb-5">
+          <div class="col-md-6">
             <h3>Penjelasan :</h3>
             <p>Operator aritmatika merupakan operator untuk melakukan operasi aritmatika seperti penjumlahan, pengurangan, pembagian, perkalian, dsb.</p>
-            <p>Operator aritmatika terdiri dari:</p>
+            <p>Untuk melakukan operasi perkalian, kita menggunakan simbol asterik *.</p>
+            <p>Jangan gunakan x, karena simbol x bukan termasuk dalam operator di dalam pemrograman.</p>
+            <p>Lalu untuk pemangkatan kita menggunakan asterik ganda **.</p>
+            <p>Untuk pembagian, kita gunakan simbol garis miring /.</p>
+          </div>
+          <div class="col-md-6">
             <table class="table text-center table-striped table-hover">
               <thead>
                 <tr>
@@ -82,10 +90,10 @@
                 </tr>
               </tbody>
             </table>
-          </div> 
+          </div>
         </div>
-        <div class="row justify-content-around">
-          <div class="col-md-5">
+        <div class="row justify-content-around rounded-3 p-3 shadow">
+          <div class="col-md-6">
             <h3>Demo :</h3>
             <form id="formAritmatika" name="formAritmatika" onsubmit="return false" class="mb-3">
               <div class="mb-3">
@@ -119,7 +127,7 @@
               <input type="submit" value="Jalankan" name="" class="btn btn-secondary" onclick="OpAritmatika();">
             </form>
           </div>
-          <div class="col-md-5">
+          <div class="col-md-6">
             <h3>Hasil :</h3>
             <span id="CodingAritmatika" class="hasil fs-5"> </span>
             <span id="AritmatikaValue"> </span>
@@ -138,11 +146,14 @@
             <h2>Operator Penugasan</h2>
           </div>
         </div>
-        <div class="row justify-content-center mb-4">
-          <div class="col-md-8">
+        <div class="row justify-content-center mb-5">
+          <div class="col-md-6">
             <h3>Penjelasan :</h3>
             <p>Operator penugasan adalah operator yang digunakan untuk memberikan tugas kepada variabel. Biasanya digunakan untuk mengisi variabel.</p>
-            <p>Operator penugasan terdiri dari :</p>
+            <p>Operator penugasan sama seperti operator aritmatika. Ia juga digunakan untuk melakukan operasi aritmatika.</p>
+            <p>Perbedaan Operator Penugasan dan Aritmatika adalah Operator aritmatika hanya melakukan operasi aritmatika saja, sedangkan operator penugasan ia melakukan operasi aritmatika dan juga pengisian. </p>
+          </div>
+          <div class="col-md-6">
             <table class="table text-center table-striped table-hover">
               <thead>
                 <tr>
@@ -181,10 +192,10 @@
                 </tr>
               </tbody>
             </table>
-          </div> 
+          </div>
         </div>
-        <div class="row justify-content-around">
-          <div class="col-md-5">
+        <div class="row justify-content-around rounded-3 p-3 shadow">
+          <div class="col-md-6">
             <h3>Demo :</h3>
             <form id="formPenugasan" name="formPenugasan" onsubmit="return false" class="mb-3">
               <div class="mb-3">
@@ -218,7 +229,7 @@
               <input type="submit" value="Jalankan" name="" class="btn btn-secondary" onclick="OpPenugasan();">
             </form>
           </div>
-          <div class="col-md-5">
+          <div class="col-md-6">
             <h3>Hasil :</h3>
             <span id="CodingPenugasan" class="hasil fs-5"> </span>
             <span id="PenugasanValue"> </span>
@@ -237,12 +248,14 @@
             <h2>Operator Perbandingan</h2>
           </div>
         </div>
-        <div class="row justify-content-center mb-4">
-          <div class="col-md-8">
+        <div class="row justify-content-center mb-5">
+          <div class="col-md-6">
             <h3>Penjelasan :</h3>
             <p>Operator relasi atau perbandingan adalah operator yang digunakan untuk membandingkan dua nilai.</p>
             <p>Operator perbandingan akan menghasilkan sebuah nilai boolean true dan false.</p>
-            <p>Operator perbandingan terdiri dari :</p>
+            <p>Perbandingan dengan menggunakan simbol == hanya akan membandingkan nilai saja. Sedangkan yang menggunakan === akan membandingkan dengan tipe data juga.</p>
+          </div>
+          <div class="col-md-6">
             <table class="table text-center table-striped table-hover">
               <thead>
                 <tr>
@@ -279,8 +292,8 @@
             </table>
           </div>
         </div>
-        <div class="row justify-content-around">
-          <div class="col-md-5">
+        <div class="row justify-content-around rounded-3 p-3 shadow">
+          <div class="col-md-6">
             <h3>Demo :</h3>
             <form id="formPerbandingan" name="formPerbandingan" onsubmit="return false" class="mb-3">
               <div class="mb-3">
@@ -316,7 +329,7 @@
               <input type="submit" value="Jalankan" name="" class="btn btn-secondary" onclick="OpPerbandingan();">
             </form>
           </div>
-          <div class="col-md-5">
+          <div class="col-md-6">
             <h3>Hasil :</h3>
             <span id="CodingPerbandingan" class="hasil fs-5"> </span>
             <span id="PerbandinganValue"> </span>
@@ -335,11 +348,12 @@
             <h2>Operator Logika</h2>
           </div>
         </div>
-        <div class="row justify-content-center mb-4">
-          <div class="col-md-8">
+        <div class="row justify-content-center mb-5">
+          <div class="col-md-6">
             <h3>Penjelasan :</h3>
             <p>Operator logika digunakan untuk melakukan operasi terhadap dua nilai boolean.</p>
-            <p>Operator logika terdiri dari :</p>
+          </div>
+          <div class="col-md-6">
             <table class="table text-center table-striped table-hover">
               <thead>
                 <tr>
@@ -362,10 +376,10 @@
                 </tr>
               </tbody>
             </table>
-          </div> 
+          </div>
         </div>
-        <div class="row justify-content-around">
-          <div class="col-md-5">
+        <div class="row justify-content-around rounded-3 p-3 shadow">
+          <div class="col-md-6">
             <h3>Demo :</h3>
             <form id="formLogika" name="formLogika" onsubmit="return false" class="mb-3">
               <div class="mb-3">
@@ -403,7 +417,7 @@
               <input type="submit" value="Jalankan" name="" class="btn btn-secondary" onclick="OpLogika();">
             </form>
           </div>
-          <div class="col-md-5">
+          <div class="col-md-6">
             <h3>Hasil :</h3>
             <span id="CodingLogika" class="hasil fs-5"> </span>
             <span id="LogikaValue"> </span>
@@ -422,11 +436,14 @@
             <h2>Operator Bitwise</h2>
           </div>
         </div>
-        <div class="row">
+        <div class="row justify-content-center mb-5">
           <div class="col-md-6">
             <h3>Penjelasan :</h3>
             <p>Operator bitwise merupkan operator yang digunakan untuk operasi berdasarkan bit (biner).</p>
-            <p>Operator bitwise terdiri dari :</p>
+            <p>Operator ini berlaku untuk tipe data int, long, short, char, dan byte.</p>
+            <p>Konsepnya hampir sama dengan opeartor Logika. Bedanya, Bitwise digunakan untuk biner.</p>
+          </div>
+          <div class="col-md-6">
             <table class="table text-center table-striped table-hover">
               <thead>
                 <tr>
@@ -470,33 +487,46 @@
               </tbody>
             </table>
           </div>
+        </div>
+        <div class="row justify-content-around rounded-3 p-3 shadow">
           <div class="col-md-6">
             <h3>Demo :</h3>
-            <form>
+            <form id="formBitwise" name="formBitwise" onsubmit="return false" class="mb-3">
               <div class="mb-3">
                 <label for="BitwiseVarA" class="form-label">Variabel A :</label>
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="CBBitwiseVarA">
+                  <label class="form-check-label" for="CBBitwiseVarA">Negasi/Kebalikan</label>
+                </div>
                 <input type="number" class="form-control" id="BitwiseVarA">
               </div>
               <div class="mb-3">
-                <label for="OpBitwise" class="form-label">Jenis Operator :</label>
-                <select id="OpBitwise" class="form-select">
+                <label for="SelOpBitwise" class="form-label">Jenis Operator :</label>
+                <select id="SelOpBitwise" class="form-select">
                   <option selected>Pilih jenis operator</option>
                   <option value="&">AND(&)</option>
                   <option value="|">OR(|)</option>
                   <option value="^">XOR(^)</option>
-                  <option value="!">Negasi/kebalikan(!)</option>
-                  <option value="<<">Left Shift(>>)</option>
-                  <option value=">>">Right Shift(<<)</option>
-                  <option value="<<<">Left Shift (unsigned)(<<<)</option>
+                  <option value=">>">Left Shift(>>)</option>
+                  <option value="<<">Right Shift(<<)</option>
                   <option value=">>>">Right Shift (unsigned)(>>>)</option>
                 </select>
               </div>
               <div class="mb-3">
                 <label for="BitwiseVarB" class="form-label">Variabel B :</label>
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="CBBitwiseVarB">
+                  <label class="form-check-label" for="CBBitwiseVarB">Negasi/Kebalikan</label>
+                </div>
                 <input type="number" class="form-control" id="BitwiseVarB">
               </div>
-              <button type="submit" class="btn btn-secondary">Submit</button>
+              <input type="submit" value="Jalankan" name="" class="btn btn-secondary" onclick="OpBitwise();">
             </form>
+          </div>
+          <div class="col-md-6">
+            <h3>Hasil :</h3>
+            <span id="CodingBitwise" class="hasil fs-5"> </span>
+            <span id="BitwiseValue"> </span>
           </div>
         </div>
       </div>
@@ -512,37 +542,89 @@
             <h2>Operator Ternary</h2>
           </div>
         </div>
-        <div class="row">
+        <div class="row justify-content-center mb-5">
           <div class="col-md-6">
             <h3>Penjelasan :</h3>
             <p>Operator ternary merupakan operator yang teridiri dari tiga bagian.</p>
             <p>Operator-operator sebelumnya hanya dua bagian saja, yaitu: bagian kiri dan kanan. Ini disebut operator binary.</p>
-            <p>Sementara operator trinary ada bagian kiri, tengah, dan kanan.</p>
+            <p>Sementara operator ternary ada bagian kiri, tengah, dan kanan.</p>
             <p>bagian kiri <b>< operator ></b> bagian tengah <b>< operator ></b> bagian kanan</p>
             <p>Opertor ternary pada Javascript, biasanya digunakan untuk membuat sebuah percabangan if/else.</p>
-            <p>Simbol opertor ternary terdiri dari tanda tanya dan titik dua (?:).</p>
-            <p>Simbol opertor ternary terdiri dari tanda tanya dan titik dua (?:).</p>
-            <p><b>< kodisi ></b> ? "benar" : "salah"</p>
-            <p>Perhatikan! <b>< kondisi ></b> dapat kita isi dengan ekspresi yang menghasilkan nilai true dan false.</p>
-            <p>Apabila kondisi bernilai true, maka "benar" yang akan dipilih dan sebaliknya—apabila false—maka "salah" yang akan dipilih.</p>
           </div>
           <div class="col-md-6">
+            <br><br>
+            <p>Simbol opertor ternary terdiri dari tanda tanya dan titik dua (?:).</p>
+            <p><b>(kodisi)</b> ? "benar" : "salah"</p>
+            <p>Perhatikan! <b>(kondisi)</b> dapat kita isi dengan ekspresi yang menghasilkan nilai true dan false.</p>
+            <p>Apabila kondisi bernilai true, maka "benar" yang akan dipilih dan sebaliknya—apabila false—maka "salah" yang akan dipilih.</p>
+          </div>
+        </div>
+        
+        <div class="row justify-content-around rounded-3 p-3 shadow">
+          <div class="col-md-6">
             <h3>Demo :</h3>
+            <form id="formTernary" name="formTernary" onsubmit="return false" class="mb-3">
+              <div class="mb-3">
+                <label for="TernaryVarA" class="form-label">Variabel A :</label>
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="CBTernaryVarA">
+                  <label class="form-check-label" for="CBTernaryVarA">String</label>
+                </div>
+                <input type="text" class="form-control" id="TernaryVarA">
+              </div>
+              <div class="mb-3">
+                <label for="SelOpTernary" class="form-label">Jenis Operator :</label>
+                <select id="SelOpTernary" class="form-select">
+                  <option selected>Pilih jenis operator</option>
+                  <option value=">">Lebih Besar(>)</option>
+                  <option value="<">Lebih Kecil(<)</option>
+                  <option value=">=">Lebih Besar Sama dengan(>=)</option>
+                  <option value="<=">Lebih Kecil Sama dengan(<=)</option>
+                  <option value="==">Sama Dengan(==)</option>
+                  <option value="===">Sama Dengan(===)</option>
+                  <option value="!=">Tidak Sama dengan(!=)</option>
+                  <option value="!==">Tidak Sama dengan(!==)</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="TernaryVarB" class="form-label">Variabel B :</label>
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="CBTernaryVarB">
+                  <label class="form-check-label" for="CBTernaryVarB">String</label>
+                </div>
+                <input type="text" class="form-control" id="TernaryVarB">
+              </div>
+              <input type="submit" value="Jalankan" name="" class="btn btn-secondary" onclick="OpTernary();">
+            </form>
+          </div>
+          <div class="col-md-6">
+            <h3>Hasil :</h3>
+            <span id="CodingTernary" class="hasil fs-5"> </span>
+            <span id="TernaryValue"> </span>
           </div>
         </div>
       </div>
     </section>
     <!-- end Operator ternary -->
 
+    <!-- Source -->
+    <section id="source">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col text-end">
+            <p class="fs-6 fw-lighter">source blog : https://www.petanikode.com/javascript-operator/</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end source -->
+
     <!-- footer -->
     <footer class="p-3 bg-light">
       <div class="container">
         <div class="row">
           <div class="col-md-6 fs-5">
-            <p>©2021 | Musmuliadi</p>
-          </div>
-          <div class="col-md-6 text-end">
-            <p>source blog : https://www.petanikode.com/javascript-operator/</p>
+            <p>© 2021 | <a href="https://github.com/smbrang" target="_blank" class="text-secondary"><i class="bi bi-github"></i></a> Musmuliadi</p>
           </div>
         </div>
       </div>

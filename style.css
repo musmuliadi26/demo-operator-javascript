@@ -4,11 +4,11 @@
 #aritmatika{
 	padding-top: 6rem;
 }
-#penugasan, #logika, #ternary{
+#penugasan, #logika, #ternary, #source{
 	background-color: #f2f2f2;
 }
 #ternary{
-	padding-bottom: 10rem;
+	padding-bottom: 15rem;
 }
 .hasil{
 	font-family: 'Trispace', sans-serif;
