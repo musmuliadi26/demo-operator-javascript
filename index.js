@@ -3,7 +3,6 @@ let textPenutupHasil = '</h4>';
 
 // Operator Aritmatika
 function OpAritmatika(){
-	let hasil;
 	let form = document.getElementById('formAritmatika');
 	let VarA = document.getElementById('formAritmatika').AritmatikaVarA.value;
 	let VarB = document.getElementById('formAritmatika').AritmatikaVarB.value;
@@ -12,151 +11,130 @@ function OpAritmatika(){
 	let CBVarB = document.getElementById('formAritmatika').CBAritmatikaVarB.checked;
 	let Coding = document.getElementById('CodingAritmatika');
 	let Value = document.getElementById('AritmatikaValue');
-	let textHasilPenjumlahan = "var Hasil = A + B; <br><i>console</i>.log(Hasil);";
-	let textHasilPengurangan = "var Hasil = A - B; <br><i>console</i>.log(Hasil);";
-	let textHasilPerkalian = "var Hasil = A * B; <br><i>console</i>.log(Hasil);";
-	let textHasilPemangkatan = "var Hasil = A ** B; <br><i>console</i>.log(Hasil);";
-	let textHasilPembagian = "var Hasil = A / B; <br><i>console</i>.log(Hasil);";
-	let textHasilModulus = "var Hasil = A % B; <br><i>console</i>.log(Hasil);";
+
+	let textHasil = {
+		tambah : "var Hasil = A + B; <br><i>console</i>.log(Hasil);",
+		kurang : "var Hasil = A - B; <br><i>console</i>.log(Hasil);",
+		kali : "var Hasil = A * B; <br><i>console</i>.log(Hasil);",
+		pangkat : "var Hasil = A ** B; <br><i>console</i>.log(Hasil);",
+		bagi : "var Hasil = A / B; <br><i>console</i>.log(Hasil);",
+		modulus : "var Hasil = A % B; <br><i>console</i>.log(Hasil);"
+	};
 
 	let c = Number(VarA);
 	let d = Number(VarB);
 
-	if(JOperator == "+"){
+	if (JOperator == "+") {
 		if(CBVarA && CBVarB){
-			Coding.innerHTML = `var A = "${VarA}"; <br> var B = "${VarB}"; <br><br> ${textHasilPenjumlahan}`;
-			hasil = VarA + VarB;
-			Value.innerHTML = `${textPembukaHasil} "${hasil}" ${textPenutupHasil}`;
+			Coding.innerHTML = `var A = "${VarA}"; <br> var B = "${VarB}"; <br><br> ${textHasil.tambah}`;
+			Value.innerHTML = `${textPembukaHasil} "${VarA + VarB}" ${textPenutupHasil}`;
 			form.reset();
 		}else if(CBVarB){
-			Coding.innerHTML = `var A = ${VarA}; <br> var B = "${VarB}"; <br><br> ${textHasilPenjumlahan}`;
-			hasil = c + VarB;
-			Value.innerHTML = `${textPembukaHasil} "${hasil}" ${textPenutupHasil}`;
+			Coding.innerHTML = `var A = ${VarA}; <br> var B = "${VarB}"; <br><br> ${textHasil.tambah}`;
+			Value.innerHTML = `${textPembukaHasil} "${c + VarB}" ${textPenutupHasil}`;
 			form.reset();
 		}else if(CBVarA){
-			Coding.innerHTML = `var A = "${VarA}"; <br> var B = ${VarB}; <br><br> ${textHasilPenjumlahan}`;
-			hasil = VarA + d;
-			Value.innerHTML = `${textPembukaHasil} "${hasil}" ${textPenutupHasil}`;
+			Coding.innerHTML = `var A = "${VarA}"; <br> var B = ${VarB}; <br><br> ${textHasil.tambah}`;
+			Value.innerHTML = `${textPembukaHasil} "${VarA + d}" ${textPenutupHasil}`;
 			form.reset();
 		}else{
-			Coding.innerHTML = `var A = ${VarA};<br> var B = ${VarB}; <br><br> ${textHasilPenjumlahan}`;
-			hasil = c + d;
-			Value.innerHTML = `${textPembukaHasil} ${hasil} ${textPenutupHasil}`;
+			Coding.innerHTML = `var A = ${VarA}; <br> var B = ${VarB}; <br><br> ${textHasil.tambah}`;
+			Value.innerHTML = `${textPembukaHasil} ${c + d} ${textPenutupHasil}`;
 			form.reset();
 		}
-	}else if(JOperator == "-"){
+	}else if(JOperator === "-") {
 		if(CBVarA && CBVarB){
-			Coding.innerHTML = `var A = "${VarA}"; <br> var B = "${VarB}"; <br><br> ${textHasilPengurangan}`;
-			hasil = VarA - VarB;
-			Value.innerHTML = `${textPembukaHasil} ${hasil} ${textPenutupHasil}`;
+			Coding.innerHTML = `var A = "${VarA}"; <br> var B = "${VarB}"; <br><br> ${textHasil.kurang}`;
+			Value.innerHTML = `${textPembukaHasil} ${VarA - VarB} ${textPenutupHasil}`;
 			form.reset();
 		}else if(CBVarB){
-			Coding.innerHTML = `var A = ${VarA}; <br> var B = "${VarB}"; <br><br> ${textHasilPengurangan}`;
-			hasil = c - VarB;
-			Value.innerHTML = `${textPembukaHasil} ${hasil} ${textPenutupHasil}`;
+			Coding.innerHTML = `var A = ${VarA}; <br> var B = "${VarB}"; <br><br> ${textHasil.kurang}`;
+			Value.innerHTML = `${textPembukaHasil} ${c - VarB} ${textPenutupHasil}`;
 			form.reset();
 		}else if(CBVarA){
-			Coding.innerHTML = `var A = "${VarA}"; <br> var B = ${VarB}; <br><br> ${textHasilPengurangan}`;
-			hasil = VarA - d;
-			Value.innerHTML = `${textPembukaHasil} ${hasil} ${textPenutupHasil}`;
+			Coding.innerHTML = `var A = "${VarA}"; <br> var B = ${VarB}; <br><br> ${textHasil.kurang}`;
+			Value.innerHTML = `${textPembukaHasil} ${VarA - d} ${textPenutupHasil}`;
 			form.reset();
 		}else{
-			Coding.innerHTML = `var A = ${VarA}<br> var B = ${VarB}; <br><br> ${textHasilPengurangan}`;
-			hasil = c - d;
-			Value.innerHTML = `${textPembukaHasil} ${hasil} ${textPenutupHasil}`;
+			Coding.innerHTML = `var A = ${VarA}; <br> var B = ${VarB}; <br><br> ${textHasil.kurang}`;
+			Value.innerHTML = `${textPembukaHasil} ${c - d} ${textPenutupHasil}`;
 			form.reset();
 		}
-	}else if(JOperator == "*"){
+	}else if(JOperator == "*") {
 		if(CBVarA && CBVarB){
-			Coding.innerHTML = `var A = "${VarA}"; <br> var B = "${VarB}"; <br><br> ${textHasilPerkalian}`;
-			hasil = VarA * VarB;
-			Value.innerHTML = `${textPembukaHasil} ${hasil} ${textPenutupHasil}`;
+			Coding.innerHTML = `var A = "${VarA}"; <br> var B = "${VarB}"; <br><br> ${textHasil.kali}`;
+			Value.innerHTML = `${textPembukaHasil} ${VarA * VarB} ${textPenutupHasil}`;
 			form.reset();
 		}else if(CBVarB){
-			Coding.innerHTML = `var A = ${VarA}; <br> var B = "${VarB}"; <br><br> ${textHasilPerkalian}`;
-			hasil = c * VarB;
-			Value.innerHTML = `${textPembukaHasil} ${hasil} ${textPenutupHasil}`;
+			Coding.innerHTML = `var A = ${VarA}; <br> var B = "${VarB}"; <br><br> ${textHasil.kali}`;
+			Value.innerHTML = `${textPembukaHasil} ${c * VarB} ${textPenutupHasil}`;
 			form.reset();
 		}else if(CBVarA){
-			Coding.innerHTML = `var A = "${VarA}"; <br> var B = ${VarB}; <br><br> ${textHasilPerkalian}`;
-			hasil = VarA * d;
-			Value.innerHTML = `${textPembukaHasil} ${hasil} ${textPenutupHasil}`;
+			Coding.innerHTML = `var A = "${VarA}"; <br> var B = ${VarB}; <br><br> ${textHasil.kali}`;
+			Value.innerHTML = `${textPembukaHasil} ${VarA * d} ${textPenutupHasil}`;
 			form.reset();
 		}else{
-			Coding.innerHTML = `var A = ${VarA}; <br> var B = ${VarB}; <br><br> ${textHasilPerkalian}`;
-			hasil = c * d;
-			Value.innerHTML = `${textPembukaHasil} ${hasil} ${textPenutupHasil}`;
+			Coding.innerHTML = `var A = ${VarA}; <br> var B = ${VarB}; <br><br> ${textHasil.kali}`;
+			Value.innerHTML = `${textPembukaHasil} ${c * d} ${textPenutupHasil}`;
 			form.reset();
 		}
-	}else if(JOperator == "**"){
+	}else if(JOperator == "**") {
 		if(CBVarA && CBVarB){
-			Coding.innerHTML = `var A = "${VarA}"; <br> var B = "${VarB}"; <br><br> ${textHasilPemangkatan}`;
-			hasil = VarA ** VarB;
-			Value.innerHTML = `${textPembukaHasil} ${hasil} ${textPenutupHasil}`;
+			Coding.innerHTML = `var A = "${VarA}"; <br> var B = "${VarB}"; <br><br> ${textHasil.pangkat}`;
+			Value.innerHTML = `${textPembukaHasil} ${VarA ** VarB} ${textPenutupHasil}`;
 			form.reset();
 		}else if(CBVarB){
-			Coding.innerHTML = `var A = ${VarA}; <br> var B = "${VarB}"; <br><br> ${textHasilPemangkatan}`;
-			hasil = c ** VarB;
-			Value.innerHTML = `${textPembukaHasil} ${hasil} ${textPenutupHasil}`;
+			Coding.innerHTML = `var A = ${VarA}; <br> var B = "${VarB}"; <br><br> ${textHasil.pangkat}`;
+			Value.innerHTML = `${textPembukaHasil} ${c ** VarB} ${textPenutupHasil}`;
 			form.reset();
 		}else if(CBVarA){
-			Coding.innerHTML = `var A = "${VarA}"; <br> var B = ${VarB}; <br><br> ${textHasilPemangkatan}`;
-			hasil = VarA ** d;
-			Value.innerHTML = `${textPembukaHasil} ${hasil} ${textPenutupHasil}`;
+			Coding.innerHTML = `var A = "${VarA}"; <br> var B = ${VarB}; <br><br> ${textHasil.pangkat}`;
+			Value.innerHTML = `${textPembukaHasil} ${VarA ** d} ${textPenutupHasil}`;
 			form.reset();
 		}else{
-			Coding.innerHTML = `var A = ${VarA};<br> var B = ${VarB}; <br><br> ${textHasilPemangkatan}`;
-			hasil = c ** d;
-			Value.innerHTML = `${textPembukaHasil} ${hasil} ${textPenutupHasil}`;
+			Coding.innerHTML = `var A = ${VarA};<br> var B = ${VarB}; <br><br> ${textHasil.pangkat}`;
+			Value.innerHTML = `${textPembukaHasil} ${c ** d} ${textPenutupHasil}`;
 			form.reset();
 		}
-	}else if(JOperator == "/"){
+	}else if(JOperator == "/") {
 		if(CBVarA && CBVarB){
-			Coding.innerHTML = `var A = "${VarA}";<br> var B = "${VarB}"; <br><br> ${textHasilPembagian}`;
-			hasil = VarA / VarB;
-			Value.innerHTML = `${textPembukaHasil} ${hasil} ${textPenutupHasil}`;
+			Coding.innerHTML = `var A = "${VarA}"; <br> var B = "${VarB}"; <br><br> ${textHasil.bagi}`;
+			Value.innerHTML = `${textPembukaHasil} ${VarA / VarB} ${textPenutupHasil}`;
 			form.reset();
 		}else if(CBVarB){
-			Coding.innerHTML = `var A = ${VarA}; <br> var B = "${VarB}"; <br><br> ${textHasilPembagian}`;
-			hasil = c / VarB;
-			Value.innerHTML = `${textPembukaHasil} ${hasil} ${textPenutupHasil}`;
+			Coding.innerHTML = `var A = ${VarA}; <br> var B = "${VarB}"; <br><br> ${textHasil.bagi}`;
+			Value.innerHTML = `${textPembukaHasil} ${c / VarB} ${textPenutupHasil}`;
 			form.reset();
 		}else if(CBVarA){
-			Coding.innerHTML = `var A = "${VarA}"; <br> var B = ${VarB}; <br><br> ${textHasilPembagian}`;
-			hasil = VarA / d;
-			Value.innerHTML = `${textPembukaHasil} ${hasil} ${textPenutupHasil}`;
+			Coding.innerHTML = `var A = "${VarA}"; <br> var B = ${VarB}; <br><br> ${textHasil.bagi}`;
+			Value.innerHTML = `${textPembukaHasil} ${VarA / d} ${textPenutupHasil}`;
 			form.reset();
 		}else{
-			Coding.innerHTML = `var A = ${VarA}; <br> var B = ${VarB}; <br><br> ${textHasilPembagian}`;
-			hasil = c / d;
-			Value.innerHTML = `${textPembukaHasil} ${hasil} ${textPenutupHasil}`;
+			Coding.innerHTML = `var A = ${VarA}; <br> var B = ${VarB}; <br><br> ${textHasil.bagi}`;
+			Value.innerHTML = `${textPembukaHasil} ${c / d} ${textPenutupHasil}`;
 			form.reset();
 		}
-	}else if(JOperator == "%"){
+	}else{
 		if(CBVarA && CBVarB){
-			Coding.innerHTML = `var A = "${VarA}"; <br> var B = "${VarB}"; <br><br> ${textHasilModulus}`;
-			hasil = VarA % VarB;
-			Value.innerHTML = `${textPembukaHasil} ${hasil} ${textPenutupHasil}`;
+			Coding.innerHTML = `var A = "${VarA}"; <br> var B = "${VarB}"; <br><br> ${textHasil.modulus}`;
+			Value.innerHTML = `${textPembukaHasil} ${VarA % VarB} ${textPenutupHasil}`;
 			form.reset();
 		}else if(CBVarB){
-			Coding.innerHTML = `var A = ${VarA}; <br> var B = "${VarB}"; <br><br> ${textHasilModulus}`;
-			hasil = c % VarB;
-			Value.innerHTML = `${textPembukaHasil} ${hasil} ${textPenutupHasil}`;
+			Coding.innerHTML = `var A = ${VarA}; <br> var B = "${VarB}"; <br><br> ${textHasil.modulus}`;
+			Value.innerHTML = `${textPembukaHasil} ${c % VarB} ${textPenutupHasil}`;
 			form.reset();
 		}else if(CBVarA){
-			Coding.innerHTML = `var A = "${VarA}"; <br> var B = ${VarB}; <br><br> ${textHasilModulus}`;
-			hasil = VarA % d;
-			Value.innerHTML = `${textPembukaHasil} ${hasil} ${textPenutupHasil}`;
+			Coding.innerHTML = `var A = "${VarA}"; <br> var B = ${VarB}; <br><br> ${textHasil.modulus}`;
+			Value.innerHTML = `${textPembukaHasil} ${VarA % d} ${textPenutupHasil}`;
 			form.reset();
 		}else{
-			Coding.innerHTML = `var A = ${VarA}; <br> var B = ${VarB}; <br><br> ${textHasilModulus}`;
-			hasil = c % d;
-			Value.innerHTML = `${textPembukaHasil} ${hasil} ${textPenutupHasil}`;
+			Coding.innerHTML = `var A = ${VarA}; <br> var B = ${VarB}; <br><br> ${textHasil.modulus}`;
+			Value.innerHTML = `${textPembukaHasil} ${c % d} ${textPenutupHasil}`;
 			form.reset();
 		}
-	}	
+	}
 }
-// end Operator Aritmatika
+//end Operator Aritmatika
 
 // Operator Penugasan
 function OpPenugasan(){
