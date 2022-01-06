@@ -642,8 +642,6 @@ function OpLogika(){
 
 // Operator Bitwise
 function OpBitwise(){
-	var hasil;
-
 	var form = document.getElementById('formBitwise');
 	var VarA = document.getElementById('formBitwise').BitwiseVarA.value;
 	var VarB = document.getElementById('formBitwise').BitwiseVarB.value;
@@ -653,136 +651,128 @@ function OpBitwise(){
 	var Coding = document.getElementById('CodingBitwise');
 	var Value = document.getElementById('BitwiseValue');
 
+	let textHasil = {
+		and : "let Hasil = A & B; <br><i>console</i>.log(Hasil);",
+		or : "let Hasil = A | B; <br><i>console</i>.log(Hasil);",
+		xor : "let Hasil = A ^ B; <br><i>console</i>.log(Hasil);",
+		rightShift : "let Hasil = A >> B; <br><i>console</i>.log(Hasil);",
+		leftShift : "let Hasil = A << B; <br><i>console</i>.log(Hasil);",
+		rightShiftU : "let Hasil = A >>> B; <br><i>console</i>.log(Hasil);",
+	}
+
+	let textCodingCB = {
+		CBVarAB : `let A = ~${VarA}; <br> let B = ~${VarB}; <br><br>`,
+		CBVarA : `let A = ~${VarA}; <br> let B = ${VarB}; <br><br>`,
+		CBVarB : `let A = ${VarA}; <br> let B = ~${VarB}; <br><br>`,
+		NonCB : `let A = ${VarA}; <br> let B = ${VarB}; <br><br>`
+	}
+
 	if(JOperator == "&"){
 		if(CBVarA && CBVarB){
-			Coding.innerHTML ='var A = ~'+ VarA +';<br> var B = ~'+ VarB +'; <br><br> var hasil = A & B; <br><i>console</i>.log(hasil);';
-			hasil = ~VarA & ~VarB;
-			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Coding.innerHTML =`${textCodingCB.CBVarAB} ${textHasil.and}`;
+			Value.innerHTML = `${textPembukaHasil} ${~VarA & ~VarB} ${textPenutupHasil}`;
 			form.reset();
 		}else if(CBVarA){
-			Coding.innerHTML ='var A = ~'+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A & B; <br><i>console</i>.log(hasil);';
-			hasil = ~VarA & VarB;
-			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Coding.innerHTML =`${textCodingCB.VarA} ${textHasil.and}`;
+			Value.innerHTML = `${textPembukaHasil} ${~VarA & VarB} ${textPenutupHasil}`;
 			form.reset();
 		}else if(CBVarB){
-			Coding.innerHTML ='var A = '+ VarA +';<br> var B = ~'+ VarB +'; <br><br> var hasil = A & B; <br><i>console</i>.log(hasil);';
-			hasil = VarA & ~VarB;
-			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Coding.innerHTML =`${textCodingCB.VarB} ${textHasil.and}`;
+			Value.innerHTML = `${textPembukaHasil} ${VarA & ~VarB} ${textPenutupHasil}`;
 			form.reset();
 		}else{
-			Coding.innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A & B; <br><i>console</i>.log(hasil);';
-			hasil = VarA & VarB;
-			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.and}`;
+			Value.innerHTML = `${textPembukaHasil} ${VarA & VarB} ${textPenutupHasil}`;
 			form.reset();
 		}
 	}else if(JOperator == "|"){
 		if(CBVarA && CBVarB){
-			Coding.innerHTML ='var A = ~'+ VarA +';<br> var B = ~'+ VarB +'; <br><br> var hasil = A | B; <br><i>console</i>.log(hasil);';
-			hasil = ~VarA | ~VarB;
-			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Coding.innerHTML =`${textCodingCB.CBVarAB} ${textHasil.or}`;
+			Value.innerHTML = `${textPembukaHasil} ${~VarA | ~VarB} ${textPenutupHasil}`;
 			form.reset();
 		}else if(CBVarA){
-			Coding.innerHTML ='var A = ~'+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A | B; <br><i>console</i>.log(hasil);';
-			hasil = ~VarA | VarB;
-			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Coding.innerHTML =`${textCodingCB.VarA} ${textHasil.or}`;
+			Value.innerHTML = `${textPembukaHasil} ${~VarA | VarB} ${textPenutupHasil}`;
 			form.reset();
 		}else if(CBVarB){
-			Coding.innerHTML ='var A = '+ VarA +';<br> var B = ~'+ VarB +'; <br><br> var hasil = A | B; <br><i>console</i>.log(hasil);';
-			hasil = VarA | ~VarB;
-			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Coding.innerHTML =`${textCodingCB.VarB} ${textHasil.or}`;
+			Value.innerHTML = `${textPembukaHasil} ${VarA | ~VarB} ${textPenutupHasil}`;
 			form.reset();
 		}else{
-			Coding.innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A | B; <br><i>console</i>.log(hasil);';
-			hasil = VarA | VarB;
-			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.or}`;
+			Value.innerHTML = `${textPembukaHasil} ${VarA | VarB} ${textPenutupHasil}`;
 			form.reset();
 		}
 	}else if(JOperator == "^"){
 		if(CBVarA && CBVarB){
-			Coding.innerHTML ='var A = ~'+ VarA +';<br> var B = ~'+ VarB +'; <br><br> var hasil = A ^ B; <br><i>console</i>.log(hasil);';
-			hasil = ~VarA ^ ~VarB;
-			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Coding.innerHTML =`${textCodingCB.CBVarAB} ${textHasil.xor}`;
+			Value.innerHTML = `${textPembukaHasil} ${~VarA ^ ~VarB} ${textPenutupHasil}`;
 			form.reset();
 		}else if(CBVarA){
-			Coding.innerHTML ='var A = ~'+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A ^ B; <br><i>console</i>.log(hasil);';
-			hasil = ~VarA ^ VarB;
-			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Coding.innerHTML =`${textCodingCB.VarA} ${textHasil.xor}`;
+			Value.innerHTML = `${textPembukaHasil} ${~VarA ^ VarB} ${textPenutupHasil}`;
 			form.reset();
 		}else if(CBVarB){
-			Coding.innerHTML ='var A = '+ VarA +';<br> var B = ~'+ VarB +'; <br><br> var hasil = A ^ B; <br><i>console</i>.log(hasil);';
-			hasil = VarA ^ ~VarB;
-			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Coding.innerHTML =`${textCodingCB.VarB} ${textHasil.xor}`;
+			Value.innerHTML = `${textPembukaHasil} ${VarA ^ ~VarB} ${textPenutupHasil}`;
 			form.reset();
 		}else{
-			Coding.innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A ^ B; <br><i>console</i>.log(hasil);';
-			hasil = VarA ^ VarB;
-			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.xor}`;
+			Value.innerHTML = `${textPembukaHasil} ${VarA ^ VarB} ${textPenutupHasil}`;
 			form.reset();
 		}
 	}else if(JOperator == "<<"){
 		if(CBVarA && CBVarB){
-			Coding.innerHTML ='var A = ~'+ VarA +';<br> var B = ~'+ VarB +'; <br><br> var hasil = A << B; <br><i>console</i>.log(hasil);';
-			hasil = ~VarA << ~VarB;
-			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Coding.innerHTML =`${textCodingCB.CBVarAB} ${textHasil.leftShift}`;
+			Value.innerHTML = `${textPembukaHasil} ${~VarA << ~VarB} ${textPenutupHasil}`;
 			form.reset();
 		}else if(CBVarA){
-			Coding.innerHTML ='var A = ~'+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A << B; <br><i>console</i>.log(hasil);';
-			hasil = ~VarA << VarB;
-			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Coding.innerHTML =`${textCodingCB.VarA} ${textHasil.leftShift}`;
+			Value.innerHTML = `${textPembukaHasil} ${~VarA << VarB} ${textPenutupHasil}`;
 			form.reset();
 		}else if(CBVarB){
-			Coding.innerHTML ='var A = '+ VarA +';<br> var B = ~'+ VarB +'; <br><br> var hasil = A << B; <br><i>console</i>.log(hasil);';
-			hasil = VarA << ~VarB;
-			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Coding.innerHTML =`${textCodingCB.VarB} ${textHasil.leftShift}`;
+			Value.innerHTML = `${textPembukaHasil} ${VarA << ~VarB} ${textPenutupHasil}`;
 			form.reset();
 		}else{
-			Coding.innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A << B; <br><i>console</i>.log(hasil);';
-			hasil = VarA << VarB;
-			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.leftShift}`;
+			Value.innerHTML = `${textPembukaHasil} ${VarA << VarB} ${textPenutupHasil}`;
 			form.reset();
 		}
 	}else if(JOperator == ">>"){
 		if(CBVarA && CBVarB){
-			Coding.innerHTML ='var A = ~'+ VarA +';<br> var B = ~'+ VarB +'; <br><br> var hasil = A >> B; <br><i>console</i>.log(hasil);';
-			hasil = ~VarA >> ~VarB;
-			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Coding.innerHTML =`${textCodingCB.CBVarAB} ${textHasil.rightShift}`;
+			Value.innerHTML = `${textPembukaHasil} ${~VarA >> ~VarB} ${textPenutupHasil}`;
 			form.reset();
 		}else if(CBVarA){
-			Coding.innerHTML ='var A = ~'+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A >> B; <br><i>console</i>.log(hasil);';
-			hasil = ~VarA >> VarB;
-			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Coding.innerHTML =`${textCodingCB.VarA} ${textHasil.rightShift}`;
+			Value.innerHTML = `${textPembukaHasil} ${~VarA >> VarB} ${textPenutupHasil}`;
 			form.reset();
 		}else if(CBVarB){
-			Coding.innerHTML ='var A = '+ VarA +';<br> var B = ~'+ VarB +'; <br><br> var hasil = A >> B; <br><i>console</i>.log(hasil);';
-			hasil = VarA >> ~VarB;
-			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Coding.innerHTML =`${textCodingCB.VarB} ${textHasil.rightShift}`;
+			Value.innerHTML = `${textPembukaHasil} ${VarA >> ~VarB} ${textPenutupHasil}`;
 			form.reset();
 		}else{
-			Coding.innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A >> B; <br><i>console</i>.log(hasil);';
-			hasil = VarA >> VarB;
-			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.rightShift}`;
+			Value.innerHTML = `${textPembukaHasil} ${VarA >> VarB} ${textPenutupHasil}`;
 			form.reset();
 		}
 	}else if(JOperator == ">>>"){
 		if(CBVarA && CBVarB){
-			Coding.innerHTML ='var A = ~'+ VarA +';<br> var B = ~'+ VarB +'; <br><br> var hasil = A >>> B; <br><i>console</i>.log(hasil);';
-			hasil = ~VarA >>> ~VarB;
-			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Coding.innerHTML =`${textCodingCB.CBVarAB} ${textHasil.rightShiftU}`;
+			Value.innerHTML = `${textPembukaHasil} ${~VarA >>> ~VarB} ${textPenutupHasil}`;
 			form.reset();
 		}else if(CBVarA){
-			Coding.innerHTML ='var A = ~'+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A >>> B; <br><i>console</i>.log(hasil);';
-			hasil = ~VarA >>> VarB;
-			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Coding.innerHTML =`${textCodingCB.VarA} ${textHasil.rightShiftU}`;
+			Value.innerHTML = `${textPembukaHasil} ${~VarA >>> VarB} ${textPenutupHasil}`;
 			form.reset();
 		}else if(CBVarB){
-			Coding.innerHTML ='var A = '+ VarA +';<br> var B = ~'+ VarB +'; <br><br> var hasil = A >>> B; <br><i>console</i>.log(hasil);';
-			hasil = VarA >>> ~VarB;
-			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Coding.innerHTML =`${textCodingCB.VarB} ${textHasil.rightShiftU}`;
+			Value.innerHTML = `${textPembukaHasil} ${VarA >>> ~VarB} ${textPenutupHasil}`;
 			form.reset();
 		}else{
-			Coding.innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = A >>> B; <br><i>console</i>.log(hasil);';
-			hasil = VarA >>> VarB;
-			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.rightShiftU}`;
+			Value.innerHTML = `${textPembukaHasil} ${VarA >>> VarB} ${textPenutupHasil}`;
 			form.reset();
 		}
 	}
@@ -791,8 +781,6 @@ function OpBitwise(){
 
 // Operator Ternary
 function OpTernary(){
-	var hasil;
-
 	var form = document.getElementById('formTernary');
 	var VarA = document.getElementById('formTernary').TernaryVarA.value;
 	var VarB = document.getElementById('formTernary').TernaryVarB.value;
@@ -802,183 +790,169 @@ function OpTernary(){
 	var Coding = document.getElementById('CodingTernary');
 	var Value = document.getElementById('TernaryValue');
 
+	let textHasil = {
+		lBesar : "let Hasil = (A > B) ? true : false; <br><i>console</i>.log(Hasil);",
+		lKecil : "let Hasil = (A < B) ? true : false; <br><i>console</i>.log(Hasil);",
+		lBesarSD : "let Hasil = (A >= B) ? true : false; <br><i>console</i>.log(Hasil);",
+		lKecilSD : "let Hasil = (A <= B) ? true : false; <br><i>console</i>.log(Hasil);",
+		samaDengan2 : "let Hasil = (A == B) ? true : false; <br><i>console</i>.log(Hasil);",
+		samaDengan3 : "let Hasil = (A === B) ? true : false; <br><i>console</i>.log(Hasil);",
+		tSD1 : "let Hasil = (A != B) ? true : false; <br><i>console</i>.log(Hasil);",
+		tSD2 : "let Hasil = (A !== B) ? true : false; <br><i>console</i>.log(Hasil);"
+	}
+
+	let textCodingCB = {
+		CBVarAB : `let A = "${VarA}"; <br> let B = "${VarB}"; <br><br>`,
+		CBVarA : `let A = "${VarA}"; <br> let B = ${VarB}; <br><br>`,
+		CBVarB : `let A = ${VarA}; <br> let B = "${VarB}"; <br><br>`,
+		NonCB : `let A = ${VarA}; <br> let B = ${VarB}; <br><br>`
+	}
+
 	var c = Number(VarA);
 	var d = Number(VarB);
 
 	if(JOperator == ">"){
 		if(CBVarA && CBVarB){
-			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> var hasil = (a > b) ? true : false; <br><i>console</i>.log(hasil);';
-			hasil = (VarA > VarB) ? true : false;
-			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Coding.innerHTML =`${textCodingCB.CBVarAB} ${textHasil.lBesar}`;
+			Value.innerHTML = `${textPembukaHasil} ${(VarA > VarB) ? true : false} ${textPenutupHasil}`;
 			form.reset();
 		}else if(CBVarB){
-			Coding.innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> var hasil = (a > b) ? true : false; <br><i>console</i>.log(hasil);';
-			hasil = (c > VarB) ? true : false;
-			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Coding.innerHTML =`${textCodingCB.CBVarB} ${textHasil.lBesar}`;
+			Value.innerHTML = `${textPembukaHasil} ${(c > VarB) ? true : false} ${textPenutupHasil}`;
 			form.reset();
 		}else if(CBVarA){
-			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> var hasil = (a > b) ? true : false; <br><i>console</i>.log(hasil);';
-			hasil = (VarA > d) ? true : false;
-			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Coding.innerHTML =`${textCodingCB.CBVarA} ${textHasil.lBesar}`;
+			Value.innerHTML = `${textPembukaHasil} ${(VarA > d) ? true : false} ${textPenutupHasil}`;
 			form.reset();
 		}else{
-			Coding.innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = (a > b) ? true : false; <br><i>console</i>.log(hasil);';
-			hasil = (c > d) ? true : false;
-			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.lBesar}`;
+			Value.innerHTML = `${textPembukaHasil} ${(c > d) ? true : false} ${textPenutupHasil}`;
 			form.reset();
 		}
 	}else if(JOperator == "<"){
 		if(CBVarA && CBVarB){
-			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> var hasil = (a < b) ? true : false; <br><i>console</i>.log(hasil);';
-			hasil = (VarA < VarB) ? true : false;
-			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Coding.innerHTML =`${textCodingCB.CBVarAB} ${textHasil.lKecil}`;
+			Value.innerHTML = `${textPembukaHasil} ${(VarA < VarB) ? true : false} ${textPenutupHasil}`;
 			form.reset();
 		}else if(CBVarB){
-			Coding.innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> var hasil = (a < b) ? true : false; <br><i>console</i>.log(hasil);';
-			hasil = (c < VarB) ? true : false;
-			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Coding.innerHTML =`${textCodingCB.CBVarB} ${textHasil.lKecil}`;
+			Value.innerHTML = `${textPembukaHasil} ${(c < VarB) ? true : false} ${textPenutupHasil}`;
 			form.reset();
 		}else if(CBVarA){
-			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> var hasil = (a < b) ? true : false; <br><i>console</i>.log(hasil);';
-			hasil = (VarA < d) ? true : false;
-			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Coding.innerHTML =`${textCodingCB.CBVarA} ${textHasil.lKecil}`;
+			Value.innerHTML = `${textPembukaHasil} ${(VarA < d) ? true : false} ${textPenutupHasil}`;
 			form.reset();
 		}else{
-			Coding.innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = (a < b) ? true : false; <br><i>console</i>.log(hasil);';
-			hasil = (c < d) ? true : false;
-			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.lKecil}`;
+			Value.innerHTML = `${textPembukaHasil} ${(c < d) ? true : false} ${textPenutupHasil}`;
 			form.reset();
 		}
 	}else if(JOperator == ">="){
 		if(CBVarA && CBVarB){
-			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> var hasil = (a >= b) ? true : false; <br><i>console</i>.log(hasil);';
-			hasil = (VarA >= VarB) ? true : false;
-			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Coding.innerHTML =`${textCodingCB.CBVarAB} ${textHasil.lBesarSD}`;
+			Value.innerHTML = `${textPembukaHasil} ${(VarA >= VarB) ? true : false} ${textPenutupHasil}`;
 			form.reset();
 		}else if(CBVarB){
-			Coding.innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> var hasil = (a >= b) ? true : false; <br><i>console</i>.log(hasil);';
-			hasil = (c >= VarB) ? true : false;
-			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Coding.innerHTML =`${textCodingCB.CBVarB} ${textHasil.lBesarSD}`;
+			Value.innerHTML = `${textPembukaHasil} ${(c >= VarB) ? true : false} ${textPenutupHasil}`;
 			form.reset();
 		}else if(CBVarA){
-			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> var hasil = (a >= b) ? true : false; <br><i>console</i>.log(hasil);';
-			hasil = (VarA >= d) ? true : false;
-			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Coding.innerHTML =`${textCodingCB.CBVarA} ${textHasil.lBesarSD}`;
+			Value.innerHTML = `${textPembukaHasil} ${(VarA >= d) ? true : false} ${textPenutupHasil}`;
 			form.reset();
 		}else{
-			Coding.innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = (a >= b) ? true : false; <br><i>console</i>.log(hasil);';
-			hasil = (c >= d) ? true : false;
-			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.lBesarSD}`;
+			Value.innerHTML = `${textPembukaHasil} ${(c >= d) ? true : false} ${textPenutupHasil}`;
 			form.reset();
 		}
 	}else if(JOperator == "<="){
 		if(CBVarA && CBVarB){
-			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> var hasil = (a <= b) ? true : false; <br><i>console</i>.log(hasil);';
-			hasil = (VarA <= VarB) ? true : false;
-			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Coding.innerHTML =`${textCodingCB.CBVarAB} ${textHasil.lKecilSD}`;
+			Value.innerHTML = `${textPembukaHasil} ${(VarA <= VarB) ? true : false} ${textPenutupHasil}`;
 			form.reset();
 		}else if(CBVarB){
-			Coding.innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> var hasil = (a <= b) ? true : false; <br><i>console</i>.log(hasil);';
-			hasil = (c <= VarB) ? true : false;
-			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Coding.innerHTML =`${textCodingCB.CBVarB} ${textHasil.lKecilSD}`;
+			Value.innerHTML = `${textPembukaHasil} ${(c <= VarB) ? true : false} ${textPenutupHasil}`;
 			form.reset();
 		}else if(CBVarA){
-			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> var hasil = (a <= b) ? true : false; <br><i>console</i>.log(hasil);';
-			hasil = (VarA <= d) ? true : false;
-			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Coding.innerHTML =`${textCodingCB.CBVarA} ${textHasil.lKecilSD}`;
+			Value.innerHTML = `${textPembukaHasil} ${(VarA <= d) ? true : false} ${textPenutupHasil}`;
 			form.reset();
 		}else{
-			Coding.innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = (a <= b) ? true : false; <br><i>console</i>.log(hasil);';
-			hasil = (c <= d) ? true : false;
-			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.lKecilSD}`;
+			Value.innerHTML = `${textPembukaHasil} ${(c <= d) ? true : false} ${textPenutupHasil}`;
 			form.reset();
 		}
 	}else if(JOperator == "=="){
 		if(CBVarA && CBVarB){
-			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> var hasil = (a == b) ? true : false; <br><i>console</i>.log(hasil);';
-			hasil = (VarA == VarB) ? true : false;
-			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Coding.innerHTML =`${textCodingCB.CBVarAB} ${textHasil.samaDengan2}`;
+			Value.innerHTML = `${textPembukaHasil} ${(VarA == VarB) ? true : false} ${textPenutupHasil}`;
 			form.reset();
 		}else if(CBVarB){
-			Coding.innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> var hasil = (a == b) ? true : false; <br><i>console</i>.log(hasil);';
-			hasil = (c == VarB) ? true : false;
-			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Coding.innerHTML =`${textCodingCB.CBVarB} ${textHasil.samaDengan2}`;
+			Value.innerHTML = `${textPembukaHasil} ${(c == VarB) ? true : false} ${textPenutupHasil}`;
 			form.reset();
 		}else if(CBVarA){
-			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> var hasil = (a == b) ? true : false; <br><i>console</i>.log(hasil);';
-			hasil = (VarA == d) ? true : false;
-			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Coding.innerHTML =`${textCodingCB.CBVarA} ${textHasil.samaDengan2}`;
+			Value.innerHTML = `${textPembukaHasil} ${(VarA == d) ? true : false} ${textPenutupHasil}`;
 			form.reset();
 		}else{
-			Coding.innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = (a == b) ? true : false; <br><i>console</i>.log(hasil);';
-			hasil = (c == d) ? true : false;
-			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.samaDengan2}`;
+			Value.innerHTML = `${textPembukaHasil} ${(c == d) ? true : false} ${textPenutupHasil}`;
 			form.reset();
 		}
 	}else if(JOperator == "==="){
 		if(CBVarA && CBVarB){
-			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> var hasil = (a === b) ? true : false; <br><i>console</i>.log(hasil);';
-			hasil = (VarA === VarB) ? true : false;
-			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Coding.innerHTML =`${textCodingCB.CBVarAB} ${textHasil.samaDengan3}`;
+			Value.innerHTML = `${textPembukaHasil} ${(VarA === VarB) ? true : false} ${textPenutupHasil}`;
 			form.reset();
 		}else if(CBVarB){
-			Coding.innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> var hasil = (a === b) ? true : false; <br><i>console</i>.log(hasil);';
-			hasil = (c === VarB) ? true : false;
-			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Coding.innerHTML =`${textCodingCB.CBVarB} ${textHasil.samaDengan3}`;
+			Value.innerHTML = `${textPembukaHasil} ${(c === VarB) ? true : false} ${textPenutupHasil}`;
 			form.reset();
 		}else if(CBVarA){
-			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> var hasil = (a === b) ? true : false; <br><i>console</i>.log(hasil);';
-			hasil = (VarA === d) ? true : false;
-			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Coding.innerHTML =`${textCodingCB.CBVarA} ${textHasil.samaDengan3}`;
+			Value.innerHTML = `${textPembukaHasil} ${(VarA === d) ? true : false} ${textPenutupHasil}`;
 			form.reset();
 		}else{
-			Coding.innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = (a === b) ? true : false; <br><i>console</i>.log(hasil);';
-			hasil = (c === d) ? true : false;
-			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.samaDengan3}`;
+			Value.innerHTML = `${textPembukaHasil} ${(c === d) ? true : false} ${textPenutupHasil}`;
 			form.reset();
 		}
 	}else if(JOperator == "!="){
 		if(CBVarA && CBVarB){
-			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> var hasil = (a != b) ? true : false; <br><i>console</i>.log(hasil);';
-			hasil = (VarA != VarB) ? true : false;
-			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Coding.innerHTML =`${textCodingCB.CBVarAB} ${textHasil.tSD1}`;
+			Value.innerHTML = `${textPembukaHasil} ${(VarA != VarB) ? true : false} ${textPenutupHasil}`;
 			form.reset();
 		}else if(CBVarB){
-			Coding.innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> var hasil = (a != b) ? true : false; <br><i>console</i>.log(hasil);';
-			hasil = (c != VarB) ? true : false;
-			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Coding.innerHTML =`${textCodingCB.CBVarB} ${textHasil.tSD1}`;
+			Value.innerHTML = `${textPembukaHasil} ${(c != VarB) ? true : false} ${textPenutupHasil}`;
 			form.reset();
 		}else if(CBVarA){
-			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> var hasil = (a != b) ? true : false; <br><i>console</i>.log(hasil);';
-			hasil = (VarA != d) ? true : false;
-			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Coding.innerHTML =`${textCodingCB.CBVarA} ${textHasil.tSD1}`;
+			Value.innerHTML = `${textPembukaHasil} ${(VarA != d) ? true : false} ${textPenutupHasil}`;
 			form.reset();
 		}else{
-			Coding.innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = (a != b) ? true : false; <br><i>console</i>.log(hasil);';
-			hasil = (c != d) ? true : false;
-			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.tSD1}`;
+			Value.innerHTML = `${textPembukaHasil} ${(c != d) ? true : false} ${textPenutupHasil}`;
 			form.reset();
 		}
 	}else if(JOperator == "!=="){
 		if(CBVarA && CBVarB){
-			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = "'+ VarB +'"; <br><br> var hasil = (a !== b) ? true : false; <br><i>console</i>.log(hasil);';
-			hasil = (VarA !== VarB) ? true : false;
-			Value.innerHTML = '<h3 class="mt-3">Console :</h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Coding.innerHTML =`${textCodingCB.CBVarAB} ${textHasil.tSD2}`;
+			Value.innerHTML = `${textPembukaHasil} ${(VarA !== VarB) ? true : false} ${textPenutupHasil}`;
 			form.reset();
 		}else if(CBVarB){
-			Coding.innerHTML ='var A = '+ VarA +';<br> var B = "'+ VarB +'"; <br><br> var hasil = (a !== b) ? true : false; <br><i>console</i>.log(hasil);';
-			hasil = (c !== VarB) ? true : false;
-			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Coding.innerHTML =`${textCodingCB.CBVarB} ${textHasil.tSD2}`;
+			Value.innerHTML = `${textPembukaHasil} ${(c !== VarB) ? true : false} ${textPenutupHasil}`;
 			form.reset();
 		}else if(CBVarA){
-			Coding.innerHTML ='var A = "'+ VarA +'";<br> var B = '+ VarB +'; <br><br> var hasil = (a !== b) ? true : false; <br><i>console</i>.log(hasil);';
-			hasil = (VarA !== d) ? true : false;
-			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Coding.innerHTML =`${textCodingCB.CBVarA} ${textHasil.tSD2}`;
+			Value.innerHTML = `${textPembukaHasil} ${(VarA !== d) ? true : false} ${textPenutupHasil}`;
 			form.reset();
 		}else{
-			Coding.innerHTML ='var A = '+ VarA +';<br> var B = '+ VarB +'; <br><br> var hasil = (a !== b) ? true : false; <br><i>console</i>.log(hasil);';
-			hasil = (c !== d) ? true : false;
-			Value.innerHTML = '<h3 class="mt-3">Console :<h3><h4 class="hasil"> '+ hasil +' </h4>';
+			Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.tSD2}`;
+			Value.innerHTML = `${textPembukaHasil} ${(c !== d) ? true : false} ${textPenutupHasil}`;
 			form.reset();
 		}
 	}	
