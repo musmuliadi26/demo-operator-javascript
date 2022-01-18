@@ -1,4 +1,4 @@
-let textPembukaHasil = '<h3 class="mt-3">Console :</h3><h4 class="hasil">';
+ let textPembukaHasil = '<h3 class="mt-3">Console :</h3><h4 class="hasil">';
 let textPenutupHasil = '</h4>';
 
 // Operator Aritmatika
