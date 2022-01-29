@@ -18,7 +18,7 @@
   </head>
   <body>
     <!-- navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm fixed-top">
       <div class="container">
         <a class="navbar-brand fs-6" href="#">Demo Operator Javascript</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,10 +50,10 @@
           <div class="col-md-6">
             <h3>Penjelasan :</h3>
             <p>Operator aritmatika merupakan operator untuk melakukan operasi aritmatika seperti penjumlahan, pengurangan, pembagian, perkalian, dsb.</p>
-            <p>Untuk melakukan operasi perkalian, kita menggunakan simbol asterik *.</p>
-            <p>Jangan gunakan x, karena simbol x bukan termasuk dalam operator di dalam pemrograman.</p>
-            <p>Lalu untuk pemangkatan kita menggunakan asterik ganda **.</p>
-            <p>Untuk pembagian, kita gunakan simbol garis miring /.</p>
+            <p>Untuk melakukan operasi perkalian, kita menggunakan simbol asterik <span class="red">*</span>.</p>
+            <p>Jangan gunakan <span class="red">x</span>, karena simbol <span class="red">x</span> bukan termasuk dalam operator di dalam pemrograman.</p>
+            <p>Lalu untuk pemangkatan kita menggunakan asterik ganda <span class="red">**</span>.</p>
+            <p>Untuk pembagian, kita gunakan simbol garis miring <span class="red">/</span>.</p>
           </div>
           <div class="col-md-6">
             <table class="table text-center table-striped table-hover">
@@ -97,12 +97,12 @@
             <h3>Demo :</h3>
             <form id="formAritmatika" name="formAritmatika" onsubmit="return false" class="mb-3">
               <div class="mb-3">
-                <label for="AritmatikaVarA" class="form-label">Variabel A :</label>
+                <label class="form-label">Variabel A :</label>
                 <div class="form-check">
-                  <input type="checkbox" class="form-check-input" id="CBAritmatikaVarA">
-                  <label class="form-check-label" for="CBAritmatikaVarA">String</label>
+                  <input type="checkbox" class="form-check-input" id="CBVarA">
+                  <label class="form-check-label">String</label>
                 </div>
-                <input type="text" class="form-control" id="AritmatikaVarA">
+                <input type="text" class="form-control" id="VarA">
               </div>
               <div class="mb-3">
                 <label for="SelOpAritmatika" class="form-label">Jenis Operator :</label>
@@ -117,14 +117,14 @@
                 </select>
               </div>
               <div class="mb-3">
-                <label for="AritmatikaVarB" class="form-label">Variabel B :</label>
+                <label class="form-label">Variabel B :</label>
                 <div class="form-check">
-                  <input type="checkbox" class="form-check-input" id="CBAritmatikaVarB">
-                  <label class="form-check-label" for="CBAritmatikaVarB">String</label>
+                  <input type="checkbox" class="form-check-input" id="CBVarB">
+                  <label class="form-check-label">String</label>
                 </div>
-                <input type="text" class="form-control" id="AritmatikaVarB">
+                <input type="text" class="form-control" id="VarB">
               </div>
-              <input type="submit" value="Jalankan" name="" class="btn btn-secondary" onclick="OpAritmatika();">
+              <input type="submit" value="Jalankan" name="" class="btn btn-secondary" onclick="aritmatika.Operator(document.getElementById('SelOpAritmatika').value)">
             </form>
           </div>
           <div class="col-md-6">
@@ -199,12 +199,12 @@
             <h3>Demo :</h3>
             <form id="formPenugasan" name="formPenugasan" onsubmit="return false" class="mb-3">
               <div class="mb-3">
-                <label for="PenugasanVarA" class="form-label">Variabel A :</label>
+                <label class="form-label">Variabel A :</label>
                 <div class="form-check">
-                  <input type="checkbox" class="form-check-input" id="CBPenugasanVarA">
-                  <label class="form-check-label" for="CBPenugasanVarA">String</label>
+                  <input type="checkbox" class="form-check-input" id="CBVarA">
+                  <label class="form-check-label">String</label>
                 </div>
-                <input type="text" class="form-control" id="PenugasanVarA">
+                <input type="text" class="form-control" id="VarA">
               </div>
               <div class="mb-3">
                 <label for="SelOpPenugasan" class="form-label">Jenis Operator :</label>
@@ -219,14 +219,14 @@
                 </select>
               </div>
               <div class="mb-3">
-                <label for="PenugasanVarB" class="form-label">Variabel B :</label>
+                <label class="form-label">Variabel B :</label>
                 <div class="form-check">
-                  <input type="checkbox" class="form-check-input" id="CBPenugasanVarB">
-                  <label class="form-check-label" for="CBPenugasanVarB">String</label>
+                  <input type="checkbox" class="form-check-input" id="CBVarB">
+                  <label class="form-check-label">String</label>
                 </div>
-                <input type="text" class="form-control" id="PenugasanVarB">
+                <input type="text" class="form-control" id="VarB">
               </div>
-              <input type="submit" value="Jalankan" name="" class="btn btn-secondary" onclick="OpPenugasan();">
+              <input type="submit" value="Jalankan" name="" class="btn btn-secondary" onclick="penugasan.Operator(document.getElementById('SelOpPenugasan').value)">
             </form>
           </div>
           <div class="col-md-6">
@@ -252,8 +252,8 @@
           <div class="col-md-6">
             <h3>Penjelasan :</h3>
             <p>Operator relasi atau perbandingan adalah operator yang digunakan untuk membandingkan dua nilai.</p>
-            <p>Operator perbandingan akan menghasilkan sebuah nilai boolean true dan false.</p>
-            <p>Perbandingan dengan menggunakan simbol == hanya akan membandingkan nilai saja. Sedangkan yang menggunakan === akan membandingkan dengan tipe data juga.</p>
+            <p>Operator perbandingan akan menghasilkan sebuah nilai boolean <span class="red">true</span> dan <span class="red">false</span>.</p>
+            <p>Perbandingan dengan menggunakan simbol <span class="red">==</span> hanya akan membandingkan nilai saja. Sedangkan yang menggunakan <span class="red">===</span> akan membandingkan dengan tipe data juga.</p>
           </div>
           <div class="col-md-6">
             <table class="table text-center table-striped table-hover">
@@ -297,12 +297,12 @@
             <h3>Demo :</h3>
             <form id="formPerbandingan" name="formPerbandingan" onsubmit="return false" class="mb-3">
               <div class="mb-3">
-                <label for="PerbandinganVarA" class="form-label">Variabel A :</label>
+                <label class="form-label">Variabel A :</label>
                 <div class="form-check">
-                  <input type="checkbox" class="form-check-input" id="CBPerbandinganVarA">
-                  <label class="form-check-label" for="CBPerbandinganVarA">String</label>
+                  <input type="checkbox" class="form-check-input" id="CBVarA">
+                  <label class="form-check-label">String</label>
                 </div>
-                <input type="text" class="form-control" id="PerbandinganVarA">
+                <input type="text" class="form-control" id="VarA">
               </div>
               <div class="mb-3">
                 <label for="SelOpPerbandingan" class="form-label">Jenis Operator :</label>
@@ -319,14 +319,14 @@
                 </select>
               </div>
               <div class="mb-3">
-                <label for="PerbandinganVarB" class="form-label">Variabel B :</label>
+                <label class="form-label">Variabel B :</label>
                 <div class="form-check">
-                  <input type="checkbox" class="form-check-input" id="CBPerbandinganVarB">
-                  <label class="form-check-label" for="CBPerbandinganVarB">String</label>
+                  <input type="checkbox" class="form-check-input" id="CBVarB">
+                  <label class="form-check-label">String</label>
                 </div>
-                <input type="text" class="form-control" id="PerbandinganVarB">
+                <input type="text" class="form-control" id="VarB">
               </div>
-              <input type="submit" value="Jalankan" name="" class="btn btn-secondary" onclick="OpPerbandingan();">
+              <input type="submit" value="Jalankan" name="" class="btn btn-secondary" onclick="perbandingan.Operator(document.getElementById('SelOpPerbandingan').value)">
             </form>
           </div>
           <div class="col-md-6">
@@ -351,7 +351,7 @@
         <div class="row justify-content-center mb-5">
           <div class="col-md-6">
             <h3>Penjelasan :</h3>
-            <p>Operator logika digunakan untuk melakukan operasi terhadap dua nilai boolean.</p>
+            <p>Operator logika digunakan untuk melakukan operasi terhadap dua nilai <span class="red">boolean</span>.</p>
           </div>
           <div class="col-md-6">
             <table class="table text-center table-striped table-hover">
@@ -383,12 +383,12 @@
             <h3>Demo :</h3>
             <form id="formLogika" name="formLogika" onsubmit="return false" class="mb-3">
               <div class="mb-3">
-                <label for="LogikaVarA" class="form-label">Variabel A :</label>
+                <label class="form-label">Variabel A :</label>
                 <div class="form-check">
-                  <input type="checkbox" class="form-check-input" id="CBLogikaVarA">
-                  <label class="form-check-label" for="CBLogikaVarA">Negasi/Kebalikan</label>
+                  <input type="checkbox" class="form-check-input" id="CBVarA">
+                  <label class="form-check-label">Negasi/Kebalikan</label>
                 </div>
-                <select id="LogikaVarA" class="form-select">
+                <select id="VarA" class="form-select">
                   <option selected>Pilih boolean variabel A</option>
                   <option value="true">true</option>
                   <option value="false">false</option>
@@ -403,18 +403,18 @@
                 </select>
               </div>
               <div class="mb-3">
-                <label for="LogikaVarB" class="form-label">Variabel B :</label>
+                <label class="form-label">Variabel B :</label>
                 <div class="form-check">
-                  <input type="checkbox" class="form-check-input" id="CBLogikaVarB">
-                  <label class="form-check-label" for="CBLogikaVarB">Negasi/Kebalikan</label>
+                  <input type="checkbox" class="form-check-input" id="CBVarB">
+                  <label class="form-check-label">Negasi/Kebalikan</label>
                 </div>
-                <select id="LogikaVarB" class="form-select">
+                <select id="VarB" class="form-select">
                   <option selected>Pilih boolean variabel B</option>
                   <option value="true">true</option>
                   <option value="false">false</option>
                 </select>
               </div>
-              <input type="submit" value="Jalankan" name="" class="btn btn-secondary" onclick="OpLogika();">
+              <input type="submit" value="Jalankan" name="" class="btn btn-secondary" onclick="logika.Operator(document.getElementById('SelOpLogika').value)">
             </form>
           </div>
           <div class="col-md-6">
@@ -440,7 +440,7 @@
           <div class="col-md-6">
             <h3>Penjelasan :</h3>
             <p>Operator bitwise merupkan operator yang digunakan untuk operasi berdasarkan bit (biner).</p>
-            <p>Operator ini berlaku untuk tipe data int, long, short, char, dan byte.</p>
+            <p>Operator ini berlaku untuk tipe data <span class="red">int</span>, <span class="red">long</span>, <span class="red">short</span>, <span class="red">char</span>, dan <span class="red">byte</span>.</p>
             <p>Konsepnya hampir sama dengan opeartor Logika. Bedanya, Bitwise digunakan untuk biner.</p>
           </div>
           <div class="col-md-6">
@@ -493,12 +493,12 @@
             <h3>Demo :</h3>
             <form id="formBitwise" name="formBitwise" onsubmit="return false" class="mb-3">
               <div class="mb-3">
-                <label for="BitwiseVarA" class="form-label">Variabel A :</label>
+                <label class="form-label">Variabel A :</label>
                 <div class="form-check">
-                  <input type="checkbox" class="form-check-input" id="CBBitwiseVarA">
-                  <label class="form-check-label" for="CBBitwiseVarA">Negasi/Kebalikan</label>
+                  <input type="checkbox" class="form-check-input" id="CBVarA">
+                  <label class="form-check-label">Negasi/Kebalikan</label>
                 </div>
-                <input type="number" class="form-control" id="BitwiseVarA">
+                <input type="number" class="form-control" id="VarA">
               </div>
               <div class="mb-3">
                 <label for="SelOpBitwise" class="form-label">Jenis Operator :</label>
@@ -513,14 +513,14 @@
                 </select>
               </div>
               <div class="mb-3">
-                <label for="BitwiseVarB" class="form-label">Variabel B :</label>
+                <label class="form-label">Variabel B :</label>
                 <div class="form-check">
-                  <input type="checkbox" class="form-check-input" id="CBBitwiseVarB">
-                  <label class="form-check-label" for="CBBitwiseVarB">Negasi/Kebalikan</label>
+                  <input type="checkbox" class="form-check-input" id="CBVarB">
+                  <label class="form-check-label">Negasi/Kebalikan</label>
                 </div>
-                <input type="number" class="form-control" id="BitwiseVarB">
+                <input type="number" class="form-control" id="VarB">
               </div>
-              <input type="submit" value="Jalankan" name="" class="btn btn-secondary" onclick="OpBitwise();">
+              <input type="submit" value="Jalankan" name="" class="btn btn-secondary" onclick="bitwise.Operator(document.getElementById('SelOpBitwise').value)">
             </form>
           </div>
           <div class="col-md-6">
@@ -548,15 +548,15 @@
             <p>Operator ternary merupakan operator yang teridiri dari tiga bagian.</p>
             <p>Operator-operator sebelumnya hanya dua bagian saja, yaitu: bagian kiri dan kanan. Ini disebut operator binary.</p>
             <p>Sementara operator ternary ada bagian kiri, tengah, dan kanan.</p>
-            <p>bagian kiri <b>< operator ></b> bagian tengah <b>< operator ></b> bagian kanan</p>
+            <p>bagian kiri <span class="red">< operator ></span> bagian tengah <span class="red">< operator ></span> bagian kanan</p>
             <p>Opertor ternary pada Javascript, biasanya digunakan untuk membuat sebuah percabangan if/else.</p>
           </div>
           <div class="col-md-6">
             <br><br>
-            <p>Simbol opertor ternary terdiri dari tanda tanya dan titik dua (?:).</p>
-            <p><b>(kodisi)</b> ? "benar" : "salah"</p>
-            <p>Perhatikan! <b>(kondisi)</b> dapat kita isi dengan ekspresi yang menghasilkan nilai true dan false.</p>
-            <p>Apabila kondisi bernilai true, maka "benar" yang akan dipilih dan sebaliknya—apabila false—maka "salah" yang akan dipilih.</p>
+            <p>Simbol opertor ternary terdiri dari tanda tanya dan titik dua (<span class="red">(?:)</span>).</p>
+            <p><span class="red">< kodisi ></span> ? <span class="red">"benar"</span> : <span class="red">"salah"</span></p>
+            <p>Perhatikan! <span class="red">< kondisi ></span> dapat kita isi dengan ekspresi yang menghasilkan nilai <span class="red">true</span> dan <span class="red">false</span>.</p>
+            <p>Apabila kondisi bernilai <span class="red">true</span>, maka <span class="red">"benar"</span> yang akan dipilih dan sebaliknya apabila <span class="red">false</span> maka <span class="red">"salah"</span> yang akan dipilih.</p>
           </div>
         </div>
         
@@ -565,12 +565,12 @@
             <h3>Demo :</h3>
             <form id="formTernary" name="formTernary" onsubmit="return false" class="mb-3">
               <div class="mb-3">
-                <label for="TernaryVarA" class="form-label">Variabel A :</label>
+                <label class="form-label">Variabel A :</label>
                 <div class="form-check">
-                  <input type="checkbox" class="form-check-input" id="CBTernaryVarA">
-                  <label class="form-check-label" for="CBTernaryVarA">String</label>
+                  <input type="checkbox" class="form-check-input" id="CBVarA">
+                  <label class="form-check-label">String</label>
                 </div>
-                <input type="text" class="form-control" id="TernaryVarA">
+                <input type="text" class="form-control" id="VarA">
               </div>
               <div class="mb-3">
                 <label for="SelOpTernary" class="form-label">Jenis Operator :</label>
@@ -587,14 +587,14 @@
                 </select>
               </div>
               <div class="mb-3">
-                <label for="TernaryVarB" class="form-label">Variabel B :</label>
+                <label class="form-label">Variabel B :</label>
                 <div class="form-check">
-                  <input type="checkbox" class="form-check-input" id="CBTernaryVarB">
-                  <label class="form-check-label" for="CBTernaryVarB">String</label>
+                  <input type="checkbox" class="form-check-input" id="CBVarB">
+                  <label class="form-check-label">String</label>
                 </div>
-                <input type="text" class="form-control" id="TernaryVarB">
+                <input type="text" class="form-control" id="VarB">
               </div>
-              <input type="submit" value="Jalankan" name="" class="btn btn-secondary" onclick="OpTernary();">
+              <input type="submit" value="Jalankan" name="" class="btn btn-secondary" onclick="ternary.Operator(document.getElementById('SelOpTernary').value)">
             </form>
           </div>
           <div class="col-md-6">
@@ -632,7 +632,7 @@
     <!-- end footer -->
 
     <!-- my JS -->
-    <script src="index.js"></script>
+    <script src="index2.js"></script>
     <!-- bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   </body>
