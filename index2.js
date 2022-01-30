@@ -37,38 +37,8 @@ class Logic{
 		}
 
 		const textHasil = {
-			tambah : `let Hasil = A ${operator} B; <br><i>console</i>.log(Hasil);`,
-			kurang : `let Hasil = A ${operator} B; <br><i>console</i>.log(Hasil);`,
-			kali : `let Hasil = A ${operator} B; <br><i>console</i>.log(Hasil);`,
-			pangkat : `let Hasil = A ${operator} B; <br><i>console</i>.log(Hasil);`,
-			bagi : `let Hasil = A ${operator} B; <br><i>console</i>.log(Hasil);`,
-			modulus : `let Hasil = A ${operator} B; <br><i>console</i>.log(Hasil);`,
-
-			lBesar : "let Hasil = A > B; <br><i>console</i>.log(Hasil);",
-			lKecil : "let Hasil = A < B; <br><i>console</i>.log(Hasil);",
-			lBesarSD : "let Hasil = A >= B; <br><i>console</i>.log(Hasil);",
-			lKecilSD : "let Hasil = A <= B; <br><i>console</i>.log(Hasil);",
-			samaDengan2 : "let Hasil = A == B; <br><i>console</i>.log(Hasil);",
-			samaDengan3 : "let Hasil = A === B; <br><i>console</i>.log(Hasil);",
-			tSD1 : "let Hasil = A != B; <br><i>console</i>.log(Hasil);",
-			tSD2 : "let Hasil = A !== B; <br><i>console</i>.log(Hasil);",
-
-			and : `let Hasil = A ${operator} B; <br><i>console</i>.log(Hasil);`,
-			or : `let Hasil = A ${operator} B; <br><i>console</i>.log(Hasil);`,
-
-			xor : "let Hasil = A ^ B; <br><i>console</i>.log(Hasil);",
-			rightShift : "let Hasil = A >> B; <br><i>console</i>.log(Hasil);",
-			leftShift : "let Hasil = A << B; <br><i>console</i>.log(Hasil);",
-			rightShiftU : "let Hasil = A >>> B; <br><i>console</i>.log(Hasil);",
-
-			lBesar : "let Hasil = (A > B) ? true : false; <br><i>console</i>.log(Hasil);",
-			lKecil : "let Hasil = (A < B) ? true : false; <br><i>console</i>.log(Hasil);",
-			lBesarSD : "let Hasil = (A >= B) ? true : false; <br><i>console</i>.log(Hasil);",
-			lKecilSD : "let Hasil = (A <= B) ? true : false; <br><i>console</i>.log(Hasil);",
-			samaDengan2 : "let Hasil = (A == B) ? true : false; <br><i>console</i>.log(Hasil);",
-			samaDengan3 : "let Hasil = (A === B) ? true : false; <br><i>console</i>.log(Hasil);",
-			tSD1 : "let Hasil = (A != B) ? true : false; <br><i>console</i>.log(Hasil);",
-			tSD2 : "let Hasil = (A !== B) ? true : false; <br><i>console</i>.log(Hasil);"
+			hasil : `let Hasil = A ${operator} B; <br><i>console</i>.log(Hasil);`,
+			hasilTernary : `let Hasil = (A ${operator} B) ? true : false; <br><i>console</i>.log(Hasil);`
 		}
 
 		const textPembukaHasil = '<h3 class="mt-3">Console :</h3><h4 class="hasil">';
@@ -80,109 +50,109 @@ class Logic{
 		if(this.value == "aritmatika"){
 			if (operator == "+") {
 				if(CBVarA && CBVarB){
-					Coding.innerHTML = `${textCodingCB.CBVarAB} ${textHasil.tambah}`;
+					Coding.innerHTML = `${textCodingCB.CBVarAB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} "${VarA + VarB}" ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarB){
-					Coding.innerHTML = `${textCodingCB.CBVarB} ${textHasil.tambah}`;
+					Coding.innerHTML = `${textCodingCB.CBVarB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} "${c + VarB}" ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarA){
-					Coding.innerHTML = `${textCodingCB.CBVarA} ${textHasil.tambah}`;
+					Coding.innerHTML = `${textCodingCB.CBVarA} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} "${VarA + d}" ${textPenutupHasil}`;
 					form.reset();
 				}else{
-					Coding.innerHTML = `${textCodingCB.NonCB} ${textHasil.tambah}`;
+					Coding.innerHTML = `${textCodingCB.NonCB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${c + d} ${textPenutupHasil}`;
 					form.reset();
 				}
 			}else if(operator == "-") {
 				if(CBVarA && CBVarB){
-					Coding.innerHTML = `${textCodingCB.CBVarAB} ${textHasil.kurang}`;
+					Coding.innerHTML = `${textCodingCB.CBVarAB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${VarA - VarB} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarB){
-					Coding.innerHTML = `${textCodingCB.CBVarB} ${textHasil.kurang}`;
+					Coding.innerHTML = `${textCodingCB.CBVarB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${c - VarB} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarA){
-					Coding.innerHTML = `${textCodingCB.CBVarA} ${textHasil.kurang}`;
+					Coding.innerHTML = `${textCodingCB.CBVarA} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${VarA - d} ${textPenutupHasil}`;
 					form.reset();
 				}else{
-					Coding.innerHTML = `${textCodingCB.NonCB} ${textHasil.kurang}`;
+					Coding.innerHTML = `${textCodingCB.NonCB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${c - d} ${textPenutupHasil}`;
 					form.reset();
 				}
 			}else if(operator == "*") {
 				if(CBVarA && CBVarB){
-					Coding.innerHTML = `${textCodingCB.CBVarAB} ${textHasil.kali}`;
+					Coding.innerHTML = `${textCodingCB.CBVarAB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${VarA * VarB} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarB){
-					Coding.innerHTML = `${textCodingCB.CBVarB} ${textHasil.kali}`;
+					Coding.innerHTML = `${textCodingCB.CBVarB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${c * VarB} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarA){
-					Coding.innerHTML = `${textCodingCB.CBVarA} ${textHasil.kali}`;
+					Coding.innerHTML = `${textCodingCB.CBVarA} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${VarA * d} ${textPenutupHasil}`;
 					form.reset();
 				}else{
-					Coding.innerHTML = `${textCodingCB.NonCB} ${textHasil.kali}`;
+					Coding.innerHTML = `${textCodingCB.NonCB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${c * d} ${textPenutupHasil}`;
 					form.reset();
 				}
 			}else if(operator == "**") {
 				if(CBVarA && CBVarB){
-					Coding.innerHTML = `${textCodingCB.CBVarAB} ${textHasil.pangkat}`;
+					Coding.innerHTML = `${textCodingCB.CBVarAB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${VarA ** VarB} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarB){
-					Coding.innerHTML = `${textCodingCB.CBVarB} ${textHasil.pangkat}`;
+					Coding.innerHTML = `${textCodingCB.CBVarB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${c ** VarB} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarA){
-					Coding.innerHTML = `${textCodingCB.CBVarA} ${textHasil.pangkat}`;
+					Coding.innerHTML = `${textCodingCB.CBVarA} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${VarA ** d} ${textPenutupHasil}`;
 					form.reset();
 				}else{
-					Coding.innerHTML = `${textCodingCB.NonCB} ${textHasil.pangkat}`;
+					Coding.innerHTML = `${textCodingCB.NonCB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${c ** d} ${textPenutupHasil}`;
 					form.reset();
 				}
 			}else if(operator == "/") {
 				if(CBVarA && CBVarB){
-					Coding.innerHTML = `${textCodingCB.CBVarAB} ${textHasil.bagi}`;
+					Coding.innerHTML = `${textCodingCB.CBVarAB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${VarA / VarB} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarB){
-					Coding.innerHTML = `${textCodingCB.CBVarB} ${textHasil.bagi}`;
+					Coding.innerHTML = `${textCodingCB.CBVarB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${c / VarB} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarA){
-					Coding.innerHTML = `${textCodingCB.CBVarA} ${textHasil.bagi}`;
+					Coding.innerHTML = `${textCodingCB.CBVarA} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${VarA / d} ${textPenutupHasil}`;
 					form.reset();
 				}else{
-					Coding.innerHTML = `${textCodingCB.NonCB} ${textHasil.bagi}`;
+					Coding.innerHTML = `${textCodingCB.NonCB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${c / d} ${textPenutupHasil}`;
 					form.reset();
 				}
 			}else{
 				if(CBVarA && CBVarB){
-					Coding.innerHTML = `${textCodingCB.CBVarAB} ${textHasil.modulus}`;
+					Coding.innerHTML = `${textCodingCB.CBVarAB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${VarA % VarB} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarB){
-					Coding.innerHTML = `${textCodingCB.CBVarB} ${textHasil.modulus}`;
+					Coding.innerHTML = `${textCodingCB.CBVarB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${c % VarB} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarA){
-					Coding.innerHTML = `${textCodingCB.CBVarA} ${textHasil.modulus}`;
+					Coding.innerHTML = `${textCodingCB.CBVarA} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${VarA % d} ${textPenutupHasil}`;
 					form.reset();
 				}else{
-					Coding.innerHTML = `${textCodingCB.NonCB} ${textHasil.modulus}`;
+					Coding.innerHTML = `${textCodingCB.NonCB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${c % d} ${textPenutupHasil}`;
 					form.reset();
 				}
@@ -190,109 +160,109 @@ class Logic{
 		}else if(this.value == "penugasan"){
 			if(operator == "+="){
 				if(CBVarA && CBVarB){
-					Coding.innerHTML =`${textCodingCB.CBVarAB} ${textHasil.tambah}`;
+					Coding.innerHTML =`${textCodingCB.CBVarAB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} "${VarA += VarB}" ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarB){
-					Coding.innerHTML =`${textCodingCB.CBVarB} ${textHasil.tambah}`;
+					Coding.innerHTML =`${textCodingCB.CBVarB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} "${c += VarB}" ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarA){
-					Coding.innerHTML =`${textCodingCB.CBVarA} ${textHasil.tambah}`;
+					Coding.innerHTML =`${textCodingCB.CBVarA} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} "${VarA += d}" ${textPenutupHasil}`;
 					form.reset();
 				}else{
-					Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.tambah}`;
+					Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${c += d} ${textPenutupHasil}`;
 					form.reset();
 				}
 			}else if(operator == "-="){
 				if(CBVarA && CBVarB){
-					Coding.innerHTML =`${textCodingCB.CBVarAB} ${textHasil.kurang}`;
+					Coding.innerHTML =`${textCodingCB.CBVarAB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${VarA -= VarB} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarB){
-					Coding.innerHTML =`${textCodingCB.CBVarB}${textHasil.kurang}`;
+					Coding.innerHTML =`${textCodingCB.CBVarB}${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${c -= VarB} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarA){
-					Coding.innerHTML =`${textCodingCB.CBVarA}${textHasil.kurang}`;
+					Coding.innerHTML =`${textCodingCB.CBVarA}${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${VarA -= d} ${textPenutupHasil}`;
 					form.reset();
 				}else{
-					Coding.innerHTML =`${textCodingCB.NonCB}${textHasil.kurang}`;
+					Coding.innerHTML =`${textCodingCB.NonCB}${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${c -= d} ${textPenutupHasil}`;
 					form.reset();
 				}
 			}else if(operator == "*="){
 				if(CBVarA && CBVarB){
-					Coding.innerHTML =`${textCodingCB.CBVarAB} ${textHasil.kali}`;
+					Coding.innerHTML =`${textCodingCB.CBVarAB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${VarA *= VarB} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarB){
-					Coding.innerHTML =`${textCodingCB.CBVarB} ${textHasil.kali}`;
+					Coding.innerHTML =`${textCodingCB.CBVarB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${c *= VarB} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarA){
-					Coding.innerHTML =`${textCodingCB.CBVarA} ${textHasil.kali}`;
+					Coding.innerHTML =`${textCodingCB.CBVarA} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${VarA *= d} ${textPenutupHasil}`;
 					form.reset();
 				}else{
-					Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.kali}`;
+					Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${c *= d} ${textPenutupHasil}`;
 					form.reset();
 				}
 			}else if(operator == "**="){
 				if(CBVarA && CBVarB){
-					Coding.innerHTML =`${textCodingCB.CBVarAB} ${textHasil.pangkat}`;
+					Coding.innerHTML =`${textCodingCB.CBVarAB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${VarA **= VarB} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarB){
-					Coding.innerHTML =`${textCodingCB.CBVarB} ${textHasil.pangkat}`;
+					Coding.innerHTML =`${textCodingCB.CBVarB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${c **= VarB} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarA){
-					Coding.innerHTML =`${textCodingCB.CBVarA} ${textHasil.pangkat}`;
+					Coding.innerHTML =`${textCodingCB.CBVarA} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${VarA **= d} ${textPenutupHasil}`;
 					form.reset();
 				}else{
-					Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.pangkat}`;
+					Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${c **= d} ${textPenutupHasil}`;
 					form.reset();
 				}
 			}else if(operator == "/="){
 				if(CBVarA && CBVarB){
-					Coding.innerHTML =`${textCodingCB.CBVarAB} ${textHasil.bagi}`;
+					Coding.innerHTML =`${textCodingCB.CBVarAB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${VarA /= VarB} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarB){
-					Coding.innerHTML =`${textCodingCB.CBVarB} ${textHasil.bagi}`;
+					Coding.innerHTML =`${textCodingCB.CBVarB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${c /= VarB} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarA){
-					Coding.innerHTML =`${textCodingCB.CBVarA} ${textHasil.bagi}`;
+					Coding.innerHTML =`${textCodingCB.CBVarA} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${VarA /= d} ${textPenutupHasil}`;
 					form.reset();
 				}else{
-					Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.bagi}`;
+					Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${c /= d} ${textPenutupHasil}`;
 					form.reset();
 				}
 			}else if(operator == "%="){
 				if(CBVarA && CBVarB){
-					Coding.innerHTML =`${textCodingCB.CBVarAB} ${textHasil.modulus}`;
+					Coding.innerHTML =`${textCodingCB.CBVarAB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${VarA %= VarB} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarB){
-					Coding.innerHTML =`${textCodingCB.CBVarB} ${textHasil.modulus}`;
+					Coding.innerHTML =`${textCodingCB.CBVarB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${c %= VarB} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarA){
-					Coding.innerHTML =`${textCodingCB.CBVarA} ${textHasil.modulus}`;
+					Coding.innerHTML =`${textCodingCB.CBVarA} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${VarA %= d} ${textPenutupHasil}`;
 					form.reset();
 				}else{
-					Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.modulus}`;
+					Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${c %= d} ${textPenutupHasil}`;
 					form.reset();
 				}
@@ -300,145 +270,145 @@ class Logic{
 		}else if(this.value == "perbandingan"){
 			if(operator == ">"){
 				if(CBVarA && CBVarB){
-					Coding.innerHTML =`${textCodingCB.CBVarAB} ${textHasil.lBesar}`;
+					Coding.innerHTML =`${textCodingCB.CBVarAB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${VarA > VarB} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarB){
-					Coding.innerHTML =`${textCodingCB.CBVarB} ${textHasil.lBesar}`;
+					Coding.innerHTML =`${textCodingCB.CBVarB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${c > VarB} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarA){
-					Coding.innerHTML =`${textCodingCB.CBVarA} ${textHasil.lBesar}`;
+					Coding.innerHTML =`${textCodingCB.CBVarA} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${VarA > d} ${textPenutupHasil}`;
 					form.reset();
 				}else{
-					Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.lBesar}`;
+					Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${c > d} ${textPenutupHasil}`;
 					form.reset();
 				}
 			}else if(operator == "<"){
 				if(CBVarA && CBVarB){
-					Coding.innerHTML =`${textCodingCB.CBVarAB} ${textHasil.lKecil}`;
+					Coding.innerHTML =`${textCodingCB.CBVarAB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${VarA < VarB} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarB){
-					Coding.innerHTML =`${textCodingCB.CBVarB} ${textHasil.lKecil}`;
+					Coding.innerHTML =`${textCodingCB.CBVarB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${c < VarB} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarA){
-					Coding.innerHTML =`${textCodingCB.CBVarA} ${textHasil.lKecil}`;
+					Coding.innerHTML =`${textCodingCB.CBVarA} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${ VarA < d} ${textPenutupHasil}`;
 					form.reset();
 				}else{
-					Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.lKecil}`;
+					Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${c < d} ${textPenutupHasil}`;
 					form.reset();
 				}
 			}else if(operator == ">="){
 				if(CBVarA && CBVarB){
-					Coding.innerHTML =`${textCodingCB.CBVarAB} ${textHasil.lBesarSD}`;
+					Coding.innerHTML =`${textCodingCB.CBVarAB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${VarA >= VarB} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarB){
-					Coding.innerHTML =`${textCodingCB.CBVarB} ${textHasil.lBesarSD}`;
+					Coding.innerHTML =`${textCodingCB.CBVarB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${c >= VarB} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarA){
-					Coding.innerHTML =`${textCodingCB.CBVarA} ${textHasil.lBesarSD}`;
+					Coding.innerHTML =`${textCodingCB.CBVarA} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${VarA >= d} ${textPenutupHasil}`;
 					form.reset();
 				}else{
-					Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.lBesarSD}`;
+					Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${c >= d} ${textPenutupHasil}`;
 					form.reset();
 				}
 			}else if(operator == "<="){
 				if(CBVarA && CBVarB){
-					Coding.innerHTML =`${textCodingCB.CBVarAB} ${textHasil.lKecilSD}`;
+					Coding.innerHTML =`${textCodingCB.CBVarAB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${VarA <= VarB} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarB){
-					Coding.innerHTML =`${textCodingCB.CBVarB} ${textHasil.lKecilSD}`;
+					Coding.innerHTML =`${textCodingCB.CBVarB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${c <= VarB} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarA){
-					Coding.innerHTML =`${textCodingCB.CBVarA} ${textHasil.lKecilSD}`;
+					Coding.innerHTML =`${textCodingCB.CBVarA} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${VarA <= d} ${textPenutupHasil}`;
 					form.reset();
 				}else{
-					Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.lKecilSD}`;
+					Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${c <= d} ${textPenutupHasil}`;
 					form.reset();
 				}
 			}else if(operator == "=="){
 				if(CBVarA && CBVarB){
-					Coding.innerHTML =`${textCodingCB.CBVarAB} ${textHasil.samaDengan2}`;
+					Coding.innerHTML =`${textCodingCB.CBVarAB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${VarA == VarB} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarB){
-					Coding.innerHTML =`${textCodingCB.CBVarB} ${textHasil.samaDengan2}`;
+					Coding.innerHTML =`${textCodingCB.CBVarB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${c == VarB} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarA){
-					Coding.innerHTML =`${textCodingCB.CBVarA} ${textHasil.samaDengan2}`;
+					Coding.innerHTML =`${textCodingCB.CBVarA} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${VarA == d} ${textPenutupHasil}`;
 					form.reset();
 				}else{
-					Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.samaDengan2}`;
+					Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${c == d} ${textPenutupHasil}`;
 					form.reset();
 				}
 			}else if(operator == "==="){
 				if(CBVarA && CBVarB){
-					Coding.innerHTML =`${textCodingCB.CBVarAB} ${textHasil.samaDengan3}`;
+					Coding.innerHTML =`${textCodingCB.CBVarAB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${VarA === VarB} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarB){
-					Coding.innerHTML =`${textCodingCB.CBVarB} ${textHasil.samaDengan3}`;
+					Coding.innerHTML =`${textCodingCB.CBVarB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${c === VarB} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarA){
-					Coding.innerHTML =`${textCodingCB.CBVarA} ${textHasil.samaDengan3}`;
+					Coding.innerHTML =`${textCodingCB.CBVarA} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${VarA === d} ${textPenutupHasil}`;
 					form.reset();
 				}else{
-					Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.samaDengan3}`;
+					Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${c === d} ${textPenutupHasil}`;
 					form.reset();
 				}
 			}else if(operator == "!="){
 				if(CBVarA && CBVarB){
-					Coding.innerHTML =`${textCodingCB.CBVarAB} ${textHasil.tSD1}`;
+					Coding.innerHTML =`${textCodingCB.CBVarAB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${VarA != VarB} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarB){
-					Coding.innerHTML =`${textCodingCB.CBVarB} ${textHasil.tSD1}`;
+					Coding.innerHTML =`${textCodingCB.CBVarB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${c != VarB} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarA){
-					Coding.innerHTML =`${textCodingCB.CBVarA} ${textHasil.tSD1}`;
+					Coding.innerHTML =`${textCodingCB.CBVarA} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${VarA != d} ${textPenutupHasil}`;
 					form.reset();
 				}else{
-					Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.tSD1}`;
+					Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${c != d} ${textPenutupHasil}`;
 					form.reset();
 				}
 			}else if(operator == "!=="){
 				if(CBVarA && CBVarB){
-					Coding.innerHTML =`${textCodingCB.CBVarAB} ${textHasil.tSD2}`;
+					Coding.innerHTML =`${textCodingCB.CBVarAB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${VarA !== VarB} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarB){
-					Coding.innerHTML =`${textCodingCB.CBVarB} ${textHasil.tSD2}`;
+					Coding.innerHTML =`${textCodingCB.CBVarB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${c !== VarB} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarA){
-					Coding.innerHTML =`${textCodingCB.CBVarA} ${textHasil.tSD2}`;
+					Coding.innerHTML =`${textCodingCB.CBVarA} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${VarA !== d} ${textPenutupHasil}`;
 					form.reset();
 				}else{
-					Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.tSD2}`;
+					Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${c !== d} ${textPenutupHasil}`;
 					form.reset();
 				}
@@ -447,73 +417,73 @@ class Logic{
 			if (operator == "&&") {
 				if (CBVarA && CBVarB) {
 					if(VarA == "true" && VarB == "true"){
-						Coding.innerHTML =`${textCodingCBLogika.CBVarAB} ${textHasil.and}`;
+						Coding.innerHTML =`${textCodingCBLogika.CBVarAB} ${textHasil.hasil}`;
 						Value.innerHTML = `${textPembukaHasil} ${!true && !true} ${textPenutupHasil}`;
 						form.reset();
 					}else if(VarA == "true" && VarB == "false"){
-						Coding.innerHTML =`${textCodingCBLogika.CBVarAB} ${textHasil.and}`;
+						Coding.innerHTML =`${textCodingCBLogika.CBVarAB} ${textHasil.hasil}`;
 						Value.innerHTML = `${textPembukaHasil} ${!true && !false} ${textPenutupHasil}`;
 						form.reset();
 					}else if(VarA == "false" && VarB == "true"){
-						Coding.innerHTML =`${textCodingCBLogika.CBVarAB} ${textHasil.and}`;
+						Coding.innerHTML =`${textCodingCBLogika.CBVarAB} ${textHasil.hasil}`;
 						Value.innerHTML = `${textPembukaHasil} ${!false && !true} ${textPenutupHasil}`;
 						form.reset();
 					}else if(VarA == "false" && VarB == "false"){
-						Coding.innerHTML =`${textCodingCBLogika.CBVarAB} ${textHasil.and}`;
+						Coding.innerHTML =`${textCodingCBLogika.CBVarAB} ${textHasil.hasil}`;
 						Value.innerHTML = `${textPembukaHasil} ${!false && !false} ${textPenutupHasil}`;
 						form.reset();
 					}
 				}else if(CBVarA){
 					if(VarA == "true" && VarB == "true"){
-						Coding.innerHTML =`${textCodingCBLogika.CBVarA} ${textHasil.and}`;
+						Coding.innerHTML =`${textCodingCBLogika.CBVarA} ${textHasil.hasil}`;
 						Value.innerHTML = `${textPembukaHasil} ${!true && true} ${textPenutupHasil}`;
 						form.reset();
 					}else if(VarA == "true" && VarB == "false"){
-						Coding.innerHTML =`${textCodingCBLogika.CBVarA} ${textHasil.and}`;
+						Coding.innerHTML =`${textCodingCBLogika.CBVarA} ${textHasil.hasil}`;
 						Value.innerHTML = `${textPembukaHasil} ${!true && false} ${textPenutupHasil}`;
 						form.reset();
 					}else if(VarA == "false" && VarB == "true"){
-						Coding.innerHTML =`${textCodingCBLogika.CBVarA} ${textHasil.and}`;
+						Coding.innerHTML =`${textCodingCBLogika.CBVarA} ${textHasil.hasil}`;
 						Value.innerHTML = `${textPembukaHasil} ${!false && true} ${textPenutupHasil}`;
 						form.reset();
 					}else if(VarA == "false" && VarB == "false"){
-						Coding.innerHTML =`${textCodingCBLogika.CBVarA} ${textHasil.and}`;
+						Coding.innerHTML =`${textCodingCBLogika.CBVarA} ${textHasil.hasil}`;
 						Value.innerHTML = `${textPembukaHasil} ${!false && false} ${textPenutupHasil}`;
 						form.reset();
 					}
 				}else if(CBVarB){
 					if(VarA == "true" && VarB == "true"){
-						Coding.innerHTML =`${textCodingCBLogika.CBVarB} ${textHasil.and}`;
+						Coding.innerHTML =`${textCodingCBLogika.CBVarB} ${textHasil.hasil}`;
 						Value.innerHTML = `${textPembukaHasil} ${true && !true} ${textPenutupHasil}`;
 						form.reset();
 					}else if(VarA == "true" && VarB == "false"){
-						Coding.innerHTML =`${textCodingCBLogika.CBVarB} ${textHasil.and}`;
+						Coding.innerHTML =`${textCodingCBLogika.CBVarB} ${textHasil.hasil}`;
 						Value.innerHTML = `${textPembukaHasil} ${true && !false} ${textPenutupHasil}`;
 						form.reset();
 					}else if(VarA == "false" && VarB == "true"){
-						Coding.innerHTML =`${textCodingCBLogika.CBVarB} ${textHasil.and}`;
+						Coding.innerHTML =`${textCodingCBLogika.CBVarB} ${textHasil.hasil}`;
 						Value.innerHTML = `${textPembukaHasil} ${false && !true} ${textPenutupHasil}`;
 						form.reset();
 					}else if(VarA == "false" && VarB == "false"){
-						Coding.innerHTML =`${textCodingCBLogika.CBVarB} ${textHasil.and}`;
+						Coding.innerHTML =`${textCodingCBLogika.CBVarB} ${textHasil.hasil}`;
 						Value.innerHTML = `${textPembukaHasil} ${false && !false} ${textPenutupHasil}`;
 						form.reset();
 					}
 				}else{
 					if(VarA == "true" && VarB == "true"){
-						Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.and}`;
+						Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.hasil}`;
 						Value.innerHTML = `${textPembukaHasil} ${true && true} ${textPenutupHasil}`;
 						form.reset();
 					}else if(VarA == "true" && VarB == "false"){
-						Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.and}`;
+						Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.hasil}`;
 						Value.innerHTML = `${textPembukaHasil} ${true && false} ${textPenutupHasil}`;
 						form.reset();
 					}else if(VarA == "false" && VarB == "true"){
-						Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.and}`;
+						Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.hasil}`;
 						Value.innerHTML = `${textPembukaHasil} ${false && true} ${textPenutupHasil}`;
 						form.reset();
 					}else if(VarA == "false" && VarB == "false"){
-						Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.and}`;
+						Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.hasil}`;
 						Value.innerHTML = `${textPembukaHasil} ${false && false} ${textPenutupHasil}`;
 						form.reset();
 					}
@@ -521,73 +491,73 @@ class Logic{
 			}else{
 				if (CBVarA && CBVarB) {
 					if(VarA == "true" && VarB == "true"){
-						Coding.innerHTML =`${textCodingCBLogika.CBVarAB} ${textHasil.or}`;
+						Coding.innerHTML =`${textCodingCBLogika.CBVarAB} ${textHasil.hasil}`;
 						Value.innerHTML = `${textPembukaHasil} ${!true || !true} ${textPenutupHasil}`;
 						form.reset();
 					}else if(VarA == "true" && VarB == "false"){
-						Coding.innerHTML =`${textCodingCBLogika.CBVarAB} ${textHasil.or}`;
+						Coding.innerHTML =`${textCodingCBLogika.CBVarAB} ${textHasil.hasil}`;
 						Value.innerHTML = `${textPembukaHasil} ${!true || !false} ${textPenutupHasil}`;
 						form.reset();
 					}else if(VarA == "false" && VarB == "true"){
-						Coding.innerHTML =`${textCodingCBLogika.CBVarAB} var ${textHasil.or}`;
+						Coding.innerHTML =`${textCodingCBLogika.CBVarAB} var ${textHasil.hasil}`;
 						Value.innerHTML = `${textPembukaHasil} ${!false || !true} ${textPenutupHasil}`;
 						form.reset();
 					}else if(VarA == "false" && VarB == "false"){
-						Coding.innerHTML =`${textCodingCBLogika.CBVarAB} var ${textHasil.or}`;
+						Coding.innerHTML =`${textCodingCBLogika.CBVarAB} var ${textHasil.hasil}`;
 						Value.innerHTML = `${textPembukaHasil} ${!false || !false} ${textPenutupHasil}`;
 						form.reset();
 					}
 				}else if(CBVarA){
 					if(VarA == "true" && VarB == "true"){
-						Coding.innerHTML =`${textCodingCBLogika.CBVarA} ${textHasil.or}`;
+						Coding.innerHTML =`${textCodingCBLogika.CBVarA} ${textHasil.hasil}`;
 						Value.innerHTML = `${textPembukaHasil} ${!true || true} ${textPenutupHasil}`;
 						form.reset();
 					}else if(VarA == "true" && VarB == "false"){
-						Coding.innerHTML =`${textCodingCBLogika.CBVarA} ${textHasil.or}`;
+						Coding.innerHTML =`${textCodingCBLogika.CBVarA} ${textHasil.hasil}`;
 						Value.innerHTML = `${textPembukaHasil} ${!true || false} ${textPenutupHasil}`;
 						form.reset();
 					}else if(VarA == "false" && VarB == "true"){
-						Coding.innerHTML =`${textCodingCBLogika.CBVarA} ${textHasil.or}`;
+						Coding.innerHTML =`${textCodingCBLogika.CBVarA} ${textHasil.hasil}`;
 						Value.innerHTML = `${textPembukaHasil} ${!false || true} ${textPenutupHasil}`;
 						form.reset();
 					}else if(VarA == "false" && VarB == "false"){
-						Coding.innerHTML =`${textCodingCBLogika.CBVarA} ${textHasil.or}`;
+						Coding.innerHTML =`${textCodingCBLogika.CBVarA} ${textHasil.hasil}`;
 						Value.innerHTML = `${textPembukaHasil} ${!false || false} ${textPenutupHasil}`;
 						form.reset();
 					}
 				}else if(CBVarB){
 					if(VarA == "true" && VarB == "true"){
-						Coding.innerHTML =`${textCodingCBLogika.CBVarB} ${textHasil.or}`;
+						Coding.innerHTML =`${textCodingCBLogika.CBVarB} ${textHasil.hasil}`;
 						Value.innerHTML = `${textPembukaHasil} ${true || !true} ${textPenutupHasil}`;
 						form.reset();
 					}else if(VarA == "true" && VarB == "false"){
-						Coding.innerHTML =`${textCodingCBLogika.CBVarB} ${textHasil.or}`;
+						Coding.innerHTML =`${textCodingCBLogika.CBVarB} ${textHasil.hasil}`;
 						Value.innerHTML = `${textPembukaHasil} ${true || !false} ${textPenutupHasil}`;
 						form.reset();
 					}else if(VarA == "false" && VarB == "true"){
-						Coding.innerHTML =`${textCodingCBLogika.CBVarB} ${textHasil.or}`;
+						Coding.innerHTML =`${textCodingCBLogika.CBVarB} ${textHasil.hasil}`;
 						Value.innerHTML = `${textPembukaHasil} ${false || !true} ${textPenutupHasil}`;
 						form.reset();
 					}else if(VarA == "false" && VarB == "false"){
-						Coding.innerHTML =`${textCodingCBLogika.CBVarB} ${textHasil.or}`;
+						Coding.innerHTML =`${textCodingCBLogika.CBVarB} ${textHasil.hasil}`;
 						Value.innerHTML = `${textPembukaHasil} ${false || !false} ${textPenutupHasil}`;
 						form.reset();
 					}
 				}else{
 					if(VarA == "true" && VarB == "true"){
-						Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.or}`;
+						Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.hasil}`;
 						Value.innerHTML = `${textPembukaHasil} ${true || true} ${textPenutupHasil}`;
 						form.reset();
 					}else if(VarA == "true" && VarB == "false"){
-						Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.or}`;
+						Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.hasil}`;
 						Value.innerHTML = `${textPembukaHasil} ${true || false} ${textPenutupHasil}`;
 						form.reset();
 					}else if(VarA == "false" && VarB == "true"){
-						Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.or}`;
+						Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.hasil}`;
 						Value.innerHTML = `${textPembukaHasil} ${false || true} ${textPenutupHasil}`;
 						form.reset();
 					}else if(VarA == "false" && VarB == "false"){
-						Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.or}`;
+						Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.hasil}`;
 						Value.innerHTML = `${textPembukaHasil} ${false || false} ${textPenutupHasil}`;
 						form.reset();
 					}
@@ -596,109 +566,109 @@ class Logic{
 		}else if(this.value == "bitwise"){
 			if(operator == "&"){
 				if(CBVarA && CBVarB){
-					Coding.innerHTML =`${textCodingCBBitwise.CBVarAB} ${textHasil.and}`;
+					Coding.innerHTML =`${textCodingCBBitwise.CBVarAB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${~VarA & ~VarB} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarA){
-					Coding.innerHTML =`${textCodingCBBitwise.CBVarA} ${textHasil.and}`;
+					Coding.innerHTML =`${textCodingCBBitwise.CBVarA} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${~VarA & VarB} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarB){
-					Coding.innerHTML =`${textCodingCBBitwise.CBVarB} ${textHasil.and}`;
+					Coding.innerHTML =`${textCodingCBBitwise.CBVarB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${VarA & ~VarB} ${textPenutupHasil}`;
 					form.reset();
 				}else{
-					Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.and}`;
+					Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${VarA & VarB} ${textPenutupHasil}`;
 					form.reset();
 				}
 			}else if(operator == "|"){
 				if(CBVarA && CBVarB){
-					Coding.innerHTML =`${textCodingCBBitwise.CBVarAB} ${textHasil.or}`;
+					Coding.innerHTML =`${textCodingCBBitwise.CBVarAB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${~VarA | ~VarB} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarA){
-					Coding.innerHTML =`${textCodingCBBitwise.CBVarA} ${textHasil.or}`;
+					Coding.innerHTML =`${textCodingCBBitwise.CBVarA} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${~VarA | VarB} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarB){
-					Coding.innerHTML =`${textCodingCBBitwise.CBVarB} ${textHasil.or}`;
+					Coding.innerHTML =`${textCodingCBBitwise.CBVarB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${VarA | ~VarB} ${textPenutupHasil}`;
 					form.reset();
 				}else{
-					Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.or}`;
+					Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${VarA | VarB} ${textPenutupHasil}`;
 					form.reset();
 				}
 			}else if(operator == "^"){
 				if(CBVarA && CBVarB){
-					Coding.innerHTML =`${textCodingCBBitwise.CBVarAB} ${textHasil.xor}`;
+					Coding.innerHTML =`${textCodingCBBitwise.CBVarAB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${~VarA ^ ~VarB} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarA){
-					Coding.innerHTML =`${textCodingCBBitwise.CBVarA} ${textHasil.xor}`;
+					Coding.innerHTML =`${textCodingCBBitwise.CBVarA} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${~VarA ^ VarB} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarB){
-					Coding.innerHTML =`${textCodingCBBitwise.CBVarB} ${textHasil.xor}`;
+					Coding.innerHTML =`${textCodingCBBitwise.CBVarB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${VarA ^ ~VarB} ${textPenutupHasil}`;
 					form.reset();
 				}else{
-					Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.xor}`;
+					Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${VarA ^ VarB} ${textPenutupHasil}`;
 					form.reset();
 				}
 			}else if(operator == "<<"){
 				if(CBVarA && CBVarB){
-					Coding.innerHTML =`${textCodingCBBitwise.CBVarAB} ${textHasil.leftShift}`;
+					Coding.innerHTML =`${textCodingCBBitwise.CBVarAB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${~VarA << ~VarB} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarA){
-					Coding.innerHTML =`${textCodingCBBitwise.CBVarA} ${textHasil.leftShift}`;
+					Coding.innerHTML =`${textCodingCBBitwise.CBVarA} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${~VarA << VarB} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarB){
-					Coding.innerHTML =`${textCodingCBBitwise.CBVarB} ${textHasil.leftShift}`;
+					Coding.innerHTML =`${textCodingCBBitwise.CBVarB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${VarA << ~VarB} ${textPenutupHasil}`;
 					form.reset();
 				}else{
-					Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.leftShift}`;
+					Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${VarA << VarB} ${textPenutupHasil}`;
 					form.reset();
 				}
 			}else if(operator == ">>"){
 				if(CBVarA && CBVarB){
-					Coding.innerHTML =`${textCodingCBBitwise.CBVarAB} ${textHasil.rightShift}`;
+					Coding.innerHTML =`${textCodingCBBitwise.CBVarAB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${~VarA >> ~VarB} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarA){
-					Coding.innerHTML =`${textCodingCBBitwise.CBVarA} ${textHasil.rightShift}`;
+					Coding.innerHTML =`${textCodingCBBitwise.CBVarA} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${~VarA >> VarB} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarB){
-					Coding.innerHTML =`${textCodingCBBitwise.CBVarB} ${textHasil.rightShift}`;
+					Coding.innerHTML =`${textCodingCBBitwise.CBVarB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${VarA >> ~VarB} ${textPenutupHasil}`;
 					form.reset();
 				}else{
-					Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.rightShift}`;
+					Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${VarA >> VarB} ${textPenutupHasil}`;
 					form.reset();
 				}
 			}else if(operator == ">>>"){
 				if(CBVarA && CBVarB){
-					Coding.innerHTML =`${textCodingCBBitwise.CBVarAB} ${textHasil.rightShiftU}`;
+					Coding.innerHTML =`${textCodingCBBitwise.CBVarAB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${~VarA >>> ~VarB} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarA){
-					Coding.innerHTML =`${textCodingCBBitwise.CBVarA} ${textHasil.rightShiftU}`;
+					Coding.innerHTML =`${textCodingCBBitwise.CBVarA} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${~VarA >>> VarB} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarB){
-					Coding.innerHTML =`${textCodingCBBitwise.CBVarB} ${textHasil.rightShiftU}`;
+					Coding.innerHTML =`${textCodingCBBitwise.CBVarB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${VarA >>> ~VarB} ${textPenutupHasil}`;
 					form.reset();
 				}else{
-					Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.rightShiftU}`;
+					Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.hasil}`;
 					Value.innerHTML = `${textPembukaHasil} ${VarA >>> VarB} ${textPenutupHasil}`;
 					form.reset();
 				}
@@ -706,145 +676,145 @@ class Logic{
 		}else if(this.value == "ternary"){
 			if(operator == ">"){
 				if(CBVarA && CBVarB){
-					Coding.innerHTML =`${textCodingCB.CBVarAB} ${textHasil.lBesar}`;
+					Coding.innerHTML =`${textCodingCB.CBVarAB} ${textHasil.hasilTernary}`;
 					Value.innerHTML = `${textPembukaHasil} ${(VarA > VarB) ? true : false} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarB){
-					Coding.innerHTML =`${textCodingCB.CBVarB} ${textHasil.lBesar}`;
+					Coding.innerHTML =`${textCodingCB.CBVarB} ${textHasil.hasilTernary}`;
 					Value.innerHTML = `${textPembukaHasil} ${(c > VarB) ? true : false} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarA){
-					Coding.innerHTML =`${textCodingCB.CBVarA} ${textHasil.lBesar}`;
+					Coding.innerHTML =`${textCodingCB.CBVarA} ${textHasil.hasilTernary}`;
 					Value.innerHTML = `${textPembukaHasil} ${(VarA > d) ? true : false} ${textPenutupHasil}`;
 					form.reset();
 				}else{
-					Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.lBesar}`;
+					Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.hasilTernary}`;
 					Value.innerHTML = `${textPembukaHasil} ${(c > d) ? true : false} ${textPenutupHasil}`;
 					form.reset();
 				}
 			}else if(operator == "<"){
 				if(CBVarA && CBVarB){
-					Coding.innerHTML =`${textCodingCB.CBVarAB} ${textHasil.lKecil}`;
+					Coding.innerHTML =`${textCodingCB.CBVarAB} ${textHasil.hasilTernary}`;
 					Value.innerHTML = `${textPembukaHasil} ${(VarA < VarB) ? true : false} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarB){
-					Coding.innerHTML =`${textCodingCB.CBVarB} ${textHasil.lKecil}`;
+					Coding.innerHTML =`${textCodingCB.CBVarB} ${textHasil.hasilTernary}`;
 					Value.innerHTML = `${textPembukaHasil} ${(c < VarB) ? true : false} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarA){
-					Coding.innerHTML =`${textCodingCB.CBVarA} ${textHasil.lKecil}`;
+					Coding.innerHTML =`${textCodingCB.CBVarA} ${textHasil.hasilTernary}`;
 					Value.innerHTML = `${textPembukaHasil} ${(VarA < d) ? true : false} ${textPenutupHasil}`;
 					form.reset();
 				}else{
-					Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.lKecil}`;
+					Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.hasilTernary}`;
 					Value.innerHTML = `${textPembukaHasil} ${(c < d) ? true : false} ${textPenutupHasil}`;
 					form.reset();
 				}
 			}else if(operator == ">="){
 				if(CBVarA && CBVarB){
-					Coding.innerHTML =`${textCodingCB.CBVarAB} ${textHasil.lBesarSD}`;
+					Coding.innerHTML =`${textCodingCB.CBVarAB} ${textHasil.hasilTernary}`;
 					Value.innerHTML = `${textPembukaHasil} ${(VarA >= VarB) ? true : false} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarB){
-					Coding.innerHTML =`${textCodingCB.CBVarB} ${textHasil.lBesarSD}`;
+					Coding.innerHTML =`${textCodingCB.CBVarB} ${textHasil.hasilTernary}`;
 					Value.innerHTML = `${textPembukaHasil} ${(c >= VarB) ? true : false} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarA){
-					Coding.innerHTML =`${textCodingCB.CBVarA} ${textHasil.lBesarSD}`;
+					Coding.innerHTML =`${textCodingCB.CBVarA} ${textHasil.hasilTernary}`;
 					Value.innerHTML = `${textPembukaHasil} ${(VarA >= d) ? true : false} ${textPenutupHasil}`;
 					form.reset();
 				}else{
-					Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.lBesarSD}`;
+					Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.hasilTernary}`;
 					Value.innerHTML = `${textPembukaHasil} ${(c >= d) ? true : false} ${textPenutupHasil}`;
 					form.reset();
 				}
 			}else if(operator == "<="){
 				if(CBVarA && CBVarB){
-					Coding.innerHTML =`${textCodingCB.CBVarAB} ${textHasil.lKecilSD}`;
+					Coding.innerHTML =`${textCodingCB.CBVarAB} ${textHasil.hasilTernary}`;
 					Value.innerHTML = `${textPembukaHasil} ${(VarA <= VarB) ? true : false} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarB){
-					Coding.innerHTML =`${textCodingCB.CBVarB} ${textHasil.lKecilSD}`;
+					Coding.innerHTML =`${textCodingCB.CBVarB} ${textHasil.hasilTernary}`;
 					Value.innerHTML = `${textPembukaHasil} ${(c <= VarB) ? true : false} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarA){
-					Coding.innerHTML =`${textCodingCB.CBVarA} ${textHasil.lKecilSD}`;
+					Coding.innerHTML =`${textCodingCB.CBVarA} ${textHasil.hasilTernary}`;
 					Value.innerHTML = `${textPembukaHasil} ${(VarA <= d) ? true : false} ${textPenutupHasil}`;
 					form.reset();
 				}else{
-					Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.lKecilSD}`;
+					Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.hasilTernary}`;
 					Value.innerHTML = `${textPembukaHasil} ${(c <= d) ? true : false} ${textPenutupHasil}`;
 					form.reset();
 				}
 			}else if(operator == "=="){
 				if(CBVarA && CBVarB){
-					Coding.innerHTML =`${textCodingCB.CBVarAB} ${textHasil.samaDengan2}`;
+					Coding.innerHTML =`${textCodingCB.CBVarAB} ${textHasil.hasilTernary}`;
 					Value.innerHTML = `${textPembukaHasil} ${(VarA == VarB) ? true : false} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarB){
-					Coding.innerHTML =`${textCodingCB.CBVarB} ${textHasil.samaDengan2}`;
+					Coding.innerHTML =`${textCodingCB.CBVarB} ${textHasil.hasilTernary}`;
 					Value.innerHTML = `${textPembukaHasil} ${(c == VarB) ? true : false} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarA){
-					Coding.innerHTML =`${textCodingCB.CBVarA} ${textHasil.samaDengan2}`;
+					Coding.innerHTML =`${textCodingCB.CBVarA} ${textHasil.hasilTernary}`;
 					Value.innerHTML = `${textPembukaHasil} ${(VarA == d) ? true : false} ${textPenutupHasil}`;
 					form.reset();
 				}else{
-					Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.samaDengan2}`;
+					Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.hasilTernary}`;
 					Value.innerHTML = `${textPembukaHasil} ${(c == d) ? true : false} ${textPenutupHasil}`;
 					form.reset();
 				}
 			}else if(operator == "==="){
 				if(CBVarA && CBVarB){
-					Coding.innerHTML =`${textCodingCB.CBVarAB} ${textHasil.samaDengan3}`;
+					Coding.innerHTML =`${textCodingCB.CBVarAB} ${textHasil.hasilTernary}`;
 					Value.innerHTML = `${textPembukaHasil} ${(VarA === VarB) ? true : false} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarB){
-					Coding.innerHTML =`${textCodingCB.CBVarB} ${textHasil.samaDengan3}`;
+					Coding.innerHTML =`${textCodingCB.CBVarB} ${textHasil.hasilTernary}`;
 					Value.innerHTML = `${textPembukaHasil} ${(c === VarB) ? true : false} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarA){
-					Coding.innerHTML =`${textCodingCB.CBVarA} ${textHasil.samaDengan3}`;
+					Coding.innerHTML =`${textCodingCB.CBVarA} ${textHasil.hasilTernary}`;
 					Value.innerHTML = `${textPembukaHasil} ${(VarA === d) ? true : false} ${textPenutupHasil}`;
 					form.reset();
 				}else{
-					Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.samaDengan3}`;
+					Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.hasilTernary}`;
 					Value.innerHTML = `${textPembukaHasil} ${(c === d) ? true : false} ${textPenutupHasil}`;
 					form.reset();
 				}
 			}else if(operator == "!="){
 				if(CBVarA && CBVarB){
-					Coding.innerHTML =`${textCodingCB.CBVarAB} ${textHasil.tSD1}`;
+					Coding.innerHTML =`${textCodingCB.CBVarAB} ${textHasil.hasilTernary}`;
 					Value.innerHTML = `${textPembukaHasil} ${(VarA != VarB) ? true : false} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarB){
-					Coding.innerHTML =`${textCodingCB.CBVarB} ${textHasil.tSD1}`;
+					Coding.innerHTML =`${textCodingCB.CBVarB} ${textHasil.hasilTernary}`;
 					Value.innerHTML = `${textPembukaHasil} ${(c != VarB) ? true : false} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarA){
-					Coding.innerHTML =`${textCodingCB.CBVarA} ${textHasil.tSD1}`;
+					Coding.innerHTML =`${textCodingCB.CBVarA} ${textHasil.hasilTernary}`;
 					Value.innerHTML = `${textPembukaHasil} ${(VarA != d) ? true : false} ${textPenutupHasil}`;
 					form.reset();
 				}else{
-					Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.tSD1}`;
+					Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.hasilTernary}`;
 					Value.innerHTML = `${textPembukaHasil} ${(c != d) ? true : false} ${textPenutupHasil}`;
 					form.reset();
 				}
 			}else if(operator == "!=="){
 				if(CBVarA && CBVarB){
-					Coding.innerHTML =`${textCodingCB.CBVarAB} ${textHasil.tSD2}`;
+					Coding.innerHTML =`${textCodingCB.CBVarAB} ${textHasil.hasilTernary}`;
 					Value.innerHTML = `${textPembukaHasil} ${(VarA !== VarB) ? true : false} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarB){
-					Coding.innerHTML =`${textCodingCB.CBVarB} ${textHasil.tSD2}`;
+					Coding.innerHTML =`${textCodingCB.CBVarB} ${textHasil.hasilTernary}`;
 					Value.innerHTML = `${textPembukaHasil} ${(c !== VarB) ? true : false} ${textPenutupHasil}`;
 					form.reset();
 				}else if(CBVarA){
-					Coding.innerHTML =`${textCodingCB.CBVarA} ${textHasil.tSD2}`;
+					Coding.innerHTML =`${textCodingCB.CBVarA} ${textHasil.hasilTernary}`;
 					Value.innerHTML = `${textPembukaHasil} ${(VarA !== d) ? true : false} ${textPenutupHasil}`;
 					form.reset();
 				}else{
-					Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.tSD2}`;
+					Coding.innerHTML =`${textCodingCB.NonCB} ${textHasil.hasilTernary}`;
 					Value.innerHTML = `${textPembukaHasil} ${(c !== d) ? true : false} ${textPenutupHasil}`;
 					form.reset();
 				}
